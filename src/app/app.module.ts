@@ -15,6 +15,7 @@ import { RequestNewUserComponent } from './request-new-user/request-new-user.com
 import { ProductComponent } from './product/product.component';
 import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
 import { AdminComponent } from './admin/admin.component';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -27,6 +28,11 @@ import { WhatsnewComponent } from './whatsnew/whatsnew.component';
 import { AnnouncementAddComponent } from './announcement-add/announcement-add.component';
 import { NewuserRequestComponent } from './newuser-request/newuser-request.component';
 import { AnnouncementCloneComponent } from './announcement-clone/announcement-clone.component';
+=======
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ForgotComponent } from './forgot/forgot.component';
+
+>>>>>>> 1d6ba7093b47cf7b3ee9a7656b0500f22acc4747
 
 @NgModule({
   declarations: [
@@ -41,6 +47,7 @@ import { AnnouncementCloneComponent } from './announcement-clone/announcement-cl
     ProductComponent,
     DownloadFullFilesComponent,
     AdminComponent,
+<<<<<<< HEAD
     AnnouncementDetailsComponent,
     AnnouncementAdminComponent,
     UserSearchComponent,
@@ -51,6 +58,9 @@ import { AnnouncementCloneComponent } from './announcement-clone/announcement-cl
     NewuserRequestComponent,
     AnnouncementCloneComponent,
     
+=======
+    ForgotComponent
+>>>>>>> 1d6ba7093b47cf7b3ee9a7656b0500f22acc4747
   ],
   imports: [
     NgxNewstickerAlbeModule ,
@@ -58,8 +68,13 @@ import { AnnouncementCloneComponent } from './announcement-clone/announcement-cl
     NgMarqueeModule,
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
     FormsModule,
     Ng2SearchPipeModule
+=======
+    ReactiveFormsModule,
+    FormsModule
+>>>>>>> 1d6ba7093b47cf7b3ee9a7656b0500f22acc4747
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,24 +2,48 @@
     <table class="table table-hover light-grey-bg">
         <thead class="primary-red-bg white-text">
             <tr>
-                <th>
-                    Title <i class="fa fa-filter" (click)="changeFilter(0)"></i>
-                    <div id="myDropdown" class="dropdown-content" *ngIf="filter[0]">
-                        <input type="text" placeholder="Search Filter.." id="myInput" onkeyup="filterFunction()">
-                        <a *ngFor="let item of filters[0]">{{item.name}}</a>
+                
+                <th *ngFor="let filterData of tableDisplay;let i=index">
+                    <span [innerHtml]="filterData.name"></span> <i class="fa fa-filter" *ngIf="!filterData.noFilter " (click)="changeFilter(i)"></i>
+                    <div id="myDropdown" class="dropdown-content" *ngIf="!filterData.noFilter  && filter[i] && ( filters[i] |  filter:searchTitle[i]) as result ">
+                        <input type="text" placeholder="Search Filter.." class="form-control" [(ngModel)]="searchTitle[i]">
+                        <a *ngFor="let item of result"><label><input  type="checkbox" (change)="filterRecords()" [(ngModel)]="item.selected"> {{item.name}}</label></a>
+                        <a *ngIf="!(result.length)"><label >No Results Found</label></a>
                     </div>
                 </th>
-                <th>Lastname</th>
-                <th>Email</th>
+                
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of response">
-                <td>{{item.title}}</td>
-                <td>{{item.createdAt}}</td>
-                <td>{{item.type}}</td>
+           
+            <tr *ngFor="let item of response | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                <td *ngFor="let record of tableDisplay">{{item[record.key]}}</td>
             </tr>
-
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <ngb-pagination
+                            [(page)]="page"
+                            [pageSize]="pageSize"
+                            [collectionSize]="response.length"></ngb-pagination>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="padded-input pull-right" [(ngModel)]="pageSize">
+                                <option value="10">10 Per Page</option>
+                                <option value="20">20 Per Page</option>
+                                <option value="30">30 Per Page</option>
+                                <option value="40">40 Per Page</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+          
+        </tfoot>
     </table>
+    
+   
 </div>

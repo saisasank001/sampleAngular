@@ -1,0 +1,141 @@
+<div class="page">
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne">1. What is HTML?</button>									
+                </h2>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo">2. What is Bootstrap?</button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree">3. What is CSS?</button>                     
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" class="sidebar">
+        <ngb-panel title="Simple">
+          <ng-template ngbPanelContent>
+              <ul class="list-sidebar bg-defoult">
+            <li><a href="#">General</a></li>
+              <li><a href="#">Buttons</a></li>
+              <li><a href="#">Tabs & Accordions</a></li>
+              <li><a href="#">Typography</a></li>
+              <li><a href="#">FontAwesome</a></li>
+              <li><a href="#">Slider</a></li>
+              <li><a href="#">Panels</a></li>
+              <li><a href="#">Widgets</a></li>
+              <li><a href="#">Bootstrap Model</a></li>
+            </ul>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span>&#9733; <b>Fancy</b> title &#9733;</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+            labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Disabled" [disabled]="true">
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+            labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+      
+    <div class="sidebar left ">
+        <ul class="list-sidebar bg-defoult">
+        
+          <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+            <ul class="sub-menu collapse" id="dashboard">
+              <li class="active"><a href="#">CSS3 Animation</a></li>
+              <li><a href="#">General</a></li>
+              <li><a href="#">Buttons</a></li>
+              <li><a href="#">Tabs & Accordions</a></li>
+              <li><a href="#">Typography</a></li>
+              <li><a href="#">FontAwesome</a></li>
+              <li><a href="#">Slider</a></li>
+              <li><a href="#">Panels</a></li>
+              <li><a href="#">Widgets</a></li>
+              <li><a href="#">Bootstrap Model</a></li>
+            </ul>
+          </li>
+          <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+            <ul class="sub-menu collapse" id="products">
+              <li class="active"><a href="#">CSS3 Animation</a></li>
+              <li><a href="#">General</a></li>
+              <li><a href="#">Buttons</a></li>
+              <li><a href="#">Tabs & Accordions</a></li>
+              <li><a href="#">Typography</a></li>
+              <li><a href="#">FontAwesome</a></li>
+              <li><a href="#">Slider</a></li>
+              <li><a href="#">Panels</a></li>
+              <li><a href="#">Widgets</a></li>
+              <li><a href="#">Bootstrap Model</a></li>
+            </ul>
+          </li>
+          <li> <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a> </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa fa-chevron-left pull-right"></span></a>
+            <ul  class="sub-menu collapse" id="tables" >
+              <li><a href=""> Static Tables</a></li>
+              <li><a href=""> Data Tables</a></li>
+              <li><a href=""> Foo Tables</a></li>
+              <li><a href=""> jqGrid</a></li>
+            </ul>
+          </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa fa-chevron-left pull-right"></span></a>
+            <ul  class="sub-menu collapse" id="e-commerce" >
+              <li><a href=""> Products grid</a></li>
+              <li><a href=""> Products list</a></li>
+              <li><a href="">Product edit</a></li>
+              <li><a href=""> Product detail</a></li>
+              <li><a href="">Cart</a></li>
+              <li><a href=""> Orders</a></li>
+              <li><a href=""> Credit Card form</a> </li>
+            </ul>
+          </li>
+          <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a></li>
+          <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+          <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+          <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+          <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+          <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span></a> </li>
+        </ul>
+      </div>
+</div>

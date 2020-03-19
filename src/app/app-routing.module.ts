@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AnnouncementAddComponent } from './announcement-add/announcement-add.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,9 @@ const routes: Routes = [
   },{
     path:'announcement-add',
     component: AnnouncementAddComponent
+  },{
+    path:'forgot',
+    component:ForgotComponent
   }
 ];
 
