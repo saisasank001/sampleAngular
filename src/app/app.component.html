@@ -1,7 +1,7 @@
 <div class="container boxed-layout">
     <app-header></app-header>
     
-    <app-urgent-message *ngIf="router.url!='/'"></app-urgent-message>
+    <app-urgent-message *ngIf="router.url!='/' && router.url!='/forgot'"></app-urgent-message>
     <router-outlet></router-outlet>
 
     <app-footer></app-footer>

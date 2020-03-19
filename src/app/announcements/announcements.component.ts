@@ -208,22 +208,24 @@ export class AnnouncementsComponent implements OnInit {
   tableDisplay=[{
     name:'Title',
     key:'title',
+  },
+  {
+    name:'Type',
+    key:'type'
   },{
     name:'Created At',
     key:'createdAt'
-  },{
-    name:'Type',
-    key:'type'
   }];
 
-  page=1;
-  pageSize=10;
+
  
 
   constructor() {
     this.cloneResponse=this.response;
    }
 
+  page=1;
+  pageSize=10;
   filter=[]; // for filter menu toggle
   filters=[]; // for filters checkbox data
   searchTitle=[]; // for searching text 
@@ -290,7 +292,7 @@ export class AnnouncementsComponent implements OnInit {
       }
       
       let filters=JSON.parse(JSON.stringify(this.filters[index]));
-      console.log(filters)
+    
       filters=filters.filter(item=>{return item.selected==true})
       console.log(filters)
       if(filters.length){
@@ -299,7 +301,7 @@ export class AnnouncementsComponent implements OnInit {
         });
       }
     })
-    console.log(tmp);
+  
     let tmpResponse=[];
     this.cloneResponse.forEach(item=>{
       let keys=Object.keys(item);
