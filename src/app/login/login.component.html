@@ -11,6 +11,7 @@
               <label for="pwd">Password:</label>
               <input type="password" class="form-control" placeholder="password" id="pwd">
            </div>
+          
            <div class="checkbox">
               <p class="text-align-right"><label >forgot password?</label></p>
            </div>
@@ -18,3 +19,82 @@
         </div>
      </div>
     </div>
+<!--reset password model-->
+    <div>
+      <ng-template #reset let-modal>
+         <div class="modal-header">
+           <h4 class="modal-title" id="modal-basic-title">Reset Password</h4>
+           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <form>
+             <div class="form-group" [formGroup]="resetForm" >
+               <label for="email">Email:</label>
+               <div class="input-group">
+                 <input id="email" class="form-control" placeholder="Enter Registered Email" formControlName="email">
+                 
+               </div>
+             </div>
+           </form>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-outline-dark" (click)="resetData(resetForm.value); modal.close('Save click')">submit</button>
+         </div>
+       </ng-template>
+       
+       <button class="btn btn-lg btn-outline-primary" (click)="open()">Reset Password</button>
+                  
+     </div>
+<!--reactive password model-->
+     <div>
+      <ng-template #reactive let-modal>
+         <div class="modal-header">
+           <h4 class="modal-title" id="modal-basic-title">Reactive Password</h4>
+           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <form>
+            <div class="form-group" [formGroup]="reactiveForm" >
+               <label for="email">Email:</label>
+               <div class="input-group">
+                 <input id="email" class="form-control" placeholder="Enter Registered Email" formControlName="email">
+                 
+               </div>
+             </div>
+           </form>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-outline-dark" (click)="reactiveData(reactiveForm.value); modal.close('Save click')">Submit</button>
+         </div>
+       </ng-template>                 
+     </div>
+<!--Forgot password model-->
+<div>
+   <ng-template #forgot let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Forgot Password</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+         <div class="form-group" [formGroup]="forgotForm" >
+            <label for="email">Email:</label>
+            <div class="input-group">
+              <input id="email" class="form-control" placeholder="Enter Registered Email" formControlName="email">
+              
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="forgotData(forgotForm.value); modal.close('Save click')">Submit</button>
+      </div>
+    </ng-template>
+               
+  </div>

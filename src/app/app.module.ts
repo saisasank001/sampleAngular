@@ -15,6 +15,7 @@ import { RequestNewUserComponent } from './request-new-user/request-new-user.com
 import { ProductComponent } from './product/product.component';
 import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
 import { AdminComponent } from './admin/admin.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,7 +37,9 @@ import { AdminComponent } from './admin/admin.component';
     NgbModule,
     NgMarqueeModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
