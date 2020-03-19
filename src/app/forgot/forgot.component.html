@@ -1,0 +1,15 @@
+<div style="height: 64vh;">
+
+    <div class="card login-card light-grey-bg">
+          <div class="card-header dark-grey-bg white-text"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;Secure Customer Sign On</div>
+          <div class="card-body">
+            <form [formGroup]="forgotForm">
+              <div class="form-group" >
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" placeholder="eg: something@example.com" id="email" formControlName="email">
+             </div>
+            </form>          
+             <button type="submit" class="btn btn-block btn-danger" (click)="submit(forgotForm.value)">Submit</button>
+          </div>
+       </div>
+      </div>

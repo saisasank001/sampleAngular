@@ -3,19 +3,20 @@
   <div class="card login-card light-grey-bg">
         <div class="card-header dark-grey-bg white-text"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;Secure Customer Sign On</div>
         <div class="card-body">
-           <div class="form-group">
+          <form [formGroup]="loginForm">
+            <div class="form-group" >
               <label for="email">Email address:</label>
-              <input type="email" class="form-control" placeholder="eg: something@example.com" id="email">
+              <input type="email" class="form-control" placeholder="eg: something@example.com" id="email" formControlName="mailaddress">
            </div>
            <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" placeholder="password" id="pwd">
+              <input type="password" class="form-control" placeholder="password" id="pwd" formControlName="pwd">
            </div>
-          
+          </form>          
            <div class="checkbox">
-              <p class="text-align-right"><label >forgot password?</label></p>
+              <p class="text-align-right" (click)="forgotPwd()"><a [routerLink]="'/forgot'">Forgot Password?</a></p>
            </div>
-           <button type="submit" class="btn btn-block btn-danger">Submit</button>
+           <button type="submit" class="btn btn-block btn-danger" (click)="submit(loginForm.value)">Submit</button>
         </div>
      </div>
     </div>
@@ -44,8 +45,7 @@
          </div>
        </ng-template>
        
-       <button class="btn btn-lg btn-outline-primary" (click)="open()">Reset Password</button>
-                  
+                   
      </div>
 <!--reactive password model-->
      <div>
@@ -72,29 +72,3 @@
          </div>
        </ng-template>                 
      </div>
-<!--Forgot password model-->
-<div>
-   <ng-template #forgot let-modal>
-      <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Forgot Password</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-         <div class="form-group" [formGroup]="forgotForm" >
-            <label for="email">Email:</label>
-            <div class="input-group">
-              <input id="email" class="form-control" placeholder="Enter Registered Email" formControlName="email">
-              
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="forgotData(forgotForm.value); modal.close('Save click')">Submit</button>
-      </div>
-    </ng-template>
-               
-  </div>

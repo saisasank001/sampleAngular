@@ -16,6 +16,7 @@ import { ProductComponent } from './product/product.component';
 import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ForgotComponent } from './forgot/forgot.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     RequestNewUserComponent,
     ProductComponent,
     DownloadFullFilesComponent,
-    AdminComponent
+    AdminComponent,
+    ForgotComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,
