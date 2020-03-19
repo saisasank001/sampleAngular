@@ -1,0 +1,24 @@
+
+.newsticker{
+    height: 40px;
+    .nt-title{
+        h2{
+            display: inline-block;
+            margin: 0;
+            padding: 0 15px;
+            line-height: 40px;
+            font-size: 18px;
+            color: #fff;
+            height: 32px;
+            box-sizing: border-box;
+            overflow: hidden;
+            font-weight: lighter;
+        }
+    }
+    .nt-content{
+        margin-top: 7px
+    }
+}
+.mark, mark{
+    background-color:#fff
+}

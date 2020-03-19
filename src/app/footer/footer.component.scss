@@ -1,0 +1,19 @@
+.footer{
+    width:100%;
+    img{
+        width: 100px;
+    }
+    .flex-row{
+        justify-content: space-between;
+    }
+    .primary{
+        padding: 5px;
+        border-radius: 2px;
+    }
+    .copyright-text{
+        margin-left:8px
+    }
+    .sub-footer{
+        margin-top:5px
+    }
+}

@@ -1,0 +1,25 @@
+<div class="page">
+    <table class="table table-hover light-grey-bg">
+        <thead class="primary-red-bg white-text">
+            <tr>
+                <th>
+                    Title <i class="fa fa-filter" (click)="changeFilter(0)"></i>
+                    <div id="myDropdown" class="dropdown-content" *ngIf="filter[0]">
+                        <input type="text" placeholder="Search Filter.." id="myInput" onkeyup="filterFunction()">
+                        <a *ngFor="let item of filters[0]">{{item.name}}</a>
+                    </div>
+                </th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of response">
+                <td>{{item.title}}</td>
+                <td>{{item.createdAt}}</td>
+                <td>{{item.type}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
