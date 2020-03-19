@@ -15,7 +15,18 @@ import { RequestNewUserComponent } from './request-new-user/request-new-user.com
 import { ProductComponent } from './product/product.component';
 import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
 import { AdminComponent } from './admin/admin.component';
-
+import { FormsModule } from '@angular/forms';
+// search module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
+import { AnnouncementAdminComponent } from './announcement-admin/announcement-admin.component';
+import { UserSearchComponent } from './user-search/user-search.component';
+import { UpdateUserEmailComponent } from './update-user-email/update-user-email.component';
+import { EmailUnsubscribeAdminComponent } from './email-unsubscribe-admin/email-unsubscribe-admin.component';
+import { WhatsnewComponent } from './whatsnew/whatsnew.component';
+import { AnnouncementAddComponent } from './announcement-add/announcement-add.component';
+import { NewuserRequestComponent } from './newuser-request/newuser-request.component';
+import { AnnouncementCloneComponent } from './announcement-clone/announcement-clone.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +40,26 @@ import { AdminComponent } from './admin/admin.component';
     RequestNewUserComponent,
     ProductComponent,
     DownloadFullFilesComponent,
-    AdminComponent
+    AdminComponent,
+    AnnouncementDetailsComponent,
+    AnnouncementAdminComponent,
+    UserSearchComponent,
+    UpdateUserEmailComponent,
+    EmailUnsubscribeAdminComponent,
+    WhatsnewComponent,
+    AnnouncementAddComponent,
+    NewuserRequestComponent,
+    AnnouncementCloneComponent,
+    
   ],
   imports: [
     NgxNewstickerAlbeModule ,
     NgbModule,
     NgMarqueeModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
