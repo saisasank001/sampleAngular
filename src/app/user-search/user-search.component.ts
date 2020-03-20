@@ -26,5 +26,4 @@ export class UserSearchComponent implements OnInit {
           requestedEmail:['',[Validators.required]]
   });
   }
-
 }

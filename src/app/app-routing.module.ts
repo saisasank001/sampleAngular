@@ -7,6 +7,7 @@ import { AnnouncementDetailsComponent } from './announcement-details/announcemen
 import { AnnouncementAddComponent } from './announcement-add/announcement-add.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { UserSearchComponent } from './user-search/user-search.component';
+import { UpdateUserEmailComponent } from './update-user-email/update-user-email.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path:'user-search',
     component:UserSearchComponent
+  },
+  {
+    path:'update-user-email',
+    component:UpdateUserEmailComponent
   }
 ];
 
