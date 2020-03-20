@@ -7,10 +7,20 @@
             <div class="form-group" >
               <label for="email">Email address:</label>
               <input type="email" class="form-control" placeholder="eg: something@example.com" id="email" formControlName="mailaddress">
+              <small class="form-text text-muted invalid-data"
+                 *ngIf="loginForm.controls['mailaddress'].invalid && (loginForm.controls['mailaddress'].dirty || loginForm.controls['mailaddress'].touched)"
+                 class="invalid-data">
+            Please enter valid email 
+          </small>
            </div>
            <div class="form-group">
               <label for="pwd">Password:</label>
               <input type="password" class="form-control" placeholder="password" id="pwd" formControlName="pwd">
+              <small class="form-text text-muted invalid-data"
+                 *ngIf="loginForm.controls['pwd'].invalid && (loginForm.controls['pwd'].dirty || loginForm.controls['pwd'].touched)"
+                 class="invalid-data">
+            Please enter password 
+          </small>
            </div>
           </form>          
            <div class="checkbox">
@@ -35,7 +45,11 @@
                <label for="email">Email:</label>
                <div class="input-group">
                  <input id="email" class="form-control" placeholder="Enter Registered Email" formControlName="email">
-                 
+                 <small class="form-text text-muted invalid-data"
+                 *ngIf="resetForm.controls['email'].invalid && (resetForm.controls['email'].dirty || resetForm.controls['email'].touched)"
+                 class="invalid-data">
+            Please enter valid email 
+          </small>
                </div>
              </div>
            </form>
@@ -62,7 +76,11 @@
                <label for="email">Email:</label>
                <div class="input-group">
                  <input id="email" class="form-control" placeholder="Enter Registered Email" formControlName="email">
-                 
+                 <small class="form-text text-muted invalid-data"
+                 *ngIf="reactiveForm.controls['email'].invalid && (reactiveForm.controls['email'].dirty || reactiveForm.controls['email'].touched)"
+                 class="invalid-data">
+            Please enter valid email 
+          </small>
                </div>
              </div>
            </form>
@@ -72,3 +90,32 @@
          </div>
        </ng-template>                 
      </div>
+ <!--otp model-->
+ <div>
+  <ng-template #otp let-modal>
+     <div class="modal-header">
+       <h4 class="modal-title" id="modal-basic-title">OTP</h4>
+       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+         <span aria-hidden="true">&times;</span>
+       </button>
+     </div>
+     <div class="modal-body">
+       <form>
+        <div class="form-group" [formGroup]="otpForm" >
+           <label for="otp">OTP</label>
+           <div class="input-group">
+             <input  class="form-control" placeholder="Enter OTP" formControlName="otp">
+             <small class="form-text text-muted invalid-data"
+             *ngIf="otpForm.controls['otp'].invalid && (otpForm.controls['otp'].dirty || otpForm.controls['otp'].touched)"
+             class="invalid-data">
+        Please enter OTP 
+      </small>
+           </div>
+         </div>
+       </form>
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-outline-dark" (click)="otpData(otpForm.value); modal.close('Save click')">Submit</button>
+     </div>
+   </ng-template>                 
+ </div>    

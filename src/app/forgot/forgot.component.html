@@ -7,6 +7,10 @@
               <div class="form-group" >
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" placeholder="eg: something@example.com" id="email" formControlName="email">
+                <small class="form-text text-muted invalid-data"
+                 *ngIf="forgotForm.controls['email'].invalid && (forgotForm.controls['email'].dirty || forgotForm.controls['email'].touched)"
+                 class="invalid-data">Please enter valid email
+                </small>
              </div>
             </form>          
              <button type="submit" class="btn btn-block btn-danger" (click)="submit(forgotForm.value)">Submit</button>

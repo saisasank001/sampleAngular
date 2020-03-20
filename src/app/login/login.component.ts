@@ -12,9 +12,10 @@ export class LoginComponent implements OnInit {
   loginForm:FormGroup;
   resetForm: FormGroup;
   reactiveForm: FormGroup;
-  forgotForm: FormGroup;
+  otpForm: FormGroup;
   @ViewChild('reset',{static:true}) resetModal;  
-  @ViewChild('reactive',{static:true}) reactiveModal;
+  @ViewChild('reactive',{static:true}) reactiveModal;  
+  @ViewChild('otp',{static:true}) otpModel;
 
   data = [
     {
@@ -55,25 +56,44 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit() {  
     this.loginForm = this.formBuilder.group({
-      mailaddress: ['', Validators.required],
-      pwd: ['', Validators.required]
+    //   mailaddress: ['',[Validators.required,Validators.pattern(
+    //     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    // )]],
+    // pwd: ['', [Validators.required,Validators.minLength(6)]]
+    mailaddress: ['',[Validators.required]],
+    pwd: ['', [Validators.required]]
+
   });  
       this.resetForm = this.formBuilder.group({
-          email: ['', Validators.required],
+          email: ['',[Validators.required,Validators.pattern(
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )]]
       }); 
       this.reactiveForm = this.formBuilder.group({
-        email: ['', Validators.required],
+        email: ['',[Validators.required,Validators.pattern(
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      )]]
     }); 
+    this.otpForm = this.formBuilder.group({
+      otp: ['',[Validators.required,Validators.pattern(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )]]
+  });
   }
 
   submit(data){
+    console.log()
     for(let i=0;i<this.data.length;i++)
     {
       if(data.mailaddress == this.data[i].username && data.pwd == this.data[i].password){
+        console.log(this.data[i].code);
         if(this.data[i].code == 0){
-            this.open(this.resetModal)
+            this.open(this.otpModel)
         }
         else if(this.data[i].code == 1){
+          this.open(this.resetModal)
+        }
+        else if(this.data[i].code == 2){
           this.open(this.reactiveModal)
         }
       }
@@ -91,7 +111,7 @@ export class LoginComponent implements OnInit {
     console.log(data);
     this.reactiveForm.reset();
    }
-   forgotPwd(){
-     console.log("forgot");
+   otpData(data){
+     console.log(data);
    }
 }
