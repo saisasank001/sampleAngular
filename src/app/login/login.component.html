@@ -118,4 +118,43 @@
        <button type="button" class="btn btn-outline-dark" (click)="otpData(otpForm.value); modal.close('Save click')">Submit</button>
      </div>
    </ng-template>                 
- </div>    
+ </div> 
+ 
+  <!--password expiry model-->
+  <div>
+    <ng-template #passwordExpire let-modal>
+       <div class="modal-header">
+         <h4 class="modal-title" id="modal-basic-title">Password Expired</h4>
+         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         <form>
+          <div class="form-group" [formGroup]="passwordExpiryForm" >
+             <label for="password">Password</label>
+             <div class="input-group">
+               <input  class="form-control" placeholder="Enter Password" formControlName="password">
+               <small class="form-text text-muted invalid-data"
+               *ngIf="passwordExpiryForm.controls['password'].invalid && (passwordExpiryForm.controls['password'].dirty || passwordExpiryForm.controls['password'].touched)"
+               class="invalid-data">
+          Please enter password 
+        </small>
+             </div>
+             <label for="password"> Confirm Password</label>
+             <div class="input-group">
+               <input  class="form-control" placeholder="Enter Confirm Password" formControlName="confirmPassword">
+               <small class="form-text text-muted invalid-data"
+               *ngIf="passwordExpiryForm.controls['confirmPassword'].invalid && (passwordExpiryForm.controls['confirmPassword'].dirty || passwordExpiryForm.controls['confirmPassword].touched)"
+               class="invalid-data">
+          Please enter confirm password 
+        </small>
+             </div>
+           </div>
+         </form>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-outline-dark" (click)="passwordExpired(passwordExpiryForm.value); modal.close('Save click')">Submit</button>
+       </div>
+     </ng-template>                 
+   </div>
