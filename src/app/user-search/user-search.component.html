@@ -1,1 +1,129 @@
-<p>user-search works!</p>
+<div class="page">
+    <form class="form-group" [formGroup]="userSearchForm">
+    <table class="table table-hover light-grey-bg">       
+        <tbody>
+            <tr>
+                <td>
+                    <label>First Name:</label>
+                    <input class="form-control" placeholder="Enter firstname" formControlName="firstName">
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['firstName'].invalid && (userSearchForm.controls['firstName'].dirty || userSearchForm.controls['firstName'].touched)"
+                        class="invalid-data">
+                    Please enter firstname 
+                </small>
+                </td>
+                <td>
+                    <label>Last Name:</label>
+                    <input class="form-control" placeholder="Enter lastname" formControlName="lastName">
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['lastName'].invalid && (userSearchForm.controls['lastName'].dirty || userSearchForm.controls['lastName'].touched)"
+                        class="invalid-data">
+                    Please enter lastname 
+                </small>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Company Name:</label>
+                    <input class="form-control" placeholder="Enter Company Name" formControlName="companyName">
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['companyName'].invalid && (userSearchForm.controls['companyName'].dirty || userSearchForm.controls['companyName'].touched)"
+                        class="invalid-data">
+                    Please enter company name 
+                </small>
+                </td>
+                <td>
+                    <label>Email:</label>
+                    <input class="form-control" placeholder="Enter Email" formControlName="email">
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['email'].invalid && (userSearchForm.controls['email'].dirty || userSearchForm.controls['email'].touched)"
+                        class="invalid-data">
+                    Please enter email 
+                </small>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Work Phone Number:</label>
+                    <input class="form-control" placeholder="Work Phone Number" formControlName="phoneNumber">
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['phoneNumber'].invalid && (userSearchForm.controls['phoneNumber'].dirty || userSearchForm.controls['phoneNumber'].touched)"
+                        class="invalid-data">
+                     Please enter work phone number 
+                    </small>
+                </td>
+                <td>
+                    <label>Current Status:</label>
+                    <select class="form-control" formControlName="currentStatus">
+                        <option value="all" >All</option>
+                        <option value="some" >some</option>
+                      </select>
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['currentStatus'].invalid && (userSearchForm.controls['currentStatus'].dirty || userSearchForm.controls['currentStatus'].touched)"
+                        class="invalid-data">
+                    Please enter current status 
+                </small>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>From Date:</label>
+                        <input type ="date" class="form-control" placeholder="Choose a date" formControlName="fromDate">
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['fromDate'].invalid && (userSearchForm.controls['fromDate'].dirty || userSearchForm.controls['fromDate'].touched)"
+                        class="invalid-data">
+                     Please enter from date
+                    </small>
+                </td>
+                <td>
+                    <label>To Date:</label>
+                        <input type ="date" class="form-control" placeholder="Choose a date" formControlName="toDate">
+
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['toDate'].invalid && (userSearchForm.controls['toDate'].dirty || userSearchForm.controls['toDate'].touched)"
+                        class="invalid-data">
+                     Please enter to date
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Requested By:</label>
+                        <input class="form-control" placeholder="Enter Requested By Name" formControlName="requestedBy">
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['requestedBy'].invalid && (userSearchForm.controls['requestedBy'].dirty || userSearchForm.controls['requestedBy'].touched)"
+                        class="invalid-data">
+                     Please enter requested by name
+                    </small>
+                </td>
+                <td>
+                    <label>Requested By Email:</label>
+                        <input class="form-control" placeholder="Enter Requested By Email" formControlName="requestedEmail">
+
+                        <small class="form-text text-muted invalid-data"
+                        *ngIf="userSearchForm.controls['requestedEmail'].invalid && (userSearchForm.controls['requestedEmail'].dirty || userSearchForm.controls['requestedEmail'].touched)"
+                        class="invalid-data">
+                     Please enter requested by email
+                    </small>
+                </td>
+            </tr>
+            
+        </tbody>
+        
+
+    <tfoot>
+        <tr>
+            <td colspan="3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" style="float: right;" class="btn dark-grey-bg white-text"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+      
+    </tfoot>
+</table>
+</form>
+</div>
+

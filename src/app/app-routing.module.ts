@@ -6,6 +6,7 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
 import { AnnouncementDetailsComponent } from './announcement-details/announcement-details.component';
 import { AnnouncementAddComponent } from './announcement-add/announcement-add.component';
 import { ForgotComponent } from './forgot/forgot.component';
+import { UserSearchComponent } from './user-search/user-search.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,10 @@ const routes: Routes = [
   },{
     path:'forgot',
     component:ForgotComponent
+  },
+  {
+    path:'user-search',
+    component:UserSearchComponent
   }
 ];
 
