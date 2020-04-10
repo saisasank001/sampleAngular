@@ -8,11 +8,27 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
   <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    href="assets/css/bootstrap.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <script src="assets/js/custombox.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/custombox.min.css">
 </head>
 <body>
-  <app-root></app-root>
+  <!-- <div class="loader-wrapper">
+  <div class="loader">Loading...</div>
+</div> -->
+  <app-root>
+    <div class="loader-wrapper" style="background: url(https://www.lexisnexis.com/images/gateway/gateway-bg.jpg) no-repeat center top;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;height: 100vh;">
+      <div class="loader">Loading...</div>
+    </div>
+  </app-root>
 </body>
 </html>

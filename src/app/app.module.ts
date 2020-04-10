@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgMarqueeModule } from 'ng-marquee';
 import { NgxNewstickerAlbeModule } from 'ngx-newsticker-albe';
@@ -28,7 +29,12 @@ import { NewuserRequestComponent } from './newuser-request/newuser-request.compo
 import { AnnouncementCloneComponent } from './announcement-clone/announcement-clone.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ForgotComponent } from './forgot/forgot.component';
-
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UnsubscriptionsComponent } from './unsubscriptions/unsubscriptions.component';
+import { SideNavComponent } from './product/side-nav/side-nav.component';
+import { MasterListComponent } from './master-list/master-list.component';
+import { IndividualSearchComponent } from './individual-search/individual-search.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +59,17 @@ import { ForgotComponent } from './forgot/forgot.component';
     NewuserRequestComponent,
     AnnouncementCloneComponent,
     
-    ForgotComponent
+    ForgotComponent,
+    
+    DashboardComponent,
+    
+    UnsubscriptionsComponent,
+    
+    SideNavComponent,
+    
+    MasterListComponent,
+    
+    IndividualSearchComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,
@@ -64,7 +80,8 @@ import { ForgotComponent } from './forgot/forgot.component';
     FormsModule,
     Ng2SearchPipeModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,AngularEditorModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

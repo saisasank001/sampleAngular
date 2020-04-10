@@ -8,36 +8,67 @@ import { AnnouncementAddComponent } from './announcement-add/announcement-add.co
 import { ForgotComponent } from './forgot/forgot.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { UpdateUserEmailComponent } from './update-user-email/update-user-email.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UnsubscriptionsComponent } from './unsubscriptions/unsubscriptions.component';
+import { ProductComponent } from './product/product.component';
+import { MasterListComponent } from './master-list/master-list.component';
+import { IndividualSearchComponent } from './individual-search/individual-search.component';
 
 
 const routes: Routes = [
   {
-    path:'',
+    path:'login',
     component:LoginComponent
-  },{
-    path:'home',
-    component:HomeComponent
-  },{
-    path:'announcement',
-    component:AnnouncementsComponent
-  },
-  {
-    path:'announcement-details',
-    component:AnnouncementDetailsComponent
-  },{
-    path:'announcement-add',
-    component: AnnouncementAddComponent
   },{
     path:'forgot',
     component:ForgotComponent
-  },
-  {
-    path:'user-search',
-    component:UserSearchComponent
-  },
-  {
-    path:'update-user-email',
-    component:UpdateUserEmailComponent
+  },{
+    path:'',
+    component:HomeComponent,
+    children:[
+      {
+        path:'',
+        component:DashboardComponent
+      },
+      {
+        path:'products',
+        component: ProductComponent,
+        children:[
+          { path: '', redirectTo: 'master-list', pathMatch: 'full' },
+          {
+            path:'master-list',
+            component: MasterListComponent
+          },
+          {
+            path:'individual-search',
+            component: IndividualSearchComponent
+          },
+        ]
+      },
+      {
+        path:'unsubscriptions',
+        component:UnsubscriptionsComponent
+      },
+      {
+        path:'announcement',
+        component:AnnouncementsComponent
+      },
+      {
+        path:'announcement-details',
+        component:AnnouncementDetailsComponent
+      },{
+        path:'announcement-add',
+        component: AnnouncementAddComponent
+      },
+      {
+        path:'user-search',
+        component:UserSearchComponent
+      },
+      {
+        path:'update-user-email',
+        component:UpdateUserEmailComponent
+      }
+    ]
   }
 ];
 

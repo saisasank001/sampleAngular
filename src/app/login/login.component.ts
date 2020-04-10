@@ -1,6 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpServiceService } from '../http-service.service';
 
 @Component({
   selector: 'app-login',
@@ -702,7 +703,8 @@ export class LoginComponent implements OnInit {
        }
     }
  }
-  constructor(private modalService: NgbModal, private formBuilder: FormBuilder) { }
+  constructor(private modalService: NgbModal, private formBuilder: FormBuilder,
+   public httpService:HttpServiceService) { }
 
   //to open model 
   open(model) { 
@@ -711,6 +713,10 @@ export class LoginComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+
+  showLoginNotify(){
+     return window.location.hostname=='localhost';
   }
 
   private getDismissReason(reason: any): string {
@@ -748,6 +754,11 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required,Validators.minLength(6)]],
   confirmPassword: ['', [Validators.required,Validators.minLength(6)]]
 });
+   this.httpService.getApi('Welcome/test1').subscribe(res=>{
+      this.httpService.getApi('Welcome/test2').subscribe(res=>{
+         alert()
+      })   
+   })
   }
 
   submit(data){

@@ -1,160 +1,91 @@
-<div style="height: 64vh;">
-
-  <div class="card login-card light-grey-bg">
-        <div class="card-header dark-grey-bg white-text"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;Secure Customer Sign On</div>
-        <div class="card-body">
-          <form [formGroup]="loginForm">
-            <div class="form-group" >
-              <label for="email">Email address:</label>
-              <input type="email" class="form-control" placeholder="eg: something@example.com" id="email" formControlName="mailaddress">
-              <small class="form-text text-muted invalid-data"
-                 *ngIf="loginForm.controls['mailaddress'].invalid && (loginForm.controls['mailaddress'].dirty || loginForm.controls['mailaddress'].touched)"
-                 class="invalid-data">
-            Please enter valid email 
-          </small>
-           </div>
-           <div class="form-group">
-              <label for="pwd">Password:</label>
-              <input type="password" class="form-control" placeholder="password" id="pwd" formControlName="pwd">
-              <small class="form-text text-muted invalid-data"
-                 *ngIf="loginForm.controls['pwd'].invalid && (loginForm.controls['pwd'].dirty || loginForm.controls['pwd'].touched)"
-                 class="invalid-data">
-            Please enter password 
-          </small>
-           </div>
-          </form>          
-           <div class="checkbox">
-              <p class="text-align-right" (click)="forgotPwd()"><a [routerLink]="'/forgot'">Forgot Password?</a></p>
-           </div>
-           <button type="submit" class="btn btn-block btn-danger" (click)="submit(loginForm.value)">Submit</button>
+<div class="row vh-100">
+   
+    <div class="col-lg-6 p-0 d-flex justify-content-center" style="background: url(https://www.lexisnexis.com/images/gateway/gateway-bg.jpg) no-repeat center top;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;">
+    <div class="overlay-effect"></div>
+        <div class="accountbg d-flex align-items-center"> 
+            <div class="account-title text-center">
+                <img src="assets/images/logo.png" class="thumb-sm" width="250px">
+                <!-- <h4 class="mt-3">Welcome To Frogetor</h4> -->
+                <div class="border w-25 mx-auto border-primary"></div>
+                <br>
+                <h3 class="">Customer Test Data Query Tool</h3>
+                
+               
+            </div>
         </div>
-     </div>
     </div>
-<!--reset password model-->
-    <div>
-      <ng-template #reset let-modal>
-         <div class="modal-header">
-           <h4 class="modal-title" id="modal-basic-title">Reset Password</h4>
-           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-             <span aria-hidden="true">&times;</span>
-           </button>
-         </div>
-         <div class="modal-body">
-           <form>
-             <div class="form-group" [formGroup]="resetForm" >
-               <label for="email">Email:</label>
-               <div class="input-group">
-                 <input id="email" class="form-control" placeholder="Enter Registered Email" formControlName="email">
-                 <small class="form-text text-muted invalid-data"
-                 *ngIf="resetForm.controls['email'].invalid && (resetForm.controls['email'].dirty || resetForm.controls['email'].touched)"
-                 class="invalid-data">
-            Please enter valid email 
-          </small>
-               </div>
-             </div>
-           </form>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-outline-dark" (click)="resetData(resetForm.value); modal.close('Save click')">submit</button>
-         </div>
-       </ng-template>
-       
-                   
-     </div>
-<!--reactive password model-->
-     <div>
-      <ng-template #reactive let-modal>
-         <div class="modal-header">
-           <h4 class="modal-title" id="modal-basic-title">Reactive Password</h4>
-           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-             <span aria-hidden="true">&times;</span>
-           </button>
-         </div>
-         <div class="modal-body">
-           <form>
-            <div class="form-group" [formGroup]="reactiveForm" >
-               <label for="email">Email:</label>
-               <div class="input-group">
-                 <input id="email" class="form-control" placeholder="Enter Registered Email" formControlName="email">
-                 <small class="form-text text-muted invalid-data"
-                 *ngIf="reactiveForm.controls['email'].invalid && (reactiveForm.controls['email'].dirty || reactiveForm.controls['email'].touched)"
-                 class="invalid-data">
-            Please enter valid email 
-          </small>
-               </div>
-             </div>
-           </form>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-outline-dark" (click)="reactiveData(reactiveForm.value); modal.close('Save click')">Submit</button>
-         </div>
-       </ng-template>                 
-     </div>
- <!--otp model-->
- <div>
-  <ng-template #otp let-modal>
-     <div class="modal-header">
-       <h4 class="modal-title" id="modal-basic-title">OTP</h4>
-       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-         <span aria-hidden="true">&times;</span>
-       </button>
-     </div>
-     <div class="modal-body">
-       <form>
-        <div class="form-group" [formGroup]="otpForm" >
-           <label for="otp">OTP</label>
-           <div class="input-group">
-             <input  class="form-control" placeholder="Enter OTP" formControlName="otp">
-             <small class="form-text text-muted invalid-data"
-             *ngIf="otpForm.controls['otp'].invalid && (otpForm.controls['otp'].dirty || otpForm.controls['otp'].touched)"
-             class="invalid-data">
-        Please enter OTP 
-      </small>
-           </div>
-         </div>
-       </form>
-     </div>
-     <div class="modal-footer">
-       <button type="button" class="btn btn-outline-dark" (click)="otpData(otpForm.value); modal.close('Save click')">Submit</button>
-     </div>
-   </ng-template>                 
- </div> 
- 
-  <!--password expiry model-->
-  <div>
-    <ng-template #passwordExpire let-modal>
-       <div class="modal-header">
-         <h4 class="modal-title" id="modal-basic-title">Password Expired</h4>
-         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-           <span aria-hidden="true">&times;</span>
-         </button>
-       </div>
-       <div class="modal-body">
-         <form>
-          <div class="form-group" [formGroup]="passwordExpiryForm" >
-             <label for="password">Password</label>
-             <div class="input-group">
-               <input  class="form-control" placeholder="Enter Password" formControlName="password">
-               <small class="form-text text-muted invalid-data"
-               *ngIf="passwordExpiryForm.controls['password'].invalid && (passwordExpiryForm.controls['password'].dirty || passwordExpiryForm.controls['password'].touched)"
-               class="invalid-data">
-          Please enter password 
-        </small>
-             </div>
-             <label for="password"> Confirm Password</label>
-             <div class="input-group">
-               <input  class="form-control" placeholder="Enter Confirm Password" formControlName="confirmPassword">
-               <small class="form-text text-muted invalid-data"
-               *ngIf="passwordExpiryForm.controls['confirmPassword'].invalid && (passwordExpiryForm.controls['confirmPassword'].dirty || passwordExpiryForm.controls['confirmPassword].touched)"
-               class="invalid-data">
-          Please enter confirm password 
-        </small>
-             </div>
-           </div>
-         </form>
-       </div>
-       <div class="modal-footer">
-         <button type="button" class="btn btn-outline-dark" (click)="passwordExpired(passwordExpiryForm.value); modal.close('Save click')">Submit</button>
-       </div>
-     </ng-template>                 
-   </div>
+    <div class="col-lg-6 p-0 d-flex  signin-form">
+        <div class="notify" *ngIf="showLoginNotify"><p>Make sure you are logging into QA system</p></div>
+        <div class="login-card">
+            <div class="card mb-0 shadow-none ">
+                <div class="card-header">
+                    <div class="media">
+                        
+                        <div class="media-body ml-3 align-self-center">                                                                                                                       
+                            <h4 class="mt-0 mb-1"><i class="fa fa-lock"></i>Secure Customer Signin</h4>
+                            <!-- <p class="white-text mb-0">Sign in to continue to customer test data query tool.</p> -->
+                        </div>
+                    </div>  
+                </div>
+                <div class="card-body">
+                    
+                    <div class="px-3">
+                                                  
+                        
+                        <form class="form-horizontal my-4" action="index.html">
+    
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user font-16"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="username" placeholder="example@example.com">
+                                </div>                                    
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="userpassword">Password</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon2"><i class="fa fa-key font-16"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" id="userpassword" placeholder="***********">
+                                </div>                                
+                            </div>
+    
+                            <div class="form-group row mt-4">
+                                <div class="col-sm-6">
+                                    <!-- <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                        <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                    </div> -->
+                                </div>
+                                <div class="col-sm-12 text-right">
+                                    <a routerLink="/forgot" class="text-muted font-13"><i class="mdi mdi-lock"></i> Forgot your password?</a>                                    
+                                </div>
+                            </div>
+    
+                            <div class="form-group mb-0 row">
+                                <div class="col-12 mt-2">
+                                    <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In <i class="fas fa-sign-in-alt ml-1"></i></button>
+                                </div>
+                            </div>                            
+                        </form>
+                    </div>
+                                         
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <app-footer></app-footer>
+    </div>
+</div>

@@ -1,21 +1,112 @@
-<div class="page">
-
-    <div class="card login-card light-grey-bg">
-          <div class="card-header dark-grey-bg white-text"><i class="fa fa-lock" aria-hidden="true"></i> &nbsp;Forgot Password</div>
-          <div class="card-body">
-            <form [formGroup]="forgotForm">
-              <div class="form-group" >
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" placeholder="eg: something@example.com" id="email" formControlName="email">
-                <small class="form-text text-muted invalid-data"
-                 *ngIf="forgotForm.controls['email'].invalid && (forgotForm.controls['email'].dirty || forgotForm.controls['email'].touched)"
-                 class="invalid-data">Please enter valid email
-                </small>
-             </div>
-            </form>          
-             <button type="submit" class="btn btn-block btn-danger" (click)="submit(forgotForm.value)">Submit</button>
+<div *ngIf="showModal" class="modal fade bs-example-modal-center show" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="display: block; padding-right: 17px;" aria-modal="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title mt-0" id="exampleModalLabel">Enter Your One Time Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="modal-close">×</span>
+              </button>
           </div>
-       </div>
-       
+          <div class="modal-body">
+              <p>Your One Time Password has been emailed to you at <span class="primary-text bold-text">m**.com</span>. Please enter below to proceed</p>
+              <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user font-16"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="username" placeholder="one time password">
+                </div>   
+                <small>(If you would like one time password to be resent, please hit <span class="bold-text">'Cancel'</span> and try logging again)</small>                                 
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-primary primary-text">Cancel</button>
+            <button class="btn btn-primary">Verify</button>
+          </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div> 
+
+
+<div class="row vh-100">
+   
+  <div class="col-lg-6 p-0 d-flex justify-content-center" style="background: url(https://www.lexisnexis.com/images/gateway/gateway-bg.jpg) no-repeat center top;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;">
+  <div class="overlay-effect"></div>
+      <div class="accountbg d-flex align-items-center"> 
+          <div class="account-title text-center">
+              <img src="assets/images/logo.png" class="thumb-sm" width="250px">
+              <!-- <h4 class="mt-3">Welcome To Frogetor</h4> -->
+              <div class="border w-25 mx-auto border-primary"></div>
+              <br>
+              <h3 class="">Customer Test Data Query Tool</h3>
+              
+             
+          </div>
       </div>
-<br>
+  </div>
+  <div class="col-lg-6 p-0 d-flex  signin-form">
+      <div class="notify" *ngIf="showLoginNotify"><p>Make sure you are logging into QA system</p></div>
+      <div class="login-card">
+          <div class="card mb-0 shadow-none ">
+              <div class="card-header">
+                  <div class="media">
+                      
+                      <div class="media-body ml-3 align-self-center">                                                                                                                       
+                          <h4 class="mt-0 mb-1"><i class="fa fa-lock"></i>Forgot Password</h4>
+                          <!-- <p class="white-text mb-0">Sign in to continue to customer test data query tool.</p> -->
+                      </div>
+                  </div>  
+              </div>
+              <div class="card-body">
+                  
+                  <div class="px-3">
+                                                
+                      
+                      <form class="form-horizontal my-4" action="index.html">
+  
+                          <div class="form-group">
+                              <label for="username">Username</label>
+                              <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1"><i class="fa fa-user font-16"></i></span>
+                                  </div>
+                                  <input type="text" class="form-control" id="username" placeholder="example@example.com">
+                              </div>                                    
+                          </div>
+
+  
+                          <div class="form-group row mt-4">
+                              <div class="col-sm-6">
+                                  <!-- <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                      <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                  </div> -->
+                              </div>
+                              <div class="col-sm-12 text-right">
+                                  <a routerLink="/login" class="text-muted font-13"><i class="mdi mdi-lock"></i> Back to login?</a>                                    
+                              </div>
+                          </div>
+  
+                          <div class="form-group mb-0 row">
+                              <div class="col-12 mt-2">
+                                  <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Submit <i class="fas fa-sign-in-alt ml-1"></i></button>
+                              </div>
+                          </div>                            
+                      </form>
+                  </div>
+                                       
+              </div>
+              
+          </div>
+      </div>
+      
+
+      <app-footer></app-footer>
+  </div>
+</div>

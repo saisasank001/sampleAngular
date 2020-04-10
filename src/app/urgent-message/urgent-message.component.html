@@ -2,7 +2,7 @@
     <div class="nt-title pull-left dark-grey-bg">
         <h2>{{urgentMessages[index]['topic']}}</h2>
     </div>
-    <div class="nt-content">
+    <div class="nt-content white-bg">
         <ng-marquee speed="slow" style="margin-top:10px" [stopOnHover]="true">
             <mark (mouseover)="stopInterval()" (mouseout)="startInterval()">
                 {{urgentMessages[index]['message']}}

@@ -1,56 +1,24 @@
+<div class="">
 
-<div style="height: 60vh;">
-    <div class="row menu-cards">
-        <div class="col-sm-4 col-xs-6">
-            <div class="card login-card primary-red-bg" routerLink="/announcement">
-                <div class="card-body flex-row flex-vert-center">
-                    <span class="menu-icon"><i class="fa fa-bell-o" aria-hidden="true"></i> </span>
-                    Announcements
-                </div>
-                </div>
-        </div>
-        <div class="col-sm-4 col-xs-6">
-            <div class="card login-card primary-red-bg">
-                <div class="card-body flex-row flex-vert-center">
-                    <span class="menu-icon"><i class="fa fa-user-plus" aria-hidden="true"></i> </span>
-                    Request New Users
-                </div>
-                </div>
-        </div>
-        <div class="col-sm-4 col-xs-6">
-            <div class="card login-card primary-red-bg">
-                <div class="card-body flex-row flex-vert-center">
-                    <span class="menu-icon"><i class="fa fa-globe" aria-hidden="true"></i> </span>
-                    Product
-                </div>
-                </div>
-        </div>
-        <div class="col-sm-4 col-xs-6">
-            <div class="card login-card primary-red-bg">
-                <div class="card-body flex-row flex-vert-center">
-                    <span class="menu-icon"><i class="fa fa-download" aria-hidden="true"></i> </span>
-                    Download full Files
-                </div>
-                </div>
-        </div>
-        <div class="col-sm-4 col-xs-6">
-            <div class="card login-card primary-red-bg">
-                <div class="card-body flex-row flex-vert-center">
-                    <span class="menu-icon"><i class="fa fa-list" aria-hidden="true"></i> </span>
-                    FAQ
-                </div>
-                </div>
-        </div>
-        <div class="col-sm-4 col-xs-6">
-            <div class="card login-card primary-red-bg">
-                <div class="card-body flex-row flex-vert-center">
-                    
-                    <span class="menu-icon"><i class="fa fa-user-secret" aria-hidden="true"></i> </span>
-                    Admin
-                </div>
-                </div>
-        </div>
+  <div class="">
     
-    </div>
-    
+  <div class="white-bg">
+    <div class=""><app-header></app-header>
+        
+        <div class="page container">
+          <app-urgent-message></app-urgent-message>   
+        <router-outlet></router-outlet>
+        </div>
+      </div>
+        <br>
+        <app-footer></app-footer>
+        
+  </div>
+  </div>
 </div>
+
+
+  
+  
+  
+  

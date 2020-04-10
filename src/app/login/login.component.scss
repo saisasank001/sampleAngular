@@ -7,3 +7,60 @@
 .login-card .card-header{
 	text-align:center
 }
+
+.overlay-effect {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: rgba(259, 67, 95, 0.7);
+	overflow:hidden;
+  }
+
+  .account-title {
+    background: rgba(255, 255, 255, 0.85) 0%;
+    padding: 40px;
+}
+.border-primary{
+	margin-top:15px
+}
+
+.signin-form{
+	background:#fff;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	.fa-lock{
+		margin-right:10px;
+	}
+	.login-card{
+		height:75vh
+	}
+	.card-header{
+		color:#fff !important;
+		text-align: center;
+	}
+	
+	app-footer{
+		width: 100%;
+		position: absolute;
+		bottom:0px;
+		left:0
+	}
+}
+.notify{
+	width:100%;
+	background:#f2bc1d;
+	position: absolute;
+	top:0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top:12px;
+	color:#fff
+}
+
+
