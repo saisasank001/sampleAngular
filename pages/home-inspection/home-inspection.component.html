@@ -1,0 +1,125 @@
+<p>home-inspection works!</p>
+<div class="page">
+    
+    <div [formGroup]="homeInspectionForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>State</label>
+            <select  placeholder="Select State" formControlName="state" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of states" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['state'].invalid && (homeInspectionForm.controls['state'].dirty || homeInspectionForm.controls['state'].touched)"
+              class="invalid-data">
+              Please select state</small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Home Inspection Index</label>
+            <label>From</label>
+            <input class="form-control" placeholder="enter index range" formControlName="homeInspectionIndexFrom">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['homeInspectionIndexFrom'].invalid && (homeInspectionForm.controls['homeInspectionIndexFrom'].dirty || homeInspectionForm.controls['homeInspectionIndexFrom'].touched)"
+              class="invalid-data">
+              Please select Home Inspection Index From      </small>
+            <label>To</label>
+            <input class="form-control" placeholder="enter index range" formControlName="homeInspectionIndexTo" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['homeInspectionIndexTo'].invalid && (homeInspectionForm.controls['homeInspectionIndexTo'].dirty || homeInspectionForm.controls['homeInspectionIndexTo'].touched)"
+              class="invalid-data">
+              Please select Home Inspection Index To       </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Policy Coverage Value</label>
+            <input class="form-control" placeholder="Enter Amount" formControlName="policyCoverageValue" >
+           
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['policyCoverageValue'].invalid && (homeInspectionForm.controls['policyCoverageValue'].dirty || homeInspectionForm.controls['policyCoverageValue'].touched)"
+              class="invalid-data">
+              Please select Policy Coverage Value      </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Year Built</label>
+            <label>From</label>
+            <input class="form-control" placeholder="Enter year" formControlName="yearBuiltFrom">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['yearBuiltFrom'].invalid && (homeInspectionForm.controls['yearBuiltFrom'].dirty || homeInspectionForm.controls['yearBuiltFrom'].touched)"
+              class="invalid-data">
+              Please select Year Built From      </small>
+            <label>To</label>
+            <input class="form-control" placeholder="Enter Year" formControlName="yearBuiltTo" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['yearBuiltTo'].invalid && (homeInspectionForm.controls['yearBuiltTo'].dirty || homeInspectionForm.controls['yearBuiltTo'].touched)"
+              class="invalid-data">
+              Please select Year Built To       </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Indicators</label>
+            <label>H101</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>H102</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>H103</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>H104</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>H105</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>H106</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>H107</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>BP02</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>BP10</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            <label>BP11</label>
+            <input  class="form-control" type="radio" formControlName="indicators" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators" >No
+            <input  class="form-control" type="radio" formControlName="indicators" >All
+            
+           </div>
+           <label>Attributes</label>
+           <div class="col-xs-12 col-sm-6 col-md-6">            
+            <label>Adress Vacancy Indicator</label>
+            <input class="form-control" type="radio" formControlName="addressVacancyIndicator" >Yes
+            <input class="form-control" type="radio" formControlName="addressVacancyIndicator" >No
+            <input class="form-control" type="radio" formControlName="addressVacancyIndicator" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['addressVacancyIndicator'].invalid && (homeMasterForm.controls['addressVacancyIndicator'].dirty || homeMasterForm.controls['addressVacancyIndicator'].touched)"
+              class="invalid-data">
+              Please select Adress Vacancy Indicator</small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Age Of House</label>
+            <input class="form-control" placeholder="Enter Number" formControlName="ageOfHouse" >
+
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['ageOfHouse'].invalid && (homeMasterForm.controls['ageOfHouse'].dirty || homeMasterForm.controls['ageOfHouse'].touched)"
+              class="invalid-data">
+              Please select Age of House          </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

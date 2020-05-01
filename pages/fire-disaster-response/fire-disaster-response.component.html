@@ -1,0 +1,41 @@
+<p>fire-disaster-response works!</p>
+<div class="page">
+    
+    <div [formGroup]="fireDisasterResponseForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>State</label>
+            <select  placeholder="Select State" formControlName="state" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of states" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="fireDisasterResponseForm.controls['state'].invalid && (fireDisasterResponseForm.controls['state'].dirty || fireDisasterResponseForm.controls['state'].touched)"
+              class="invalid-data">
+              Please select state</small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Score</label>
+            <input class="form-control" type="checkbox" formControlName="score" >1
+            <input class="form-control" type="checkbox" formControlName="score" >2
+            <input class="form-control" type="checkbox" formControlName="score" >3
+            <input class="form-control" type="checkbox" formControlName="score" >4
+            <input class="form-control" type="checkbox" formControlName="score" >5
+            <input class="form-control" type="checkbox" formControlName="score" >6
+            <input class="form-control" type="checkbox" formControlName="score" >7
+            <input class="form-control" type="checkbox" formControlName="score" >8
+            <input class="form-control" type="checkbox" formControlName="score" >9
+            <input class="form-control" type="checkbox" formControlName="score" >10
+            <input class="form-control" type="checkbox" formControlName="score" >99
+
+            <small class="form-text text-muted invalid-data"
+              *ngIf="fireDisasterResponseForm.controls['score'].invalid && (fireDisasterResponseForm.controls['score'].dirty || fireDisasterResponseForm.controls['score'].touched)"
+              class="invalid-data">
+              Please select score         </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

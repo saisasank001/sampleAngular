@@ -1,0 +1,130 @@
+
+<div class="page">
+    <div class="page-heading">2.User</div>
+    <div [formGroup]="newUseraddForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            <!-- copy start here       -->
+
+            
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>First Name</label>
+            <input class="form-control" formControlName="firstName" placeholder="Enter First Name">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['firstName'].invalid && (newUseraddForm.controls['firstName'].dirty || newUseraddForm.controls['firstName'].touched)"
+              class="invalid-data">
+              Please Enter First Name         </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Last Name</label>
+            <input class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['lastName'].invalid && (newUseraddForm.controls['lastName'].dirty || newUseraddForm.controls['lastName'].touched)"
+              class="invalid-data">
+              Please Enter Last Name          </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Company Name</label>
+            <input class="form-control" formControlName="CompanyName" placeholder="Enter Company Name">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['CompanyName'].invalid && (newUseraddForm.controls['CompanyName'].dirty || newUseraddForm.controls['CompanyName'].touched)"
+              class="invalid-data">
+              Please enter Company Name         </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Email</label>
+            <input class="form-control" formControlName="email" placeholder="Enter Email">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['email'].invalid && (newUseraddForm.controls['email'].dirty || newUseraddForm.controls['email'].touched)"
+              class="invalid-data">
+              Please enter Email         </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Work Phone Number</label>
+            <input class="form-control" formControlName="workPhoneNumber" placeholder="Enter Work Phone Number">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['workPhoneNumber'].invalid && (newUseraddForm.controls['workPhoneNumber'].dirty || newUseraddForm.controls['workPhoneNumber'].touched)"
+              class="invalid-data">
+              Please enter Work Phone Number        </small>
+          </div>
+  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Current Status </label>
+           <!--<input class="form-control" formControlName="currentStatus" placeholder="All currentStatuss">-->
+            <select placeholder="All " formControlName="currentStatus">
+                <option value="">All </option>
+                <option *ngFor="let items of currentStatuses" value="items">{{items}}</option>
+            </select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['currentStatus'].invalid && (newUseraddForm.controls['currentStatus'].dirty || newUseraddForm.controls['currentStatus'].touched)"
+              class="invalid-data">
+              Please enter Current Status         </small>
+          </div>
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>From Date </label>
+            <input class="form-control" formControlName="fromDate" placeholder="MM/DD/YYYY">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['fromDate'].invalid && (newUseraddForm.controls['fromDate'].dirty || newUseraddForm.controls['fromDate'].touched)"
+              class="invalid-data">
+              Please enter From Date      </small>
+          </div>
+
+          
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>To Date</label>
+            <input class="form-control" formControlName="toDate" placeholder="MM/DD/YYYY">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['toDate'].invalid && (newUseraddForm.controls['toDate'].dirty || newUseraddForm.controls['toDate'].touched)"
+              class="invalid-data">
+              Please To Date         </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Requested By</label>
+            <input class="form-control" formControlName="requestedBy" placeholder="Enter Requested By">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['requestedBy'].invalid && (newUseraddForm.controls['requestedBy'].dirty || newUseraddForm.controls['requestedBy'].touched)"
+              class="invalid-data">
+              Please enter Requested By        </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Requested By Email</label>
+            <input class="form-control" formControlName="requestedByEmail" placeholder="Enter Requested By Email">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="newUseraddForm.controls['requestedByEmail'].invalid && (newUseraddForm.controls['requestedByEmail'].dirty || newUseraddForm.controls['requestedByEmail'].touched)"
+              class="invalid-data">
+              Please enter Requested By Email          </small>
+          </div>
+  
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <button type="button" class="btn btn-warning waves-effect waves-light pull-right" [disabled]="!newUseraddForm.valid"  (click)="submit(newUseraddForm.value)">Search</button>
+        </div>  
+         
+          <!-- copy end here -->
+        <table>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Company</th>
+            <th>Email Address</th>
+            <th>Current Status</th>
+            <th>Requested Email</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>

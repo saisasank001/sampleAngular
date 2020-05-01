@@ -1,0 +1,83 @@
+<p>new-announcement works!</p>
+<div class="page">
+    
+    <div [formGroup]="announcementForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Title:</label>
+            <input class="form-control" placeholder="Enter a Title" formControlName="title" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="announcementForm.controls['title'].invalid && (announcementForm.controls['title'].dirty || announcementForm.controls['title'].touched)"
+              class="invalid-data">
+              Please enter Title </small>
+          </div>
+           <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Priority:</label>
+            <select  placeholder="Select Priority" formControlName="priority" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of priority" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="announcementForm.controls['priority'].invalid && (announcementForm.controls['priority'].dirty || announcementForm.controls['priority'].touched)"
+              class="invalid-data">
+              Please select Priority</small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>From Date:</label>
+            <input class="form-control" type="date" placeholder="mm/dd/yyyy" formControlName="fromDate" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="announcementForm.controls['fromDate'].invalid && (announcementForm.controls['fromDate'].dirty || announcementForm.controls['fromDate'].touched)"
+              class="invalid-data">
+              Please enter Date </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>To Date:</label>
+            <input class="form-control" type="date" placeholder="mm/dd/yyyy" formControlName="toDate" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="announcementForm.controls['toDate'].invalid && (announcementForm.controls['toDate'].dirty || announcementForm.controls['toDate'].touched)"
+              class="invalid-data">
+              Please enter Date </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Start Time:</label>
+            <input class="form-control" type="time" placeholder="--:--" formControlName="startTime" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="announcementForm.controls['startTime'].invalid && (announcementForm.controls['startTime'].dirty || announcementForm.controls['startTime'].touched)"
+              class="invalid-data">
+              Please enter Time </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>End Time:</label>
+            <input class="form-control" type="time" placeholder="--:--" formControlName="endTime" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="announcementForm.controls['endTime'].invalid && (announcementForm.controls['endTime'].dirty || announcementForm.controls['endTime'].touched)"
+              class="invalid-data">
+              Please enter Time </small>
+          </div>
+          <label>Type</label>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Announcements</label>
+            <input class="form-control" type="checkbox" formControlName="announcements" >            
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Urgent Messages</label>
+            <input class="form-control" type="checkbox" formControlName="urgentMessage" >           
+          </div>
+          <label>Attach File</label>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label></label>
+            <input class="form-control" type="file" name="choose file" formControlName="file" >           
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Send Email</label>
+            <input class="form-control" type="checkbox" formControlName="sendEmail" >           
+          </div>
+          <button (click)="cancel()">Cancel</button>
+          <button (click)="submit(announcementForm.value)">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>

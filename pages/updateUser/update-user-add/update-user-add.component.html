@@ -1,0 +1,38 @@
+
+<div class="page">
+    <div class="page-heading">2.User</div>
+    <div [formGroup]="updateUserEmailForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            <!-- copy start here       -->
+
+            
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Old Email</label>
+            <input class="form-control" formControlName="oldEmail" placeholder="Enter Old Email Address">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="updateUserEmailForm.controls['oldEmail'].invalid && (updateUserEmailForm.controls['oldEmail'].dirty || updateUserEmailForm.controls['oldEmail'].touched)"
+              class="invalid-data">
+              Please Enter Old Email         </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>New Email</label>
+            <input class="form-control" formControlName="newEmail" placeholder="Enter New Email Address">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="updateUserEmailForm.controls['newEmail'].invalid && (updateUserEmailForm.controls['newEmail'].dirty || updateUserEmailForm.controls['newEmail'].touched)"
+              class="invalid-data">
+              Please Enter New Email        </small>
+          </div>
+   
+  
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <button type="button" class="btn btn-warning waves-effect waves-light pull-right" [disabled]="!updateUserEmailForm.valid"  (click)="update(updateUserEmailForm.value)">Update</button>
+        </div>  
+         
+          <!-- copy end here -->
+
+        </div>
+      </div>
+    </div>
+  </div>

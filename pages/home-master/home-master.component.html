@@ -1,0 +1,130 @@
+<p>home-master works!</p>
+<div class="page">
+
+    <div [formGroup]="homeMasterForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>State</label>
+            <select  placeholder="Select State" formControlName="state" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of states" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['state'].invalid && (homeMasterForm.controls['state'].dirty || homeMasterForm.controls['state'].touched)"
+              class="invalid-data">
+              Please select state         </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Advanced Linking(ALI)</label>
+            <input class="form-control" type="radio" formControlName="advancedLinking" >Yes
+            <input class="form-control" type="radio" formControlName="advancedLinking" >No
+            <input class="form-control" type="radio" formControlName="advancedLinking" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['advancedLinking'].invalid && (homeMasterForm.controls['advancedLinking'].dirty || homeMasterForm.controls['advancedLinking'].touched)"
+              class="invalid-data">
+              Please select Advanced Linking          </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Current Carrier Property</label>
+            <input class="form-control" type="radio" formControlName="currentCarrier" >Yes
+            <input class="form-control" type="radio" formControlName="currentCarrier" >No
+            <input class="form-control" type="radio" formControlName="currentCarrier" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['currentCarrier'].invalid && (homeMasterForm.controls['currentCarrier'].dirty || homeMasterForm.controls['currentCarrier'].touched)"
+              class="invalid-data">
+              Please select Current Carrier          </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Fire and Disaster Response</label>
+            <input class="form-control" type="radio" formControlName="fireAndDisasterResponse" >Yes
+            <input class="form-control" type="radio" formControlName="fireAndDisasterResponse" >No
+            <input class="form-control" type="radio" formControlName="fireAndDisasterResponse" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['fireAndDisasterResponse'].invalid && (homeMasterForm.controls['fireAndDisasterResponse'].dirty || homeMasterForm.controls['fireAndDisasterResponse'].touched)"
+              class="invalid-data">
+              Please select Fire and Disaster Response          </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Foreclosure</label>
+            <input class="form-control" type="radio" formControlName="foreClosure" >Yes
+            <input class="form-control" type="radio" formControlName="foreClosure" >No
+            <input class="form-control" type="radio" formControlName="foreClosure" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['foreClosure'].invalid && (homeMasterForm.controls['foreClosure'].dirty || homeMasterForm.controls['foreClosure'].touched)"
+              class="invalid-data">
+              Please select Foreclosure</small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>HH Members</label>
+            <input class="form-control" type="radio" formControlName="hhMembers" >Yes
+            <input class="form-control" type="radio" formControlName="hhMembers" >No
+            <input class="form-control" type="radio" formControlName="hhMembers" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['hhMembers'].invalid && (homeMasterForm.controls['hhMembers'].dirty || homeMasterForm.controls['hhMembers'].touched)"
+              class="invalid-data">
+              Please select HH Members</small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Instant ID</label>
+            <input class="form-control" type="radio" formControlName="instantId" >Yes
+            <input class="form-control" type="radio" formControlName="instantId" >No
+            <input class="form-control" type="radio" formControlName="instantId" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['instantId'].invalid && (homeMasterForm.controls['instantId'].dirty || homeMasterForm.controls['instantId'].touched)"
+              class="invalid-data">
+              Please select Instant Id</small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>InsurView Attributes</label>
+            <input class="form-control" type="radio" formControlName="insurViewAttributes" >Yes
+            <input class="form-control" type="radio" formControlName="insurViewAttributes" >No
+            <input class="form-control" type="radio" formControlName="insurViewAttributes" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['insurViewAttributes'].invalid && (homeMasterForm.controls['insurViewAttributes'].dirty || homeMasterForm.controls['insurViewAttributes'].touched)"
+              class="invalid-data">
+              Please select InsurView Attributes</small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Property Data</label>
+            <input class="form-control" type="radio" formControlName="propertyData" >Yes
+            <input class="form-control" type="radio" formControlName="propertyData" >No
+            <input class="form-control" type="radio" formControlName="propertyData" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['propertyData'].invalid && (homeMasterForm.controls['propertyData'].dirty || homeMasterForm.controls['propertyData'].touched)"
+              class="invalid-data">
+              Please select Property Data</small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>State Opt Out</label>
+            <input class="form-control" type="radio" formControlName="stateOptOut" >Yes
+            <input class="form-control" type="radio" formControlName="stateOptOut" >No
+            <input class="form-control" type="radio" formControlName="stateOptOut" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['stateOptOut'].invalid && (homeMasterForm.controls['stateOptOut'].dirty || homeMasterForm.controls['stateOptOut'].touched)"
+              class="invalid-data">
+              Please select State Opt Out</small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Vacancy</label>
+            <input class="form-control" type="radio" formControlName="vacancy" >Yes
+            <input class="form-control" type="radio" formControlName="vacancy" >No
+            <input class="form-control" type="radio" formControlName="vacancy" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeMasterForm.controls['vacancy'].invalid && (homeMasterForm.controls['vacancy'].dirty || homeMasterForm.controls['vacancy'].touched)"
+              class="invalid-data">
+              Please select vacancy</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

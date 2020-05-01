@@ -1,3 +1,5 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
 /* You can add global styles to this file, and also import other style files */
 @import './variables.scss';
 @import './menu.scss';
@@ -394,3 +396,72 @@ tfoot{
     margin-bottom:15px;
     padding-left:10px;
   }
+
+  //new
+
+  .hidden{
+    visibility: hidden;
+  }
+
+  .table-form{
+    .row{
+      padding-top:3px;
+      padding-bottom: 3px;
+      border-bottom:2px solid #dee2e6;
+      .row{
+        border:0px;
+      }
+      
+    }
+
+    .label{
+      font-size:13px !important;
+    }
+   
+    .f-horizontal{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      div{
+        width: 100%;
+      }
+    }
+  
+    .space-checkbox{
+      label{
+        margin-right:10px;
+        input{
+          margin-right:5px
+        }
+      }
+    }
+  
+   
+    tfoot{
+      background: $light-dark-grey;
+      tr{
+        background: $light-dark-grey;
+      }
+      td{
+        background: $light-dark-grey;
+      }
+      text-align: right;
+      padding:10px;
+      width: 100%;
+      button{
+        margin-right:10px;
+      }
+    }
+  }
+  
+  .btn-link {
+    font-weight: 400;
+    color: $dark-grey;
+    text-decoration: none;
+}
+
+.btn-outline-primary {
+  border: 1px solid $dark-grey;
+  color: $dark-grey ;
+  background: #fff;
+}

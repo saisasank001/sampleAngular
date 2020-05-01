@@ -1,0 +1,115 @@
+<p>vin-sights works!</p>
+<div class="page">
+
+    <div [formGroup]="vinSightsForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>State</label>
+            <select  placeholder="Select State" formControlName="state" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of states" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="vinSightsForm.controls['state'].invalid && (vinSightsForm.controls['state'].dirty || vinSightsForm.controls['state'].touched)"
+              class="invalid-data">
+              Please select state         </small>
+          </div>
+          <label># Registered Owners</label>
+           <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>From</label>
+            <input class="form-control" placeholder="Enter Min" formControlName="registeredOwnersFrom" >
+                <small class="form-text text-muted invalid-data"
+                *ngIf="vinSightsForm.controls['registeredOwnersFrom'].invalid && (vinSightsForm.controls['registeredOwnersFrom'].dirty || vinSightsForm.controls['registeredOwnersFrom'].touched)"
+                class="invalid-data">
+                Please select Registered Owners From</small>
+            <label>To</label>
+            <input class="form-control" placeholder="Enter Max" formControlName="registeredOwnersTo" >
+                <small class="form-text text-muted invalid-data"
+                *ngIf="vinSightsForm.controls['registeredOwnersTo'].invalid && (vinSightsForm.controls['registeredOwnersTo'].dirty || vinSightsForm.controls['registeredOwnersTo'].touched)"
+                class="invalid-data">
+                Please select Registered Owners To</small>
+            
+          </div>
+          <label># Titled Owners</label>
+           <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>From</label>
+            <input class="form-control" placeholder="Enter Min" formControlName="titledOwnersFrom" >
+                <small class="form-text text-muted invalid-data"
+                *ngIf="vinSightsForm.controls['titledOwnersFrom'].invalid && (vinSightsForm.controls['titledOwnersFrom'].dirty || vinSightsForm.controls['titledOwnersFrom'].touched)"
+                class="invalid-data">
+                Please select Titled Owners From</small>
+            <label>To</label>
+            <input class="form-control" placeholder="Enter Max" formControlName="titledOwnersTo" >
+                <small class="form-text text-muted invalid-data"
+                *ngIf="vinSightsForm.controls['titledOwnersTo'].invalid && (vinSightsForm.controls['titledOwnersTo'].dirty || vinSightsForm.controls['titledOwnersTo'].touched)"
+                class="invalid-data">
+                Please select Titled Owners To</small>
+            
+          </div>
+          <label># Lienholders</label>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+           <label>From</label>
+           <input class="form-control" placeholder="Enter Min" formControlName="lienHoldersFrom" >
+               <small class="form-text text-muted invalid-data"
+               *ngIf="vinSightsForm.controls['lienHoldersFrom'].invalid && (vinSightsForm.controls['lienHoldersFrom'].dirty || vinSightsForm.controls['lienHoldersFrom'].touched)"
+               class="invalid-data">
+               Please select Lienholders From</small>
+           <label>To</label>
+           <input class="form-control" placeholder="Enter Max" formControlName="lienHoldersTo" >
+               <small class="form-text text-muted invalid-data"
+               *ngIf="vinSightsForm.controls['lienHoldersTo'].invalid && (vinSightsForm.controls['lienHoldersTo'].dirty || vinSightsForm.controls['lienHoldersTo'].touched)"
+               class="invalid-data">
+               Please select Lienholders To</small>
+           
+         </div>
+         <label># Lessors</label>
+         <div class="col-xs-12 col-sm-6 col-md-6">
+          <label>From</label>
+          <input class="form-control" placeholder="Enter Min" formControlName="lessorsFrom" >
+              <small class="form-text text-muted invalid-data"
+              *ngIf="vinSightsForm.controls['lessorsFrom'].invalid && (vinSightsForm.controls['lessorsFrom'].dirty || vinSightsForm.controls['lessorsFrom'].touched)"
+              class="invalid-data">
+              Please select Lessors From</small>
+          <label>To</label>
+          <input class="form-control" placeholder="Enter Max" formControlName="lessorsTo" >
+              <small class="form-text text-muted invalid-data"
+              *ngIf="vinSightsForm.controls['lessorsTo'].invalid && (vinSightsForm.controls['lessorsTo'].dirty || vinSightsForm.controls['lessorsTo'].touched)"
+              class="invalid-data">
+              Please select Lessors To</small>
+          
+        </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Branded Title</label>
+            <input class="form-control" type="radio" formControlName="brandedTitle" >Yes
+            <input class="form-control" type="radio" formControlName="brandedTitle" >No
+            <input class="form-control" type="radio" formControlName="brandedTitle" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="vinSightsForm.controls['brandedTitle'].invalid && (vinSightsForm.controls['brandedTitle'].dirty || vinSightsForm.controls['brandedTitle'].touched)"
+              class="invalid-data">
+              Please select Branded Title</small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>License State</label>
+            <select  placeholder="Select State" formControlName="licenseState" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of states" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="vinSightsForm.controls['licenseState'].invalid && (vinSightsForm.controls['licenseState'].dirty || vinSightsForm.controls['licenseState'].touched)"
+              class="invalid-data">
+              Please select state         </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>License Plate</label>
+            <input class="form-control" placeholder="Enter License Plate" formControlName="licensePlate" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="vinSightsForm.controls['licensePlate'].invalid && (vinSightsForm.controls['licensePlate'].dirty || vinSightsForm.controls['licensePlate'].touched)"
+              class="invalid-data">
+              Please select License Plate</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

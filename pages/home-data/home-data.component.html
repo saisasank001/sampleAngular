@@ -1,0 +1,91 @@
+<p>home-data works!</p>
+<div class="page">
+    
+    <div [formGroup]="homeDataForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>State</label>
+            <select  placeholder="Select State" formControlName="state" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of states" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['state'].invalid && (homeDataForm.controls['state'].dirty || homeDataForm.controls['state'].touched)"
+              class="invalid-data">
+              Please select state</small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Statements and Alerts</label>
+            <input class="form-control" type="checkbox" formControlName="statementsAlerts" >Alert
+            <input class="form-control" type="checkbox" formControlName="statementsAlerts" >Consumer-Level
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['statementsAlerts'].invalid && (homeDataForm.controls['statementsAlerts'].dirty || homeDataForm.controls['statementsAlerts'].touched)"
+              class="invalid-data">
+              Please select Statements Alerts           </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Record-Level Statements</label>
+            <input class="form-control" type="checkbox" formControlName="recordLevelStatements" >C.L.U.E property
+            <input class="form-control" type="checkbox" formControlName="recordLevelStatements" >Current Carrier Property
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['recordLevelStatements'].invalid && (homeDataForm.controls['recordLevelStatements'].dirty || homeDataForm.controls['recordLevelStatements'].touched)"
+              class="invalid-data">
+              Please select Record-Level Statements           </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label># Statements by </label>
+            <input class="form-control" type="radio" formControlName="statementsBy" >LexID
+            <input class="form-control" type="radio" formControlName="statementsBy" >Address
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['statementsBy'].invalid && (homeDataForm.controls['statementsBy'].dirty || homeDataForm.controls['statementsBy'].touched)"
+              class="invalid-data">
+              Please select Statements By          </small>
+                <label>From </label>
+                <input class="form-control" formControlName="statementsByLexIDFrom" >
+                <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['statementsBy'].invalid && (homeDataForm.controls['statementsByLexIDFrom'].dirty || homeDataForm.controls['statementsByLexIDFrom'].touched)"
+              class="invalid-data">
+              Please select Statements From         </small>
+                <label>To </label>
+                <input class="form-control"  formControlName="statementsByLexIDTo" >
+                <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['statementsByLexIDTo'].invalid && (homeDataForm.controls['statementsByLexIDTo'].dirty || homeDataForm.controls['statementsByLexIDTo'].touched)"
+              class="invalid-data">
+              Please select Statements To          </small>
+
+            
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Max Size</label>
+            <input class="form-control" type="radio" formControlName="maxSize" >Yes
+            <input class="form-control" type="radio" formControlName="maxSize" >No
+            <input class="form-control" type="radio" formControlName="maxSize" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['maxSize'].invalid && (homeDataForm.controls['maxSize'].dirty || homeDataForm.controls['maxSize'].touched)"
+              class="invalid-data">
+              Please select max size          </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Identity Not Resolved</label>
+            <input class="form-control" type="radio" formControlName="indentityNotResolved" >Yes
+            <input class="form-control" type="radio" formControlName="indentityNotResolved" >No
+            <input class="form-control" type="radio" formControlName="indentityNotResolved" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['indentityNotResolved'].invalid && (homeDataForm.controls['indentityNotResolved'].dirty || homeDataForm.controls['indentityNotResolved'].touched)"
+              class="invalid-data">
+              Please select Identity Not Resolved          </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>LexID </label>
+            <input class="form-control" placeholder="Enter LexID"  formControlName="lexId" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="homeDataForm.controls['lexId'].invalid && (homeDataForm.controls['lexId'].dirty || homeDataForm.controls['lexId'].touched)"
+              class="invalid-data">
+              Please select LexID         </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -9,11 +9,11 @@ import { catchError } from 'rxjs/operators';
 })
 export class HttpServiceService {
 
-  serverUrl = '/index.php/';
+  serverUrl = 'http://localhost/codeigniter/index.php/';
   imgUrl = 'https://apis.smakky.com/static/images/';
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
+    headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data','Accept': 'application/json' })
   };
 
   constructor(private http: HttpClient) { }
@@ -24,6 +24,10 @@ export class HttpServiceService {
 
   postApi(json: any, url) {
     return this.http.post<any>(this.serverUrl + url, json, this.httpOptions);
+  }
+
+  uploadFileApi(json:any,url){
+    return this.http.post<any>(this.serverUrl + url, json, {});
   }
 
   private handleError(error: HttpErrorResponse) {

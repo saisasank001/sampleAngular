@@ -1,0 +1,144 @@
+<p>2.Filter Individual Search Data by Criteria</p>
+<div class="page">
+    <div class="page-heading">2.Filter Individual Search Data by Criteria</div>
+    <div [formGroup]="addForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            <!-- copy start here       -->
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <label>Product</label>
+            <!--    <input class="form-control" formControlName="product" placeholder="Enter Product">-->
+                <select formControlName="product" placeholder="Enter Product">
+                    <option value="">Select Products</option>
+                    <option *ngFor="let items of products" value="items">{{items}}</option>
+                </select>
+                <small class="form-text text-muted invalid-data"
+                  *ngIf="addForm.controls['product'].invalid && (addForm.controls['product'].dirty || addForm.controls['product'].touched)"
+                  class="invalid-data">
+                  Please Enter Product         </small>
+              </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>First Name</label>
+            <input class="form-control" formControlName="firstName" placeholder="Enter First Name">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['firstName'].invalid && (addForm.controls['firstName'].dirty || addForm.controls['firstName'].touched)"
+              class="invalid-data">
+              Please Enter First Name         </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Last Name</label>
+            <input class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['lastName'].invalid && (addForm.controls['lastName'].dirty || addForm.controls['lastName'].touched)"
+              class="invalid-data">
+              Please Enter Last Name          </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Suffix Name</label>
+            <input class="form-control" formControlName="suffixName" placeholder="Enter Beneficiary Name">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['suffixName'].invalid && (addForm.controls['suffixName'].dirty || addForm.controls['suffixName'].touched)"
+              class="invalid-data">
+              Please enter Suffix name          </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Middle Name </label>
+            <input class="form-control" formControlName="middleName" placeholder="Enter Middle Name">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['middleName'].invalid && (addForm.controls['middleName'].dirty || addForm.controls['middleName'].touched)"
+              class="invalid-data">
+              Please enter Middle Name         </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Date of Birth</label>
+            <input class="form-control" formControlName="dateOfBirth" placeholder="MM/DD/YYYY">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['dateOfBirth'].invalid && (addForm.controls['dateOfBirth'].dirty || addForm.controls['dateOfBirth'].touched)"
+              class="invalid-data">
+              Please enter Date of Birth          </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Social Security Number </label>
+            <input class="form-control" formControlName="socialSecurityNumber" placeholder="Enter Social Security Number">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['socialSecurityNumber'].invalid && (addForm.controls['socialSecurityNumber'].dirty || addForm.controls['socialSecurityNumber'].touched)"
+              class="invalid-data">
+              Please enter Social Security Number        </small>
+          </div>
+
+          
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>House Number</label>
+            <input class="form-control" formControlName="houseNumber" placeholder="Enter House Number">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['houseNumber'].invalid && (addForm.controls['houseNumber'].dirty || addForm.controls['houseNumber'].touched)"
+              class="invalid-data">
+              Please enter House Number         </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Street Name </label>
+            <input class="form-control" formControlName="streetName" placeholder="Enter Street Name ">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['streetName'].invalid && (addForm.controls['streetName'].dirty || addForm.controls['streetName'].touched)"
+              class="invalid-data">
+              Please enter Street Name         </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Apartment Number</label>
+            <input class="form-control" formControlName="apartmentNumber" placeholder="Enter Apartment Number">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['apartmentNumber'].invalid && (addForm.controls['apartmentNumber'].dirty || addForm.controls['apartmentNumber'].touched)"
+              class="invalid-data">
+              Please enter Apartment Number          </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>City  </label>
+            <input class="form-control" formControlName="city" placeholder="Enter City">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['city'].invalid && (addForm.controls['city'].dirty || addForm.controls['city'].touched)"
+              class="invalid-data">
+              Please enter City        </small>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>State </label>
+           <!--<input class="form-control" formControlName="state" placeholder="All States">-->
+            <select placeholder="All States" formControlName="state">
+                <option value="">All States</option>
+                <option *ngFor="let items of states" value="items">{{items}}</option>
+            </select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['state'].invalid && (addForm.controls['state'].dirty || addForm.controls['state'].touched)"
+              class="invalid-data">
+              Please enter State         </small>
+          </div>
+  
+                  
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Zip  </label>
+            <input class="form-control" formControlName="zip" placeholder="Enter Zip Code">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="addForm.controls['zip'].invalid && (addForm.controls['zip'].dirty || addForm.controls['zip'].touched)"
+              class="invalid-data">
+              Please enter Zip       </small>
+          </div>
+          <!-- copy end here -->
+
+        </div>
+      </div>
+    </div>
+  </div>

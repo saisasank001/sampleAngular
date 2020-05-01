@@ -1,0 +1,53 @@
+
+<div class="page">
+    <div class="page-heading">Master Domain List</div>
+    <div [formGroup]="masterDomainForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            <!-- copy start here       -->
+
+            
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>*Domain:</label>
+            <input class="form-control" formControlName="domain" placeholder="">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="masterDomainForm.controls['domain'].invalid && (masterDomainForm.controls['domain'].dirty || masterDomainForm.controls['domain'].touched)"
+              class="invalid-data">
+              Please Enter Domain        </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Notes:</label>
+            <input class="form-control" formControlName="notes" placeholder="">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="masterDomainForm.controls['notes'].invalid && (masterDomainForm.controls['notes'].dirty || masterDomainForm.controls['notes'].touched)"
+              class="invalid-data">
+              Please Enter Notes       </small>
+          </div>
+   
+  
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <button type="button"    (click)="submit(masterDomainForm.value)">Add</button>
+        </div>  
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <button type="button" class="btn btn-warning waves-effect waves-light pull-right" [disabled]="!masterDomainForm.valid"  (click)="cancel()">Cancel</button>
+        </div> 
+          <!-- copy end here -->
+          <table>
+            <tr>
+              <th>Domain</th>
+              <th>Notes</th>
+              <th>Added By</th>
+              <th>Added On</th>
+              
+            </tr>
+            <tr *ngFor='let items of formData'> 
+           
+             <td> {{items['domain']}}</td>
+             <td> {{items['notes']}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

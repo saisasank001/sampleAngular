@@ -1,10 +1,13 @@
 <div class="page">
-    <form class="form-group" [formGroup]="userSearchForm">
+    <div class="heading-bar">
+        2. Search Users
+    </div>
+    <form class="form-group table-form" [formGroup]="userSearchForm">
     <table class="table table-hover light-grey-bg">       
         <tbody>
             <tr>
                 <td>
-                    <label>First Name:</label>
+                    <label>First Name:</label></td><td>
                     <input class="form-control" placeholder="Enter firstname" formControlName="firstName">
                         <small class="form-text text-muted invalid-data"
                         *ngIf="userSearchForm.controls['firstName'].invalid && (userSearchForm.controls['firstName'].dirty || userSearchForm.controls['firstName'].touched)"
@@ -13,7 +16,7 @@
                 </small>
                 </td>
                 <td>
-                    <label>Last Name:</label>
+                    <label>Last Name:</label></td><td>
                     <input class="form-control" placeholder="Enter lastname" formControlName="lastName">
                         <small class="form-text text-muted invalid-data"
                         *ngIf="userSearchForm.controls['lastName'].invalid && (userSearchForm.controls['lastName'].dirty || userSearchForm.controls['lastName'].touched)"
@@ -24,7 +27,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Company Name:</label>
+                    <label>Company Name:</label></td><td>
                     <input class="form-control" placeholder="Enter Company Name" formControlName="companyName">
                         <small class="form-text text-muted invalid-data"
                         *ngIf="userSearchForm.controls['companyName'].invalid && (userSearchForm.controls['companyName'].dirty || userSearchForm.controls['companyName'].touched)"
@@ -33,7 +36,7 @@
                 </small>
                 </td>
                 <td>
-                    <label>Email:</label>
+                    <label>Email:</label></td><td>
                     <input class="form-control" placeholder="Enter Email" formControlName="email">
                         <small class="form-text text-muted invalid-data"
                         *ngIf="userSearchForm.controls['email'].invalid && (userSearchForm.controls['email'].dirty || userSearchForm.controls['email'].touched)"
@@ -44,7 +47,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Work Phone Number:</label>
+                    <label>Work Phone Number:</label></td><td>
                     <input class="form-control" placeholder="Work Phone Number" formControlName="phoneNumber">
                         <small class="form-text text-muted invalid-data"
                         *ngIf="userSearchForm.controls['phoneNumber'].invalid && (userSearchForm.controls['phoneNumber'].dirty || userSearchForm.controls['phoneNumber'].touched)"
@@ -53,7 +56,7 @@
                     </small>
                 </td>
                 <td>
-                    <label>Current Status:</label>
+                    <label>Current Status:</label></td><td>
                     <select class="form-control" formControlName="currentStatus">
                         <option value="all" >All</option>
                         <option value="some" >some</option>
@@ -67,7 +70,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>From Date:</label>
+                    <label>From Date:</label></td><td>
                         <input type ="date" class="form-control" placeholder="Choose a date" formControlName="fromDate">
                         <small class="form-text text-muted invalid-data"
                         *ngIf="userSearchForm.controls['fromDate'].invalid && (userSearchForm.controls['fromDate'].dirty || userSearchForm.controls['fromDate'].touched)"
@@ -76,7 +79,7 @@
                     </small>
                 </td>
                 <td>
-                    <label>To Date:</label>
+                    <label>To Date:</label></td><td>
                         <input type ="date" class="form-control" placeholder="Choose a date" formControlName="toDate">
 
                         <small class="form-text text-muted invalid-data"
@@ -88,7 +91,7 @@
             </tr>
             <tr>
                 <td>
-                    <label>Requested By:</label>
+                    <label>Requested By:</label></td><td>
                         <input class="form-control" placeholder="Enter Requested By Name" formControlName="requestedBy">
                         <small class="form-text text-muted invalid-data"
                         *ngIf="userSearchForm.controls['requestedBy'].invalid && (userSearchForm.controls['requestedBy'].dirty || userSearchForm.controls['requestedBy'].touched)"
@@ -97,7 +100,7 @@
                     </small>
                 </td>
                 <td>
-                    <label>Requested By Email:</label>
+                    <label>Requested By Email:</label></td><td>
                         <input class="form-control" placeholder="Enter Requested By Email" formControlName="requestedEmail">
 
                         <small class="form-text text-muted invalid-data"
@@ -113,7 +116,7 @@
 
     <tfoot>
         <tr>
-            <td colspan="3">
+            <td colspan="4">
                 <div class="row">
                     <div class="col-sm-12">
                         <button type="button" class="btn dark-grey-bg white-text pull-right"><i class="fa fa-search" aria-hidden="true"></i> Search</button>

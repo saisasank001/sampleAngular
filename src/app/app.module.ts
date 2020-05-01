@@ -35,6 +35,9 @@ import { UnsubscriptionsComponent } from './unsubscriptions/unsubscriptions.comp
 import { SideNavComponent } from './product/side-nav/side-nav.component';
 import { MasterListComponent } from './master-list/master-list.component';
 import { IndividualSearchComponent } from './individual-search/individual-search.component';
+// import { FullCalendarModule } from '@fullcalendar/angular';
+import {FullCalendarModule} from 'primeng/fullcalendar';
+import { EventsComponent } from './events/events.component'; // for FullCalendar!
 
 @NgModule({
   declarations: [
@@ -69,7 +72,9 @@ import { IndividualSearchComponent } from './individual-search/individual-search
     
     MasterListComponent,
     
-    IndividualSearchComponent
+    IndividualSearchComponent,
+    
+    EventsComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,
@@ -81,7 +86,8 @@ import { IndividualSearchComponent } from './individual-search/individual-search
     Ng2SearchPipeModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,AngularEditorModule 
+    HttpClientModule,AngularEditorModule ,
+    FullCalendarModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

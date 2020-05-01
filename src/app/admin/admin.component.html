@@ -1,1 +1,24 @@
-<p>admin works!</p>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="heading-bar">
+            1. Select Admin Activity
+        </div>
+        <div id="sidebar-menu" >
+            <ul>
+                <li class="has_sub" *ngFor="let menu of sideMenu">
+                    <a (click)="toggleMenu(menu)" class="waves-effect {{(menu.active)?'primary-red-bg':'dark-grey-bg'}}"><i class="dripicons-briefcase"></i> <span> {{menu.name}} </span> <span class="menu-arrow pull-right"><i class="fa {{menu.active?'fa-chevron-down':'fa-chevron-right'}}"></i></span></a>
+                    <ul class="list-unstyled" *ngIf="menu.active">
+                        <li ><a class="{{(routeUrl==menuItem.path)?'primary-red-bg white-text':'light-dark-grey-bg'}}" [routerLink]="menuItem.path" *ngFor="let menuItem of menu.children">{{menuItem.name}}</a></li>
+                        
+                    </ul>
+                </li>
+
+                
+
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>

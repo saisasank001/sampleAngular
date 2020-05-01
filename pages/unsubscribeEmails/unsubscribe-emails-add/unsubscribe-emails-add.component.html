@@ -1,0 +1,41 @@
+
+<div class="page">
+    <div class="page-heading">Add User to unsubscribed List</div>
+    <div [formGroup]="unsubscribeEmailForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            <!-- copy start here       -->
+
+      
+         
+
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label> Email Address</label>
+            <input class="form-control" formControlName="emailAddress" placeholder="Enter Email Address">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="unsubscribeEmailForm.controls['emailAddress'].invalid && (unsubscribeEmailForm.controls['emailAddress'].dirty || unsubscribeEmailForm.controls['emailAddress'].touched)"
+              class="invalid-data">
+              Please enter Email Address         </small>
+          </div>
+  
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <button type="button"   (click)="submit(unsubscribeEmailForm.value)">Add</button>
+        </div>  
+         
+          <!-- copy end here -->
+        <table>
+          <tr>
+            <th>Domain</th>
+            <th>Added By</th>
+            <th>Added On</th>
+        
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>

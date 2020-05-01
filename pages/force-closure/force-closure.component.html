@@ -1,0 +1,56 @@
+<p>force-closure works!</p>
+<div class="page">
+    
+    <div [formGroup]="forceClosureForm" class="form card">
+      <div class="card-body">
+        <div class="row">
+            
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>State</label>
+            <select  placeholder="Select State" formControlName="state" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of states" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="forceClosureForm.controls['state'].invalid && (forceClosureForm.controls['state'].dirty || forceClosureForm.controls['state'].touched)"
+              class="invalid-data">
+              Please select state</small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Forceclosure Code</label>
+            <select  placeholder="Select Code" formControlName="forceClosureCode" >
+                <option value="">Select state</option>
+                <option *ngFor="let items of forceClosures" [value]="items">{{items}}</option></select>
+            <small class="form-text text-muted invalid-data"
+              *ngIf="forceClosureForm.controls['forceClosureCode'].invalid && (forceClosureForm.controls['forceClosureCode'].dirty || forceClosureForm.controls['forceClosureCode'].touched)"
+              class="invalid-data">
+              Please select Forceclosure Code</small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Address Potentially vacant</label>
+            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" >Yes
+            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" >No
+            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" >All
+            <small class="form-text text-muted invalid-data"
+              *ngIf="forceClosureForm.controls['addressProtentiallyVacant'].invalid && (forceClosureForm.controls['addressProtentiallyVacant'].dirty || forceClosureForm.controls['addressProtentiallyVacant'].touched)"
+              class="invalid-data">
+              Please select Address Potentially vacant          </small>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <label>Vacancy Duration</label>
+            <label>From</label>
+            <input class="form-control" placeholder="enter days" formControlName="vacancyDurationFrom">
+            <small class="form-text text-muted invalid-data"
+              *ngIf="forceClosureForm.controls['vacancyDurationFrom'].invalid && (forceClosureForm.controls['vacancyDurationFrom'].dirty || forceClosureForm.controls['vacancyDurationFrom'].touched)"
+              class="invalid-data">
+              Please select Vacancy Duration From      </small>
+            <label>To</label>
+            <input class="form-control" placeholder="enter days" formControlName="vacancyDurationTo" >
+            <small class="form-text text-muted invalid-data"
+              *ngIf="forceClosureForm.controls['vacancyDurationTo'].invalid && (forceClosureForm.controls['vacancyDurationTo'].dirty || forceClosureForm.controls['vacancyDurationTo'].touched)"
+              class="invalid-data">
+              Please select Vacancy Duration To       </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

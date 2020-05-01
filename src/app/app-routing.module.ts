@@ -13,12 +13,18 @@ import { UnsubscriptionsComponent } from './unsubscriptions/unsubscriptions.comp
 import { ProductComponent } from './product/product.component';
 import { MasterListComponent } from './master-list/master-list.component';
 import { IndividualSearchComponent } from './individual-search/individual-search.component';
+import { AdminComponent } from './admin/admin.component';
+import { AnnouncementAdminComponent } from './announcement-admin/announcement-admin.component';
+import { EventsComponent } from './events/events.component';
 
 
 const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },{
+    path:'events',
+    component:EventsComponent
   },{
     path:'forgot',
     component:ForgotComponent
@@ -46,28 +52,41 @@ const routes: Routes = [
         ]
       },
       {
+        path:'admin',
+        component:AdminComponent,
+        children:[
+          { path: '', redirectTo: 'announcement-add', pathMatch: 'full' },
+          {
+            path:'announcement-add',
+            component: AnnouncementAddComponent
+          },
+          {
+            path:'annoucement-list',
+            component: AnnouncementAdminComponent
+          },
+          {
+            path:'user-search',
+            component:UserSearchComponent
+          },
+          {
+            path:'update-user-email',
+            component:UpdateUserEmailComponent
+          }
+        ]
+      },
+      {
         path:'unsubscriptions',
         component:UnsubscriptionsComponent
       },
       {
-        path:'announcement',
+        path:'announcements',
         component:AnnouncementsComponent
       },
       {
         path:'announcement-details',
         component:AnnouncementDetailsComponent
-      },{
-        path:'announcement-add',
-        component: AnnouncementAddComponent
       },
-      {
-        path:'user-search',
-        component:UserSearchComponent
-      },
-      {
-        path:'update-user-email',
-        component:UpdateUserEmailComponent
-      }
+      
     ]
   }
 ];
