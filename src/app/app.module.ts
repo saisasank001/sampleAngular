@@ -37,7 +37,12 @@ import { MasterListComponent } from './master-list/master-list.component';
 import { IndividualSearchComponent } from './individual-search/individual-search.component';
 // import { FullCalendarModule } from '@fullcalendar/angular';
 import {FullCalendarModule} from 'primeng/fullcalendar';
-import { EventsComponent } from './events/events.component'; // for FullCalendar!
+import { EventsComponent } from './events/events.component';
+import { AnnouncementEditComponent } from './announcement-edit/announcement-edit.component';
+import { EventAddComponent } from './event-add/event-add.component';
+import { EventEditComponent } from './event-edit/event-edit.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
+ // for FullCalendar!
 
 @NgModule({
   declarations: [
@@ -74,7 +79,16 @@ import { EventsComponent } from './events/events.component'; // for FullCalendar
     
     IndividualSearchComponent,
     
-    EventsComponent
+    EventsComponent,
+    
+    AnnouncementEditComponent,
+    
+    EventAddComponent,
+    
+    EventEditComponent,
+    
+    EventDetailsComponent,
+
   ],
   imports: [
     NgxNewstickerAlbeModule ,
