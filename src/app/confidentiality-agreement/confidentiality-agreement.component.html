@@ -1,0 +1,94 @@
+
+<div class="page products">
+
+  <div *ngIf="!displayRecordsView" class="row product-form">
+      <div class="col-sm-9">
+          <div class="heading-bar">
+              2.Filter Instant Data ID Data by Criteria
+          </div>
+          <form [formGroup]="confidentialityAgreementForm" class="form-group">
+              <table class="table table-hover light-dark-grey-bg">
+                <tr>
+                     <th>  </th>   
+                  <th>*First Name</th>
+                  <th>*last Name</th>
+                  <th>Company</th>
+                  <th>*Email</th>
+                  <th>*Work Phone Number</th>
+                  <th>Extn</th>
+                </tr>
+                  <tbody>
+               
+                     <td> 
+                      <button (click)="addList()">Add</button>
+                     </td>
+                      <td >
+
+                        <input class="form-control" placeholder=" First Name" formControlName="fname">
+                      </td>
+                 
+
+            
+                   
+                    <td >
+
+                      <input class="form-control" placeholder=" Last Name" formControlName="lname">
+                    </td>
+             
+                
+                
+                  <td >
+
+                    <input class="form-control" placeholder="Company" formControlName="company">
+                  </td>
+              
+                
+                <td >
+
+                  <input class="form-control" placeholder="Email" formControlName="email">
+                </td>
+           
+              
+              <td >
+
+                <input class="form-control" placeholder="Work Phone #" formControlName="phone">
+              </td>
+         
+            
+            <td >
+
+              <input class="form-control" placeholder=" Extn" formControlName="extn">
+            </td>
+       
+
+             </table>
+             <button type="button" class="btn btn-info waves-effect waves-light pull-left" 
+              (click)="Submit(confidentialityAgreementForm.value)">Submit</button><br><br>
+  <a href="#"  target="_blank" > <<Back to Home Page</a>
+          </form>
+      </div>
+      <div class="col-sm-3">
+          <div class="heading-bar">
+              3. Download
+          </div>
+          <div class="records">
+              <span>Total Dataset Size</span>
+              <h3 [innerHTML]="records" type="number" min="0"></h3>
+              <p>Records</p>
+          </div>
+          <div>
+              <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+              <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+              <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+              <!-- <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a> -->
+          </div>
+      </div>
+
+  </div>
+
+  <div *ngIf="displayRecordsView" class="row products-view">
+      <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+  </div>
+
+</div>

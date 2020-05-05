@@ -26,6 +26,9 @@ import { DownloadFullFilesComponent } from './download-full-files/download-full-
 import { CurrentCarrierComponent } from './current-carrier/current-carrier.component';
 import { FireAndDiasterComponent } from './fire-and-diaster/fire-and-diaster.component';
 import { ForeclosureDataComponent } from './foreclosure-data/foreclosure-data.component';
+import { ConfidentialityAgreementComponent } from './confidentiality-agreement/confidentiality-agreement.component';
+import { HomeInspectionComponent } from './home-inspection/home-inspection.component';
+
 
 
 const routes: Routes = [
@@ -136,6 +139,14 @@ const routes: Routes = [
       {
         path:'foreclosure-data',
         component: ForeclosureDataComponent
+      },
+      {
+        path:'test-confidentiality-agreement',
+        component: ConfidentialityAgreementComponent
+      },
+      {
+        path:'home-inspection',
+        component: HomeInspectionComponent
       }
       
       

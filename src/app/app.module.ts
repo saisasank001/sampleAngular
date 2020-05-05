@@ -52,6 +52,8 @@ import { FilterIndividualSearchComponent } from './filter-individual-search/filt
 import { HouseholdMembersComponent } from './household-members/household-members.component';
 import { FireAndDiasterComponent } from './fire-and-diaster/fire-and-diaster.component';
 import { ForeclosureDataComponent } from './foreclosure-data/foreclosure-data.component';
+import { ConfidentialityAgreementComponent } from './confidentiality-agreement/confidentiality-agreement.component';
+import { HomeInspectionComponent } from './home-inspection/home-inspection.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +114,9 @@ import { ForeclosureDataComponent } from './foreclosure-data/foreclosure-data.co
     FilterIndividualSearchComponent,
     HouseholdMembersComponent,
     FireAndDiasterComponent,
-    ForeclosureDataComponent
+    ForeclosureDataComponent,
+    ConfidentialityAgreementComponent,
+    HomeInspectionComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,

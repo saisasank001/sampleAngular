@@ -1,0 +1,268 @@
+
+<div class="page products">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
+        <div class="col-sm-9">
+            <div class="heading-bar">
+                2.Filter Instant Data ID Data by Criteria
+            </div>
+            <form [formGroup]="homeInspectionForm" class="form-group">
+                <table class="table table-hover light-dark-grey-bg">
+                    <tbody>
+                    <tr>
+                        <td><label>State </label></td>
+                        <td class="multi-select">
+
+                            <select formControlName="state" placeholder="All States">
+                                <option value="">All States</option>
+                                <option *ngFor="let items of states" value="items">{{items}}</option>
+                            </select>
+                            <!--  <small class="form-text text-muted invalid-data"
+                  *ngIf="homeInspectionForm.controls['state'].invalid && (homeInspectionForm.controls['state'].dirty || homeInspectionForm.controls['state'].touched)"
+                  class="invalid-data">
+                  Please enter State         </small> -->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>   <label>Home Inspection Index</label></td>
+                        <td class="f-horizontal">
+                            <label>From</label>
+            <input class="form-control" placeholder="enter index range" formControlName="homeInspectionIndexFrom">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['homeInspectionIndexFrom'].invalid && (homeInspectionForm.controls['homeInspectionIndexFrom'].dirty || homeInspectionForm.controls['homeInspectionIndexFrom'].touched)"
+              class="invalid-data">
+              Please select Home Inspection Index From      </small> -->
+            <label>To</label>
+            <input class="form-control" placeholder="enter index range" formControlName="homeInspectionIndexTo" >
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['homeInspectionIndexTo'].invalid && (homeInspectionForm.controls['homeInspectionIndexTo'].dirty || homeInspectionForm.controls['homeInspectionIndexTo'].touched)"
+              class="invalid-data">
+              Please select Home Inspection Index To       </small> -->
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>   <label>Policy Coverage Value</label></td>
+                        <td class="f-horizontal">
+
+                            <input class="form-control" placeholder="Enter Amount" formControlName="policyCoverageValue" >
+           
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="homeInspectionForm.controls['policyCoverageValue'].invalid && (homeInspectionForm.controls['policyCoverageValue'].dirty || homeInspectionForm.controls['policyCoverageValue'].touched)"
+              class="invalid-data">
+              Please select Policy Coverage Value      </small> -->
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>  <label>Year Built</label></td>
+                        <td class="f-horizontal">
+
+                            <label>From</label>
+                            <input class="form-control" placeholder="Enter year" formControlName="yearBuiltFrom">
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="homeInspectionForm.controls['yearBuiltFrom'].invalid && (homeInspectionForm.controls['yearBuiltFrom'].dirty || homeInspectionForm.controls['yearBuiltFrom'].touched)"
+                              class="invalid-data">
+                              Please select Year Built From      </small> -->
+                            <label>To</label>
+                            <input class="form-control" placeholder="Enter Year" formControlName="yearBuiltTo" >
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="homeInspectionForm.controls['yearBuiltTo'].invalid && (homeInspectionForm.controls['yearBuiltTo'].dirty || homeInspectionForm.controls['yearBuiltTo'].touched)"
+                              class="invalid-data">
+                              Please select Year Built To       </small> -->
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td >  <label>Indicators</label></td>
+                         <td class="f-horizontal" >   <label>H101</label>
+            <input  class="form-control" type="radio" formControlName="indicators1" value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators1" value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators1"  value="All">All
+        </td> 
+        <td class="f-horizontal" >   <label>H102</label>
+            <input  class="form-control" type="radio" formControlName="indicators2"  value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators2"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators2"  value="All">All
+            </td>
+            <td class="f-horizontal" > 
+            <label>H103</label>
+            <input  class="form-control" type="radio" formControlName="indicators3"  value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators3"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators3"  value="All">All
+            </td>
+            <td class="f-horizontal" > 
+            <label>H104</label>
+            <input  class="form-control" type="radio" formControlName="indicators4"  value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators4"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators4"  value="All">All
+            </td>
+            <td class="f-horizontal" > 
+            <label>H105</label>
+            <input  class="form-control" type="radio" formControlName="indicators5"  value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators5"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators5"  value="All">All
+            </td>
+            <td class="f-horizontal" > 
+            <label>H106</label>
+            <input  class="form-control" type="radio" formControlName="indicators6"  value="Yes" >Yes
+            <input  class="form-control" type="radio" formControlName="indicators6"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators6"  value="All">All
+            </td>
+            <td class="f-horizontal" > 
+            <label>H107</label>
+            <input  class="form-control" type="radio" formControlName="indicators7"  value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators7"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators7"  value="All">All
+            </td>
+            <td class="f-horizontal" > 
+            <label>BP02</label>
+            <input  class="form-control" type="radio" formControlName="indicators8"  value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators8"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators8"  value="All">All
+            </td>
+            <td class="f-horizontal" > 
+            <label>BP10</label>
+            <input  class="form-control" type="radio" formControlName="indicators9"  value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators9"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators9"  value="All">All
+            </td>
+            <td class="f-horizontal" > 
+            <label>BP11</label>
+            <input  class="form-control" type="radio" formControlName="indicators10"  value="Yes">Yes
+            <input  class="form-control" type="radio" formControlName="indicators10"  value="No">No
+            <input  class="form-control" type="radio" formControlName="indicators10"  value="All">All
+            </td>
+        
+                    </tr>
+
+
+            <tr>
+            <td><label>Attributes</label></td>
+            <td class="f-horizontal">
+
+                <label>Adress Vacancy Indicator</label>
+                <input class="form-control" type="radio" formControlName="attributes" value="Yes" >Yes
+                <input class="form-control" type="radio" formControlName="attributes" value="No">No
+                <input class="form-control" type="radio" formControlName="attributes" value="All">All
+                <!-- <small class="form-text text-muted invalid-data"
+                  *ngIf="homeInspectionForm.controls['attributes'].invalid && (homeInspectionForm.controls['attributes'].dirty || homeInspectionForm.controls['attributes'].touched)"
+                  class="invalid-data">
+                  Please select Adress Vacancy Indicator</small> -->
+            </td>
+             <td class="f-horizontal">
+                <label>Age Of House</label>
+                <label>From</label>
+                            <input class="form-control" placeholder="Enter year" formControlName="ageOfHouseFrom">
+                           <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="homeInspectionForm.controls['ageOfHouseFrom'].invalid && (homeInspectionForm.controls['ageOfHouseFrom'].dirty || homeInspectionForm.controls['ageOfHouseFrom'].touched)"
+                              class="invalid-data">
+                              Please select Age Of House From      </small>  -->
+                            <label>To</label>
+                            <input class="form-control" placeholder="Enter Year" formControlName="ageOfHouseTo" >
+                           <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="homeInspectionForm.controls['ageOfHouseTo'].invalid && (homeInspectionForm.controls['ageOfHouseTo'].dirty || homeInspectionForm.controls['ageOfHouseTo'].touched)"
+                              class="invalid-data">
+                              Please select Age Of House To       </small>  -->
+            </td> 
+            <td class="f-horizontal">
+
+                <label>Air Conditioning Indicator</label>
+                <input class="form-control" type="radio" formControlName="airConditioningIndicator" value="Yes" >Yes
+                <input class="form-control" type="radio" formControlName="airConditioningIndicator" value="No">No
+                <input class="form-control" type="radio" formControlName="airConditioningIndicator" value="All">All
+                 <!-- <small class="form-text text-muted invalid-data"
+                  *ngIf="homeInspectionForm.controls['airConditioningIndicator'].invalid && (homeInspectionForm.controls['airConditioningIndicator'].dirty || homeInspectionForm.controls['airConditioningIndicator'].touched)"
+                  class="invalid-data">
+                  Please select Air Conditioning Indicator</small>  -->
+            </td> 
+             <td class="f-horizontal">
+
+                <label>Forclosure Indicator</label>
+                <input class="form-control" type="radio" formControlName="forclosureIndicator" value="Yes" >Yes
+                <input class="form-control" type="radio" formControlName="forclosureIndicator" value="No">No
+                <input class="form-control" type="radio" formControlName="forclosureIndicator" value="All">All
+              <!-- <small class="form-text text-muted invalid-data"
+                  *ngIf="homeInspectionForm.controls['forclosureIndicator'].invalid && (homeInspectionForm.controls['forclosureIndicator'].dirty || homeInspectionForm.controls['forclosureIndicator'].touched)"
+                  class="invalid-data">
+                  Please select Forclosure Indicator</small>  -->
+            </td> 
+           <td class="f-horizontal">
+
+                <label>Sewer Material</label>
+               
+
+                    <select formControlName="sewerMaterial" placeholder="All ">
+                        <option value="">All </option>
+                        <option *ngFor="let items of sewerMaterials" value="items">{{items}}</option>
+                    </select>
+                     <!-- <small class="form-text text-muted invalid-data"
+          *ngIf="homeInspectionForm.controls['sewerMaterial'].invalid && (homeInspectionForm.controls['sewerMaterial'].dirty || homeInspectionForm.controls['sewerMaterial'].touched)"
+          class="invalid-data">
+          Please enter Sewer Material         </small> -->
+                
+            </td>
+           <td class="f-horizontal">
+
+                <label>Pool Indicator</label>
+                <input class="form-control" type="radio" formControlName="poolIndicator" value="Yes" >Yes
+                <input class="form-control" type="radio" formControlName="poolIndicator" value="No">No
+                <input class="form-control" type="radio" formControlName="poolIndicator" value="All">All
+                <!-- <small class="form-text text-muted invalid-data"
+                  *ngIf="homeInspectionForm.controls['poolIndicator'].invalid && (homeInspectionForm.controls['poolIndicator'].dirty || homeInspectionForm.controls['poolIndicator'].touched)"
+                  class="invalid-data">
+                  Please select Pool Indicator</small> -->
+            </td> 
+            <td class="f-horizontal">
+                <label>Years Since Sales Date</label>
+                <label>From</label>
+                            <input class="form-control" placeholder="Enter year" formControlName="from_sales">
+                           <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="homeInspectionForm.controls['from_sales'].invalid && (homeInspectionForm.controls['from_sales'].dirty || homeInspectionForm.controls['from_sales'].touched)"
+                              class="invalid-data">
+                              Please select Years Since Sales Date From      </small>  -->
+                            <label>To</label>
+                            <input class="form-control" placeholder="Enter Year" formControlName="to_sales" >
+                           <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="homeInspectionForm.controls['to_sales'].invalid && (homeInspectionForm.controls['to_sales'].dirty || homeInspectionForm.controls['to_sales'].touched)"
+                              class="invalid-data">
+                              Please select Years Since Sales Date To       </small>  -->
+            </td> 
+           
+            </tr>
+
+               </table>
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <!-- <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a> -->
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
+
+</div>
