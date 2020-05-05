@@ -1,0 +1,110 @@
+
+<div class="page products">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
+        <div class="col-sm-9">
+            <div class="heading-bar">
+                2.Filter Foreclosure Data by Criteria
+            </div>
+            <form [formGroup]="forceClosureForm" class="form-group">
+                <table class="table table-hover light-dark-grey-bg">
+                    <tbody>
+                    <tr>
+                        <td><label>State </label></td>
+                        <td class="multi-select">
+
+                            <select formControlName="state" placeholder="All States">
+                                <option value="">All States</option>
+                                <option *ngFor="let items of states" value="items">{{items}}</option>
+                            </select>
+                            <!--  <small class="form-text text-muted invalid-data"
+                  *ngIf="forceClosureForm.controls['state'].invalid && (forceClosureForm.controls['state'].dirty || forceClosureForm.controls['state'].touched)"
+                  class="invalid-data">
+                  Please enter State         </small> -->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>  <label>Forceclosure Code</label></td>
+                        <td class="f-horizontal">
+
+                            <select  placeholder="Select Code" formControlName="forceClosureCode" >
+                                <option value="">Select Forceclosure Code</option>
+                                <option *ngFor="let items of forceClosures" [value]="items">{{items}}</option></select>
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="forceClosureForm.controls['forceClosureCode'].invalid && (forceClosureForm.controls['forceClosureCode'].dirty || forceClosureForm.controls['forceClosureCode'].touched)"
+                              class="invalid-data">
+                              Please select Forceclosure Code</small> -->
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>   <label>Address Potentially vacant</label></td>
+                        <td class="f-horizontal">
+
+                            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" value="Yes" >Yes
+                            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" value="No">No
+                            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" value="All">All
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="forceClosureForm.controls['addressProtentiallyVacant'].invalid && (forceClosureForm.controls['addressProtentiallyVacant'].dirty || forceClosureForm.controls['addressProtentiallyVacant'].touched)"
+                              class="invalid-data">
+                              Please select Address Potentially vacant          </small> -->
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td> <label>Vacancy Duration</label></td>
+                        <td class="f-horizontal">
+                   
+                             <label>From</label>
+            <input class="form-control" placeholder="enter days" formControlName="vacancyDurationFrom">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="forceClosureForm.controls['vacancyDurationFrom'].invalid && (forceClosureForm.controls['vacancyDurationFrom'].dirty || forceClosureForm.controls['vacancyDurationFrom'].touched)"
+              class="invalid-data">
+              Please select Vacancy Duration From      </small> -->
+            
+            <label>To</label>
+            <input class="form-control" placeholder="enter days" formControlName="vacancyDurationTo" >
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="forceClosureForm.controls['vacancyDurationTo'].invalid && (forceClosureForm.controls['vacancyDurationTo'].dirty || forceClosureForm.controls['vacancyDurationTo'].touched)"
+              class="invalid-data">
+              Please select Vacancy Duration To       </small> -->
+                        </td>
+                    </tr>
+
+
+
+           
+
+               </table>
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <!-- <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a> -->
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+               <!-- <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters> -->
+    </div>
+
+</div>

@@ -25,6 +25,7 @@ import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter
 import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
 import { CurrentCarrierComponent } from './current-carrier/current-carrier.component';
 import { FireAndDiasterComponent } from './fire-and-diaster/fire-and-diaster.component';
+import { ForeclosureDataComponent } from './foreclosure-data/foreclosure-data.component';
 
 
 const routes: Routes = [
@@ -131,6 +132,10 @@ const routes: Routes = [
       {
         path:'fire-and-disaster',
         component: FireAndDiasterComponent
+      },
+      {
+        path:'foreclosure-data',
+        component: ForeclosureDataComponent
       }
       
       
