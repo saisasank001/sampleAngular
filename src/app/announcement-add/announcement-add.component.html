@@ -25,14 +25,14 @@
                 <label for="email">Priority:</label>
               </div>
               <div class="col-sm-9">
-                  <select class="form-control"  placeholder="Select Priority" formControlName="Priorityy" >
+                  <select class="form-control"  placeholder="Select Priority" formControlName="Priority" >
                     <option value="">Select Priority</option>
                     <option value="1">High</option>
                     <option value="2">Medium</option>
                     <option value="3">Low</option>
                   </select>
                 <small class="form-text text-muted invalid-data"
-                  *ngIf="announcementForm.controls['Priorityy'].invalid && (announcementForm.controls['Priorityy'].dirty || announcementForm.controls['Priorityy'].touched)"
+                  *ngIf="announcementForm.controls['Priority'].invalid && (announcementForm.controls['Priority'].dirty || announcementForm.controls['Priority'].touched)"
                   class="invalid-data">
                   Please select Priority</small>
               </div>
@@ -148,11 +148,12 @@
               </div>
               <div class="col-sm-9">
                   <input type="file" class="form-control" (change)="onFileChange($event)">
+
                   <input type="hidden" formControlName="filename">
                   <small class="form-text text-muted invalid-data"
-                  *ngIf="announcementForm.controls['fromDate'].invalid && (announcementForm.controls['fromDate'].dirty || announcementForm.controls['fromDate'].touched)"
+                  *ngIf="announcementForm.controls['filename'].invalid && (announcementForm.controls['filename'].dirty || announcementForm.controls['filename'].touched)"
                   class="invalid-data">
-                  Please enter Date </small>
+                  Please enter filename </small>
               </div>
           </div>
         </div>

@@ -38,9 +38,15 @@ import { IndividualSearchComponent } from './individual-search/individual-search
 // import { FullCalendarModule } from '@fullcalendar/angular';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import { EventsComponent } from './events/events.component';
+import { AnnouncementEditComponent } from './announcement-edit/announcement-edit.component';
+import { EventAddComponent } from './event-add/event-add.component';
+import { EventEditComponent } from './event-edit/event-edit.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
+ // for FullCalendar!
 import { NcfComponent } from './pages/admin/ncf/ncf.component';
 import { CurrentCarrierComponent } from './current-carrier/current-carrier.component';
 import { InstantidComponent } from './instantid/instantid.component'; // for FullCalendar!
+import { CriteriaComponent } from './criteria/criteria.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +85,19 @@ import { InstantidComponent } from './instantid/instantid.component'; // for Ful
     
     EventsComponent,
     
+    AnnouncementEditComponent,
+    
+    EventAddComponent,
+    
+    EventEditComponent,
+    
+    EventDetailsComponent,
+
     NcfComponent,
+
+    
+
+    CriteriaComponent,
     
     CurrentCarrierComponent,
     
