@@ -16,6 +16,11 @@ import { IndividualSearchComponent } from './individual-search/individual-search
 import { AdminComponent } from './admin/admin.component';
 import { AnnouncementAdminComponent } from './announcement-admin/announcement-admin.component';
 import { EventsComponent } from './events/events.component';
+import { AnnouncementEditComponent } from './announcement-edit/announcement-edit.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
+import { EventAddComponent } from './event-add/event-add.component';
+import { EventEditComponent } from './event-edit/event-edit.component';
+import { CriteriaComponent } from './criteria/criteria.component';
 
 
 const routes: Routes = [
@@ -61,6 +66,10 @@ const routes: Routes = [
             component: AnnouncementAddComponent
           },
           {
+            path:'announcement-edit',
+            component: AnnouncementEditComponent
+          },
+          {
             path:'annoucement-list',
             component: AnnouncementAdminComponent
           },
@@ -86,6 +95,23 @@ const routes: Routes = [
         path:'announcement-details',
         component:AnnouncementDetailsComponent
       },
+      {
+        path:'event-details',
+        component:EventDetailsComponent
+      },
+      {
+        path:'event-add',
+        component:EventAddComponent
+      },
+      {
+        path:'event-edit',
+        component:EventEditComponent
+      },
+      {
+        path:'criteria',
+        component:CriteriaComponent
+      }
+      
       
     ]
   }
