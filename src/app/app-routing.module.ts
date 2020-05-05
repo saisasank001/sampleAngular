@@ -21,6 +21,7 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
 import { CriteriaComponent } from './criteria/criteria.component';
+import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
 import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
 
 
@@ -115,7 +116,10 @@ const routes: Routes = [
       },
       {
         path:'download-full-files',
-        component: DownloadFullFilesComponent
+        component: DownloadFullFilesComponent},
+        {
+        path:'filter-advanced-linking',
+        component: FilterAdvancedLinkingComponent
       }
       
       
