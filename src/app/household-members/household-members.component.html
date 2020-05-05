@@ -1,0 +1,144 @@
+
+<div class="page products">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
+        <div class="col-sm-9">
+            <div class="heading-bar">
+                2. Filter Household Members Data by criteria
+            </div>
+            <form [formGroup]="householdMembersForm" class="form-group">
+                <table class="table table-hover light-dark-grey-bg">
+                    <tbody>
+                        <tr class="multi-select">
+                            <td><label>State</label></td>
+                            <td>
+                                <select placeholder="All States" formControlName="state">
+                                    <option value="">All States</option>
+                                    <option *ngFor="let items of states" value="items">{{items}}</option>
+                                </select>
+                                <!-- <small class="form-text text-muted invalid-data"
+                                  *ngIf="householdMembersForm.controls['state'].invalid && (householdMembersForm.controls['state'].dirty || householdMembersForm.controls['state'].touched)"
+                                  class="invalid-data">
+                                  Please enter State         </small> -->
+    
+                            </td>
+                        </tr>
+
+                    <tr>
+                        <td><label>Youthful Driver  </label></td>
+                        <td class="f-horizontal">
+
+                            <input class="form-control" type="radio" formControlName="is_youthful" >Yes
+                <input class="form-control" type="radio" formControlName="is_youthful" >No
+                <input class="form-control" type="radio" formControlName="is_youthful" >All
+                <!-- <small class="form-text text-muted invalid-data"
+                  *ngIf="householdMembersForm.controls['is_youthful'].invalid && (householdMembersForm.controls['is_youthful'].dirty || householdMembersForm.controls['is_youthful'].touched)"
+                  class="invalid-data">
+                  Please enter Youthful Driver        </small> -->
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label>Expired License</label></td>
+                        <td class="f-horizontal">
+
+                            <input class="form-control" type="radio" formControlName="lic_expired" >Yes
+                <input class="form-control" type="radio" formControlName="lic_expired" >No
+                <input class="form-control" type="radio" formControlName="lic_expired" >All
+                <!-- <small class="form-text text-muted invalid-data"
+                  *ngIf="householdMembersForm.controls['lic_expired'].invalid && (householdMembersForm.controls['lic_expired'].dirty || householdMembersForm.controls['lic_expired'].touched)"
+                  class="invalid-data">
+                  Please Enter License Expired       </small> -->
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td><label>Street Name </label></td>
+                        <td class="f-horizontal">
+
+                            <input class="form-control" formControlName="street" placeholder="Enter Street Name ">
+                <small class="form-text text-muted invalid-data"
+                  *ngIf="householdMembersForm.controls['street'].invalid && (householdMembersForm.controls['street'].dirty || householdMembersForm.controls['street'].touched)"
+                  class="invalid-data">
+                  Please enter Street Name         </small>
+                        </td>
+                    </tr>
+
+
+
+                    <tr >
+                        <td class="f-horizontal">
+                            <label>Apartment </label></td>
+                        
+                        <td>
+                            <input class="form-control" formControlName="apt" placeholder="Enter Apartment Name">
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="householdMembersForm.controls['apt'].invalid && (householdMembersForm.controls['apt'].dirty || householdMembersForm.controls['apt'].touched)"
+                              class="invalid-data">
+                              Please enter Apartment Name          </small> -->
+
+                        </td>
+                    </tr>
+                 
+                  
+
+                     <tr>
+                        <td class="f-horizontal"><label>City</label></td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="city" placeholder="Enter City">
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="householdMembersForm.controls['city'].invalid && (householdMembersForm.controls['city'].dirty || householdMembersForm.controls['city'].touched)"
+                              class="invalid-data">
+                              Please enter City        </small> -->
+
+                        </td>
+                    </tr>
+                     
+
+                    <tr class="sub-form">
+                        <td><label>Zip</label></td>
+                        <td>
+                            <input class="form-control" formControlName="zip" placeholder="Enter Zip Code">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="householdMembersForm.controls['zip'].invalid && (householdMembersForm.controls['zip'].dirty || householdMembersForm.controls['zip'].touched)"
+              class="invalid-data">
+              Please enter Zip       </small> -->
+
+                        </td>
+                    </tr>
+
+                   
+
+
+                </table>
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <!-- <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a> -->
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
+
+</div>

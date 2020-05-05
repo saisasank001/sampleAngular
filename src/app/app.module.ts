@@ -49,11 +49,12 @@ import { InstantidComponent } from './instantid/instantid.component'; // for Ful
 import { CriteriaComponent } from './criteria/criteria.component';
 import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
 import { FilterIndividualSearchComponent } from './filter-individual-search/filter-individual-search.component';
+import { HouseholdMembersComponent } from './household-members/household-members.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
+    FooterComponent, 
     HeaderComponent,
     LoginComponent,
     HomeComponent,
@@ -106,7 +107,8 @@ import { FilterIndividualSearchComponent } from './filter-individual-search/filt
     InstantidComponent,
     FilterAdvancedLinkingComponent,
     
-    FilterIndividualSearchComponent
+    FilterIndividualSearchComponent,
+    HouseholdMembersComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,
