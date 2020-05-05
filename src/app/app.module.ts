@@ -50,6 +50,7 @@ import { CriteriaComponent } from './criteria/criteria.component';
 import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
 import { FilterIndividualSearchComponent } from './filter-individual-search/filter-individual-search.component';
 import { HouseholdMembersComponent } from './household-members/household-members.component';
+import { FireAndDiasterComponent } from './fire-and-diaster/fire-and-diaster.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +109,8 @@ import { HouseholdMembersComponent } from './household-members/household-members
     FilterAdvancedLinkingComponent,
     
     FilterIndividualSearchComponent,
-    HouseholdMembersComponent
+    HouseholdMembersComponent,
+    FireAndDiasterComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,
