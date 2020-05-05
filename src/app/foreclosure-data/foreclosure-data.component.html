@@ -28,11 +28,11 @@
                         <td>  <label>Forceclosure Code</label></td>
                         <td class="f-horizontal">
 
-                            <select  placeholder="Select Code" formControlName="forceClosureCode" >
+                            <select  placeholder="Select Code" formControlName="foreclosure_code" >
                                 <option value="">Select Forceclosure Code</option>
                                 <option *ngFor="let items of forceClosures" [value]="items">{{items}}</option></select>
                             <!-- <small class="form-text text-muted invalid-data"
-                              *ngIf="forceClosureForm.controls['forceClosureCode'].invalid && (forceClosureForm.controls['forceClosureCode'].dirty || forceClosureForm.controls['forceClosureCode'].touched)"
+                              *ngIf="forceClosureForm.controls['foreclosure_code'].invalid && (forceClosureForm.controls['foreclosure_code'].dirty || forceClosureForm.controls['foreclosure_code'].touched)"
                               class="invalid-data">
                               Please select Forceclosure Code</small> -->
                         </td>
@@ -43,11 +43,11 @@
                         <td>   <label>Address Potentially vacant</label></td>
                         <td class="f-horizontal">
 
-                            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" value="Yes" >Yes
-                            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" value="No">No
-                            <input class="form-control" type="radio" formControlName="addressProtentiallyVacant" value="All">All
+                            <input class="form-control" type="radio" formControlName="potential_vacant" value="Yes" >Yes
+                            <input class="form-control" type="radio" formControlName="potential_vacant" value="No">No
+                            <input class="form-control" type="radio" formControlName="potential_vacant" value="All">All
                             <!-- <small class="form-text text-muted invalid-data"
-                              *ngIf="forceClosureForm.controls['addressProtentiallyVacant'].invalid && (forceClosureForm.controls['addressProtentiallyVacant'].dirty || forceClosureForm.controls['addressProtentiallyVacant'].touched)"
+                              *ngIf="forceClosureForm.controls['potential_vacant'].invalid && (forceClosureForm.controls['potential_vacant'].dirty || forceClosureForm.controls['potential_vacant'].touched)"
                               class="invalid-data">
                               Please select Address Potentially vacant          </small> -->
                         </td>
@@ -60,16 +60,16 @@
                         <td class="f-horizontal">
                    
                              <label>From</label>
-            <input class="form-control" placeholder="enter days" formControlName="vacancyDurationFrom">
+            <input class="form-control" placeholder="enter days" formControlName="from_vacancy_duration">
             <!-- <small class="form-text text-muted invalid-data"
-              *ngIf="forceClosureForm.controls['vacancyDurationFrom'].invalid && (forceClosureForm.controls['vacancyDurationFrom'].dirty || forceClosureForm.controls['vacancyDurationFrom'].touched)"
+              *ngIf="forceClosureForm.controls['from_vacancy_duration'].invalid && (forceClosureForm.controls['from_vacancy_duration'].dirty || forceClosureForm.controls['from_vacancy_duration'].touched)"
               class="invalid-data">
               Please select Vacancy Duration From      </small> -->
             
             <label>To</label>
-            <input class="form-control" placeholder="enter days" formControlName="vacancyDurationTo" >
+            <input class="form-control" placeholder="enter days" formControlName="to_vacancy_duration" >
             <!-- <small class="form-text text-muted invalid-data"
-              *ngIf="forceClosureForm.controls['vacancyDurationTo'].invalid && (forceClosureForm.controls['vacancyDurationTo'].dirty || forceClosureForm.controls['vacancyDurationTo'].touched)"
+              *ngIf="forceClosureForm.controls['to_vacancy_duration'].invalid && (forceClosureForm.controls['to_vacancy_duration'].dirty || forceClosureForm.controls['to_vacancy_duration'].touched)"
               class="invalid-data">
               Please select Vacancy Duration To       </small> -->
                         </td>
