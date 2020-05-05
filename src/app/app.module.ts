@@ -38,7 +38,8 @@ import { IndividualSearchComponent } from './individual-search/individual-search
 // import { FullCalendarModule } from '@fullcalendar/angular';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import { EventsComponent } from './events/events.component';
-import { NcfComponent } from './pages/admin/ncf/ncf.component'; // for FullCalendar!
+import { NcfComponent } from './pages/admin/ncf/ncf.component';
+import { CurrentCarrierComponent } from './current-carrier/current-carrier.component'; // for FullCalendar!
 
 @NgModule({
   declarations: [
@@ -77,7 +78,9 @@ import { NcfComponent } from './pages/admin/ncf/ncf.component'; // for FullCalen
     
     EventsComponent,
     
-    NcfComponent
+    NcfComponent,
+    
+    CurrentCarrierComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,
