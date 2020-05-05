@@ -1,0 +1,520 @@
+
+<div class="page products">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
+        <div class="col-sm-9">
+            <div class="heading-bar">
+                2. Filter Master List Data by criteria
+            </div>
+            <form [formGroup]="ncfForm" class="form-group">
+                <table class="table table-hover light-dark-grey-bg">
+                    <tbody>
+                    <tr>
+                        <td><label>State </label></td>
+                        <td class="multi-select">
+
+                            <select formControlName="state" placeholder="All States">
+                                <option value="">All States</option>
+                                <option *ngFor="let items of states" value="items">{{items}}</option>
+                            </select>
+                            <!-- <small *ngIf="ncfForm.controls['state'].invalid && (ncfForm.controls['state'].dirty || ncfForm.controls['state'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please select state
+                            </small> -->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Open Installment Accounts:</label></td>
+                        <td class="f-horizontal">
+
+                            <label><input formControlName="installments" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="installments" type="radio" value="N">No</label>
+                            <label><input formControlName="installments" type="radio" value="">ALL</label>
+
+                            <small *ngIf="ncfForm.controls['installments'].invalid && (ncfForm.controls['installments'].dirty || ncfForm.controls['installments'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label>Trended:</label></td>
+                        <td class="f-horizontal">
+
+                            <label><input formControlName="ncf_trended" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="ncf_trended" type="radio" value="N">No</label>
+                            <label><input formControlName="ncf_trended" type="radio" value="">ALL</label>
+
+                            <small *ngIf="ncfForm.controls['ncf_trended'].invalid && (ncfForm.controls['ncf_trended'].dirty || ncfForm.controls['ncf_trended'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td><label>Enhanced:</label></td>
+                        <td class="f-horizontal">
+
+                            <label><input formControlName="ncf_enhanced" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="ncf_enhanced" type="radio" value="N">No</label>
+                            <label><input formControlName="ncf_enhanced" type="radio" value="">ALL</label>
+
+                            <small *ngIf="ncfForm.controls['ncf_enhanced'].invalid && (ncfForm.controls['ncf_enhanced'].dirty || ncfForm.controls['ncf_enhanced'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
+                    </tr>
+
+
+
+                    <tr class="sub-form">
+                        <td><label>Number of LN Judgments:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="lnjudgements" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['lnjudgements'].invalid && (ncfForm.controls['lnjudgements'].dirty || ncfForm.controls['lnjudgements'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of LN Judgments
+                            </small>
+
+                        </td>
+                    </tr>
+                    <tr class="sub-form">
+                        <td><label>Number of LN Liens:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="lnliens" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['lnliens'].invalid && (ncfForm.controls['lnliens'].dirty || ncfForm.controls['lnliens'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of LN Lien
+                            </small>
+
+                        </td>
+                    </tr>
+                    <tr class="sub-form">
+                        <td><label>Number of Bankruptcies:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="bankruptcies" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['bankruptcies'].invalid && (ncfForm.controls['bankruptcies'].dirty || ncfForm.controls['bankruptcies'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of Bankruptcies
+                            </small>
+
+                        </td>
+                    </tr>
+                    <tr class="sub-form">
+                        <td><label>Number of Refinance:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="refinance" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['refinance'].invalid && (ncfForm.controls['refinance'].dirty || ncfForm.controls['refinance'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of refinance
+                            </small>
+
+                        </td>
+                    </tr>
+                    <tr class="sub-form">
+                        <td><label>Number of Foreclosures:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="foreclosures" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['foreclosures'].invalid && (ncfForm.controls['foreclosures'].dirty || ncfForm.controls['foreclosures'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of Foreclosures
+                            </small>
+
+                        </td>
+                    </tr>
+
+                   <tr>
+                        <td><label>Real Estate Balance:</label></td>
+                        <td class="f-horizontal">
+
+                            <label><input formControlName="balance" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="balance" type="radio" value="N">No</label>
+                            <label><input formControlName="balance" type="radio" value="">ALL</label>
+
+                            <small *ngIf="ncfForm.controls['balance'].invalid && (ncfForm.controls['balance'].dirty || ncfForm.controls['balance'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of foreclosures
+                            </small>
+                        </td>
+                    </tr>
+                    <tr class="sub-form">
+                        <td><label>Number of Trades:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="trades" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['trades'].invalid && (ncfForm.controls['trades'].dirty || ncfForm.controls['trades'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of Tradess
+                            </small>
+
+                        </td>
+                    </tr>
+                       <tr class="sub-form">
+                        <td><label>Number of Revolving:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="revolving" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['revolving'].invalid && (ncfForm.controls['revolving'].dirty || ncfForm.controls['revolving'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of Revolving
+                            </small>
+
+                        </td>
+                    </tr>
+
+                    <tr class="sub-form">
+                        <td><label>Number of Installments:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="installments" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['installments'].invalid && (ncfForm.controls['installments'].dirty || ncfForm.controls['installments'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of Revolving
+                            </small>
+
+                        </td>
+                    </tr>
+                    <tr class="sub-form">
+                        <td><label>Number of Public Records:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="publicrecords" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['publicrecords'].invalid && (ncfForm.controls['publicrecords'].dirty || ncfForm.controls['publicrecords'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of Revolving
+                            </small>
+
+                        </td>
+                    </tr>
+                    <tr class="sub-form">
+                        <td><label>Number of Repossession:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="repossession" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['repossession'].invalid && (ncfForm.controls['repossession'].dirty || ncfForm.controls['repossession'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of Revolving
+                            </small>
+
+                        </td>
+                    </tr>
+                    <tr class="sub-form">
+                        <td><label>Number of Collection:</label></td>
+                        <td>
+                            <input class="form-control" formControlName="collection" placeholder="Enter Number" type="text">
+                            <small *ngIf="ncfForm.controls['collection'].invalid && (ncfForm.controls['collection'].dirty || ncfForm.controls['collection'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter Number of Revolving
+                            </small>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Attract Standard Auto 2.0:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="score_from" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['score_from'].invalid && (ncfForm.controls['score_from'].dirty || ncfForm.controls['score_from'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="score_to" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['score_to'].invalid && (ncfForm.controls['score_to'].dirty || ncfForm.controls['score_to'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion_code" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion_code'].invalid && (ncfForm.controls['exclusion_code'].dirty || ncfForm.controls['exclusion_code'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Attract Non-Standard Auto 2.0:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="scoreFrom1" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['scoreFrom1'].invalid && (ncfForm.controls['scoreFrom1'].dirty || ncfForm.controls['scoreFrom1'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="lengthTo1" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['lengthTo1'].invalid && (ncfForm.controls['lengthTo1'].dirty || ncfForm.controls['lengthTo1'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion1" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion1'].invalid && (ncfForm.controls['exclusion1'].dirty || ncfForm.controls['exclusion1'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Attract Home 2.0 HO-4:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="scoreFrom2" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['scoreFrom2'].invalid && (ncfForm.controls['scoreFrom2'].dirty || ncfForm.controls['scoreFrom2'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="lengthTo2" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['lengthTo2'].invalid && (ncfForm.controls['scoreFrom2'].dirty || ncfForm.controls['scoreFrom2'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion2" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion2'].invalid && (ncfForm.controls['exclusion2'].dirty || ncfForm.controls['exclusion2'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Attract Prop 3 Home 2.0 HO-3:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="scoreFrom3" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['scoreFrom3'].invalid && (ncfForm.controls['scoreFrom3'].dirty || ncfForm.controls['scoreFrom3'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="lengthTo3" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['lengthTo3'].invalid && (ncfForm.controls['lengthTo3'].dirty || ncfForm.controls['lengthTo3'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion3" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion3'].invalid && (ncfForm.controls['exclusion3'].dirty || ncfForm.controls['exclusion3'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Attract One:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="scoreFrom4" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['scoreFrom4'].invalid && (ncfForm.controls['scoreFrom4'].dirty || ncfForm.controls['scoreFrom4'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="lengthTo4" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['lengthTo4'].invalid && (ncfForm.controls['lengthTo4'].dirty || ncfForm.controls['lengthTo4'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion4" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion4'].invalid && (ncfForm.controls['exclusion4'].dirty || ncfForm.controls['exclusion4'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Attract One 3.0:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="scoreFrom5" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['scoreFrom5'].invalid && (ncfForm.controls['scoreFrom5'].dirty || ncfForm.controls['scoreFrom5'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="lengthTo5" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['lengthTo5'].invalid && (ncfForm.controls['lengthTo5'].dirty || ncfForm.controls['lengthTo5'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion5" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion5'].invalid && (ncfForm.controls['exclusion5'].dirty || ncfForm.controls['exclusion5'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Attract Auto 3.0:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="scoreFrom6" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['scoreFrom6'].invalid && (ncfForm.controls['scoreFrom6'].dirty || ncfForm.controls['scoreFrom6'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="lengthTo6" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['lengthTo6'].invalid && (ncfForm.controls['lengthTo6'].dirty || ncfForm.controls['lengthTo6'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion6" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion6'].invalid && (ncfForm.controls['exclusion6'].dirty || ncfForm.controls['exclusion6'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Attract Home 3.0:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="scoreFrom7" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['scoreFrom7'].invalid && (ncfForm.controls['scoreFrom7'].dirty || ncfForm.controls['scoreFrom7'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="lengthTo7" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['lengthTo7'].invalid && (ncfForm.controls['lengthTo7'].dirty || ncfForm.controls['lengthTo7'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion7" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion7'].invalid && (ncfForm.controls['exclusion7'].dirty || ncfForm.controls['exclusion7'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Attract Lifes per Cr:</label></td>
+                        <td>
+                            <label> Score From:</label>
+                            <input class="form-control" formControlName="scoreFrom8" placeholder="Enter Score From" type="text">
+                            <small *ngIf="ncfForm.controls['scoreFrom8'].invalid && (ncfForm.controls['scoreFrom8'].dirty || ncfForm.controls['scoreFrom8'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter from residency number
+                            </small>
+                            <label>Score To:</label>
+                            <input class="form-control" formControlName="lengthTo8" placeholder="Enter Score To" type="text">
+
+                            <small *ngIf="ncfForm.controls['lengthTo8'].invalid && (ncfForm.controls['lengthTo8'].dirty || ncfForm.controls['lengthTo8'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please enter to residency number
+                            </small>
+
+                            <label>Exclusion Code:</label>
+                            <input class="form-control" formControlName="exclusion8" placeholder="Enter Exclusion Code" type="text">
+
+                            <small *ngIf="ncfForm.controls['exclusion8'].invalid && (ncfForm.controls['exclusion8'].dirty || ncfForm.controls['exclusion8'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please Enter Exclusion Code
+                            </small>
+                        </td>
+                    </tr>
+
+
+                </table>
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
+
+</div>
