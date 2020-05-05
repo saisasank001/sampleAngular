@@ -1,0 +1,102 @@
+<div class="page products">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
+        <div class="col-sm-9">
+            <div class="heading-bar">
+                2. Filter Advanced Linking Home Data by criteria
+            </div>
+            <form [formGroup]="filterAdvancedLinkingForm" class="form-group">
+                <table class="table table-hover light-dark-grey-bg">
+                    <tbody>
+                        <tr>
+                            <td><label>State </label></td>
+                            <td class="multi-select">
+
+                                <select formControlName="state" placeholder="All States">
+                                    <option value="">All States</option>
+                                    <option *ngFor="let items of states" value="items">{{items}}</option>
+                                </select>
+                                <!-- <small *ngIf="ncfForm.controls['state'].invalid && (ncfForm.controls['state'].dirty || ncfForm.controls['state'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please select state
+                            </small> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Statements and Alerts </label></td>
+                            <td class="multi-select">
+                                <input class="form-control" type="checkbox" formControlName="statement_type" >Alerts
+                                <input class="form-control" type="checkbox" formControlName="statement_type" >Customer Level                           
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Record-level Statements</label></td>
+                            <td class="multi-select">                                
+                                <input class="form-control" type="checkbox" formControlName="product" >C.L.U.E Property                                
+                                <input class="form-control" type="checkbox" formControlName="product" >Current Carrier Property                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label># Statements by</label></td>
+                            <td class="multi-select">
+                                <input class="form-control" type="radio" formControlName="statements_by" >LexID
+                                <input class="form-control" type="radio" formControlName="statements_by" > Address
+                                <label>From</label>      
+                                <input class="form-control" type="number" placeholder="Enter Number" formControlName="from_statements" >   
+                                <label>To</label>      
+                                <input class="form-control" type="number" placeholder="Enter Number" formControlName="to_statements" >         
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Max Size</label></td>
+                            <td class="multi-select">
+                                <input class="form-control" type="radio" formControlName="max_statement_size">Yes
+                                <input class="form-control" type="radio" formControlName="max_statement_size">No
+                                <input class="form-control" type="radio" formControlName="max_statement_size">All
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Identity Not Resolved</label></td>
+                            <td class="multi-select">
+                                <input class="form-control" type="radio" formControlName="identity_not_resolved">Yes
+                                <input class="form-control" type="radio" formControlName="identity_not_resolved">No
+                                <input class="form-control" type="radio" formControlName="identity_not_resolved">All
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>LexID</label></td>
+                            <td class="multi-select">
+                                <input class="form-control" placeholder="Enter LexID" formControlName="lexid">                                
+                            </td>
+                        </tr>   
+                </table>
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control"></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <!-- <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block"
+                    target="_blank" download="master.pdf">Download Legend</a> -->
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
+
+</div>

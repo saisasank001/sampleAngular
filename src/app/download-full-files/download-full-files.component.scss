@@ -1,0 +1,19 @@
+.header{
+    height:42px;
+    padding:10.5px;
+    background:red;
+    display: flex;
+    justify-content: space-between;
+    color:#fff;
+    font-weight:bold;
+    th{
+        font-weight: bold;
+    }
+}
+
+.panel{
+    border:2px solid #ccc;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {background: #CCC}

@@ -21,7 +21,12 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
 import { CriteriaComponent } from './criteria/criteria.component';
+<<<<<<< HEAD
 import { FilterIndividualSearchComponent } from './filter-individual-search/filter-individual-search.component';
+=======
+import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
+import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
+>>>>>>> c44f91813f26b409b8b06672aac07c7fed1bf87a
 
 
 const routes: Routes = [
@@ -55,6 +60,7 @@ const routes: Routes = [
             path:'individual-search',
             component: IndividualSearchComponent
           },
+          
         ]
       },
       {
@@ -113,8 +119,16 @@ const routes: Routes = [
         component:CriteriaComponent
       },
       {
+<<<<<<< HEAD
         path:'filter-individual-search',
         component:FilterIndividualSearchComponent
+=======
+        path:'download-full-files',
+        component: DownloadFullFilesComponent},
+        {
+        path:'filter-advanced-linking',
+        component: FilterAdvancedLinkingComponent
+>>>>>>> c44f91813f26b409b8b06672aac07c7fed1bf87a
       }
       
       

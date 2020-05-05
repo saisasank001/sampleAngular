@@ -47,6 +47,7 @@ import { NcfComponent } from './pages/admin/ncf/ncf.component';
 import { CurrentCarrierComponent } from './current-carrier/current-carrier.component';
 import { InstantidComponent } from './instantid/instantid.component'; // for FullCalendar!
 import { CriteriaComponent } from './criteria/criteria.component';
+import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
 import { FilterIndividualSearchComponent } from './filter-individual-search/filter-individual-search.component';
 
 @NgModule({
@@ -103,6 +104,7 @@ import { FilterIndividualSearchComponent } from './filter-individual-search/filt
     CurrentCarrierComponent,
     
     InstantidComponent,
+    FilterAdvancedLinkingComponent,
     
     FilterIndividualSearchComponent
   ],

@@ -1,123 +1,186 @@
+
 <div class="page products">
-    <div class="row">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
         <div class="col-sm-9">
             <div class="heading-bar">
                 2. Filter Master List Data by criteria
             </div>
-            <table class="table table-hover light-grey-bg">
-                <tbody>
+            <form [formGroup]="homeLifeMasterListForm" class="form-group">
+                <table class="table table-hover  light-dark-grey-bg">
+                    <tbody>
                     <tr>
-                        <td>State</td>
+                        <td><label>State:</label></td>
                         <td>
-                            <select class="form-control">
-                                <option value="">All States</option>
+                            <select class="form-control" formControlName="state">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
                             </select>
-                    </td>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['state'].invalid && (homeLifeMasterListForm.controls['state'].dirty || homeLifeMasterListForm.controls['state'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                                Please select state
+                            </small>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label>Advanced Linking (ALi):</label></td>
+                        <td>
+
+                            <label><input formControlName="ali" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="ali" type="radio" value="N">No</label>
+                            <label><input formControlName="ali" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['ali'].invalid && (homeLifeMasterListForm.controls['ali'].dirty || homeLifeMasterListForm.controls['ali'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Current Carrier Property:</label></td>
+                        <td>
+
+                            <label><input formControlName="current" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="current" type="radio" value="N">No</label>
+                            <label><input formControlName="current" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['current'].invalid && (homeLifeMasterListForm.controls['current'].dirty || homeLifeMasterListForm.controls['current'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
                     </tr>
                     <tr>
-                        <td>ADD</td>
+                        <td><label>Fire and Disaster Response:</label></td>
                         <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
+
+                            <label><input formControlName="fire" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="fire" type="radio" value="N">No</label>
+                            <label><input formControlName="fire" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['fire'].invalid && (homeLifeMasterListForm.controls['fire'].dirty || homeLifeMasterListForm.controls['fire'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
                     </tr>
                     <tr>
-                        <td>ADD</td>
+                        <td><label>Foreclosure:</label></td>
                         <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
+
+                            <label><input formControlName="force" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="force" type="radio" value="N">No</label>
+                            <label><input formControlName="force" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['force'].invalid && (homeLifeMasterListForm.controls['force'].dirty || homeLifeMasterListForm.controls['force'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>HH Members:</label></td>
+                        <td>
+
+                            <label><input formControlName="household" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="household" type="radio" value="N">No</label>
+                            <label><input formControlName="household" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['household'].invalid && (homeLifeMasterListForm.controls['household'].dirty || homeLifeMasterListForm.controls['household'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
                     </tr>
                     <tr>
-                        <td>ADD</td>
+                        <td><label>Instant ID:</label></td>
                         <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
+
+                            <label><input formControlName="instantid" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="instantid" type="radio" value="N">No</label>
+                            <label><input formControlName="instantid" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['instantid'].invalid && (homeLifeMasterListForm.controls['instantid'].dirty || homeLifeMasterListForm.controls['instantid'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label>InsurView Attributes:</label></td>
+                        <td>
+
+                            <label><input formControlName="insureview" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="insureview" type="radio" value="N">No</label>
+                            <label><input formControlName="insureview" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['insureview'].invalid && (homeLifeMasterListForm.controls['insureview'].dirty || homeLifeMasterListForm.controls['insureview'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label>Property Data:</label></td>
+                        <td>
+
+                            <label><input formControlName="property" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="property" type="radio" value="N">No</label>
+                            <label><input formControlName="property" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['property'].invalid && (homeLifeMasterListForm.controls['property'].dirty || homeLifeMasterListForm.controls['property'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
                     </tr>
                     <tr>
-                        <td>ADD</td>
+                        <td><label>State Opt Out:</label></td>
                         <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
+
+                            <label><input formControlName="opt" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="opt" type="radio" value="N">No</label>
+                            <label><input formControlName="opt" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['opt'].invalid && (homeLifeMasterListForm.controls['opt'].dirty || homeLifeMasterListForm.controls['opt'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
                     </tr>
+
                     <tr>
-                        <td>ADD</td>
+                        <td><label>Vacancy:</label></td>
                         <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
+
+                            <label><input formControlName="vacancy" type="radio" value="Y">Yes</label>
+                            <label><input formControlName="vacancy" type="radio" value="N">No</label>
+                            <label><input formControlName="vacancy" type="radio" value="">ALL</label>
+
+                            <small *ngIf="homeLifeMasterListForm.controls['vacancy'].invalid && (homeLifeMasterListForm.controls['vacancy'].dirty || homeLifeMasterListForm.controls['vacancy'].touched)"
+                                   class="form-text text-muted invalid-data"
+                                   class="invalid-data">
+                            </small>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>ADD</td>
-                        <td>
-                            <input type="radio"> Yes <input type="radio"> No <input type="radio"> All
-                    </td>
-                    </tr>
-                </tbody>
-            </table>
+
+
+                    </tbody>
+
+                </table>
+            </form>
         </div>
         <div class="col-sm-3">
             <div class="heading-bar">
@@ -125,18 +188,23 @@
             </div>
             <div class="records">
                 <span>Total Dataset Size</span>
-                <h3>37,897</h3>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
                 <p>Records</p>
             </div>
             <div>
-                <p>Download Limit : <input value="15000"></p>
-                <button class="btn dark-grey-bg white-text btn-block">Download Data</button>
-                <button class="btn dark-grey-bg white-text btn-block">Clear All</button>
-                <button class="btn dark-grey-bg white-text btn-block">Download Legend</button>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a>
             </div>
         </div>
+
     </div>
-    
-    
-   
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
+
 </div>
+
