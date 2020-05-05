@@ -13,7 +13,13 @@ export class CurrentCarrierComponent implements OnInit {
   policytypes:any=["policy1","policy2"];
   coverageTypes:any=["coverage type1","coverage  Type2"]
   currentCarrierPropertyForm: FormGroup;
-  
+  coverage:any=[{
+    coverageType:"",
+    occurence:"",
+    limit:"",
+    individual:"",
+    and:""
+  }];
   constructor(private formBuilder:FormBuilder, private router:Router) { }
 
   ngOnInit(): void {
@@ -33,12 +39,22 @@ export class CurrentCarrierComponent implements OnInit {
       endDateTo: ['', []],
       cancelDateFrom: ['', []],
       cancelDateTo: ['', []],
-      coverageType: ['', []],
-      occurence: ['', []],
-      limit: ['', []],
-      individual: ['', []],
-     
+    
   });
   }
-
+  addCoverage(){
+    this.coverage.push({
+      coverageType:"",
+      occurence:"",
+      limit:"",
+      individual:"",
+      and:""
+    })
+    console.log(this.coverage)
+  }
+  removeCoverage(index){
+    if (this.coverage.length > 1) {
+      this.coverage.splice(index, 1);
+    }
+  }
 }
