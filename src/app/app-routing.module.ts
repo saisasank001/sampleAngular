@@ -21,6 +21,7 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
 import { CriteriaComponent } from './criteria/criteria.component';
+import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
 
 
 const routes: Routes = [
@@ -110,6 +111,10 @@ const routes: Routes = [
       {
         path:'criteria',
         component:CriteriaComponent
+      },
+      {
+        path:'filter-advanced-linking',
+        component: FilterAdvancedLinkingComponent
       }
       
       

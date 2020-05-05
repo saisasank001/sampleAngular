@@ -47,6 +47,7 @@ import { NcfComponent } from './pages/admin/ncf/ncf.component';
 import { CurrentCarrierComponent } from './current-carrier/current-carrier.component';
 import { InstantidComponent } from './instantid/instantid.component'; // for FullCalendar!
 import { CriteriaComponent } from './criteria/criteria.component';
+import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,9 @@ import { CriteriaComponent } from './criteria/criteria.component';
     
     CurrentCarrierComponent,
     
-    InstantidComponent
+    InstantidComponent,
+    
+    FilterAdvancedLinkingComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,
