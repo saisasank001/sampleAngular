@@ -38,6 +38,7 @@ import { IndividualSearchComponent } from './individual-search/individual-search
 // import { FullCalendarModule } from '@fullcalendar/angular';
 import {FullCalendarModule} from 'primeng/fullcalendar';
 import { EventsComponent } from './events/events.component';
+<<<<<<< HEAD
 import { AnnouncementEditComponent } from './announcement-edit/announcement-edit.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
@@ -45,6 +46,10 @@ import { EventDetailsComponent } from './event-details/event-details.component';
  // for FullCalendar!
 import { NcfComponent } from './pages/admin/ncf/ncf.component';
 import { CriteriaComponent } from './criteria/criteria.component'; // for FullCalendar!
+=======
+import { NcfComponent } from './pages/admin/ncf/ncf.component';
+import { CurrentCarrierComponent } from './current-carrier/current-carrier.component'; // for FullCalendar!
+>>>>>>> ffd98786549a77a955bb891b1e6c9b8f3b5580e7
 
 @NgModule({
   declarations: [
@@ -83,6 +88,7 @@ import { CriteriaComponent } from './criteria/criteria.component'; // for FullCa
     
     EventsComponent,
     
+<<<<<<< HEAD
     AnnouncementEditComponent,
     
     EventAddComponent,
@@ -94,6 +100,11 @@ import { CriteriaComponent } from './criteria/criteria.component'; // for FullCa
     NcfComponent,
 
     CriteriaComponent
+=======
+    NcfComponent,
+    
+    CurrentCarrierComponent
+>>>>>>> ffd98786549a77a955bb891b1e6c9b8f3b5580e7
   ],
   imports: [
     NgxNewstickerAlbeModule ,
