@@ -43,6 +43,8 @@ import { EventAddComponent } from './event-add/event-add.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
  // for FullCalendar!
+import { NcfComponent } from './pages/admin/ncf/ncf.component';
+import { CriteriaComponent } from './criteria/criteria.component'; // for FullCalendar!
 
 @NgModule({
   declarations: [
@@ -89,6 +91,9 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     
     EventDetailsComponent,
 
+    NcfComponent,
+
+    CriteriaComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,

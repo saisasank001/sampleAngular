@@ -20,6 +20,7 @@ import { AnnouncementEditComponent } from './announcement-edit/announcement-edit
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { EventEditComponent } from './event-edit/event-edit.component';
+import { CriteriaComponent } from './criteria/criteria.component';
 
 
 const routes: Routes = [
@@ -105,7 +106,12 @@ const routes: Routes = [
       {
         path:'event-edit',
         component:EventEditComponent
+      },
+      {
+        path:'criteria',
+        component:CriteriaComponent
       }
+      
       
     ]
   }
