@@ -1,0 +1,111 @@
+
+<div class="page products">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
+        <div class="col-sm-9">
+            <div class="heading-bar">
+                2.Filter Instant Data ID Data by Criteria
+            </div>
+            <form [formGroup]="instantDataIdForm" class="form-group">
+                <table class="table table-hover light-dark-grey-bg">
+                    <tbody>
+                    <tr>
+                        <td><label>State </label></td>
+                        <td class="multi-select">
+
+                            <select formControlName="state" placeholder="All States">
+                                <option value="">All States</option>
+                                <option *ngFor="let items of states" value="items">{{items}}</option>
+                            </select>
+                            <!--  <small class="form-text text-muted invalid-data"
+                  *ngIf="instantDataIdForm.controls['state'].invalid && (instantDataIdForm.controls['state'].dirty || instantDataIdForm.controls['state'].touched)"
+                  class="invalid-data">
+                  Please enter State         </small> -->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>  <label>NAS(Name/Address/SSN)</label></td>
+                        <td class="f-horizontal">
+
+                            <input class="form-control" formControlName="nas" placeholder="Enter NAS ">
+
+                            <!-- <small class="form-text text-muted invalid-data"
+                            *ngIf="instantDataIdForm.controls['nas'].invalid && (instantDataIdForm.controls['nas'].dirty || instantDataIdForm.controls['nas'].touched)"
+                            class="invalid-data">
+                            Please enter NAS        </small> -->
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>   <label>NAP(Name/Address/Phone) </label></td>
+                        <td class="f-horizontal">
+
+                            <input class="form-control" formControlName="nap" placeholder="Enter NAP">
+
+                            <small class="form-text text-muted invalid-data"
+                            *ngIf="instantDataIdForm.controls['nap'].invalid && (instantDataIdForm.controls['nap'].dirty || instantDataIdForm.controls['nap'].touched)"
+                            class="invalid-data">
+                            Please enter NAP          </small>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td> <label>CVI(Customer Verification Index)</label></td>
+                        <td class="f-horizontal">
+
+                            <input class="form-control" formControlName="cvi" placeholder="Enter CVI">
+                <!-- <small class="form-text text-muted invalid-data"
+                  *ngIf="instantDataIdForm.controls['cvi'].invalid && (instantDataIdForm.controls['cvi'].dirty || instantDataIdForm.controls['cvi'].touched)"
+                  class="invalid-data">
+                  Please enter CVI        </small> -->
+                        </td>
+                    </tr>
+
+
+
+                    <tr class="sub-form">
+                        <td> <label>Risk Codes  </label></td>
+                        <td>
+                            
+                            <input class="form-control" formControlName="riskCodes" placeholder="Enter Risk Code(s) separated by comma">
+                            <small class="form-text text-muted invalid-data"
+                              *ngIf="instantDataIdForm.controls['riskCodes'].invalid && (instantDataIdForm.controls['riskCodes'].dirty || instantDataIdForm.controls['riskCodes'].touched)"
+                              class="invalid-data">
+                              Please enter Risk Codes       </small>
+
+                        </td>
+                    </tr>
+
+               </table>
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
+
+</div>
