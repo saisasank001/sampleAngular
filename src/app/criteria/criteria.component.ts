@@ -15,21 +15,21 @@ export class CriteriaComponent implements OnInit {
   ngOnInit() {
     this.criteriaForm = this.formBuilder.group({
       state: ['',[]],
-      data_source:['',[Validators.required]],
-      from_living_area_sf:['',[Validators.required]],
-      to_living_area_sf:['',[Validators.required]],
-      from_number_of_stories:['',[Validators.required]],
-      to_number_of_stories:['',[Validators.required]],
-      from_number_of_bedrooms:['',[Validators.required]],
-      to_number_of_bedrooms:['',[Validators.required]],
-      from_number_of_baths:['',[Validators.required]],
-      to_number_of_baths:['',[Validators.required]],
-      from_number_of_fireplaces:['',[Validators.required]],
-      to_number_of_fireplaces:['',[Validators.required]],
-      pool_type:['',[Validators.required]],
-      air_condition:['',[Validators.required]],
-      from_year_built:['',[Validators.required]],
-      to_year_built:['',[Validators.required]],
+      data_source:['',[]],
+      from_living_area_sf:['',[]],
+      to_living_area_sf:['',[]],
+      from_number_of_stories:['',[]],
+      to_number_of_stories:['',[]],
+      from_number_of_bedrooms:['',[]],
+      to_number_of_bedrooms:['',[]],
+      from_number_of_baths:['',[]],
+      to_number_of_baths:['',[]],
+      from_number_of_fireplaces:['',[]],
+      to_number_of_fireplaces:['',[]],
+      pool_type:['',[]],
+      air_condition:['',[]],
+      from_year_built:['',[]],
+      to_year_built:['',[]],
 
     }); 
 
@@ -40,7 +40,22 @@ export class CriteriaComponent implements OnInit {
     // this.records = this.loaderService.showProductsLoader();
     let json = {
         // session_id: this.userService.getSessionId(),
-        state:data.state
+        state:data.state,
+        data_source:data.data_source,
+        from_living_area_sf:data.from_living_area_sf,
+        to_living_area_sf:data.to_living_area_sf,
+        from_number_of_stories:data.from_number_of_stories,
+        to_number_of_stories:data.to_number_of_stories,
+        from_number_of_bedrooms:data.from_number_of_bedrooms,
+        to_number_of_bedrooms:data.to_number_of_bedrooms,
+        from_number_of_baths:data.from_number_of_baths,
+        to_number_of_baths:data.to_number_of_baths,
+        from_number_of_fireplaces:data.from_number_of_fireplaces,
+        to_number_of_fireplaces:data.to_number_of_fireplaces,
+        pool_type:data.pool_type,
+        air_condition:data.air_condition,
+        from_year_built:data.from_year_built,
+        to_year_built:data.to_year_built,
 
     };
 
@@ -92,19 +107,49 @@ export class CriteriaComponent implements OnInit {
 }
 
 clearAll(){
-    this.homeLifeMasterListForm.reset();
-    this.homeLifeMasterListForm.patchValue({
-        ali: "",  // example
+    this.criteriaForm.reset();
+    this.criteriaForm.patchValue({
+        state: "",
+        data_source:"",
+        from_living_area_sf:"",
+        to_living_area_sf:"",
+        from_number_of_stories:"",
+        to_number_of_stories:"",
+        from_number_of_bedrooms:"",
+        to_number_of_bedrooms:"",
+        from_number_of_baths:"",
+        to_number_of_baths:"",
+        from_number_of_fireplaces:"",
+        to_number_of_fireplaces:"",
+        pool_type:"",
+        air_condition:"",
+        from_year_built:"",
+        to_year_built:"", // example
       })
-    this.getRecordsCount(this.homeLifeMasterListForm.value);
+    this.getRecordsCount(this.criteriaForm.value);
 }
 
 downloadRecords() {
     try {
-        let data = this.homeLifeMasterListForm.value;
+        let data = this.criteriaForm.value;
         let json = {
             // session_id: this.userService.getSessionId(),
-            state:data.state
+            state:data.state,
+            data_source:data.data_source,
+            from_living_area_sf:data.from_living_area_sf,
+            to_living_area_sf:data.to_living_area_sf,
+            from_number_of_stories:data.from_number_of_stories,
+            to_number_of_stories:data.to_number_of_stories,
+            from_number_of_bedrooms:data.from_number_of_bedrooms,
+            to_number_of_bedrooms:data.to_number_of_bedrooms,
+            from_number_of_baths:data.from_number_of_baths,
+            to_number_of_baths:data.to_number_of_baths,
+            from_number_of_fireplaces:data.from_number_of_fireplaces,
+            to_number_of_fireplaces:data.to_number_of_fireplaces,
+            pool_type:data.pool_type,
+            air_condition:data.air_condition,
+            from_year_built:data.from_year_built,
+            to_year_built:data.to_year_built,
             // max_records: this.downloadLimit, // adding download limit
             // start_at: "",
         };
