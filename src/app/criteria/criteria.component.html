@@ -28,11 +28,11 @@
                             <td><label>Data Source</label></td>
                             <td class="f-horizontal">
 
-                                <input class="form-control" type="radio" formControlName="dataSource">A
-                                <input class="form-control" type="radio" formControlName="dataSource">B
-                                <input class="form-control" type="radio" formControlName="dataSource">All
+                                <input class="form-control" type="radio" formControlName="data_source">A
+                                <input class="form-control" type="radio" formControlName="data_source">B
+                                <input class="form-control" type="radio" formControlName="data_source">All
                                 <!-- <small class="form-text text-muted invalid-data"
-                              *ngIf="propertyDataForm.controls['dataSource'].invalid && (propertyDataForm.controls['dataSource'].dirty || propertyDataForm.controls['dataSource'].touched)"
+                              *ngIf="propertyDataForm.controls['data_source'].invalid && (propertyDataForm.controls['data_source'].dirty || propertyDataForm.controls['data_source'].touched)"
                               class="invalid-data">
                               Please Enter Data Source         </small> -->
                             </td>
@@ -41,15 +41,15 @@
                             <td><label>Living Area SF</label></td>
                             <td class="f-horizontal">
                                 <label>From</label>
-                                <input class="form-control" formControlName="areaFrom" placeholder="Enter Min">
+                                <input class="form-control" formControlName="from_living_area_sf" placeholder="Enter Min">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                  *ngIf="propertyDataForm.controls['areaFrom'].invalid && (propertyDataForm.controls['areaFrom'].dirty || propertyDataForm.controls['areaFrom'].touched)"
+                                  *ngIf="propertyDataForm.controls['from_living_area_sf'].invalid && (propertyDataForm.controls['from_living_area_sf'].dirty || propertyDataForm.controls['from_living_area_sf'].touched)"
                                   class="invalid-data">
                                   Please Enter Min Living Area SF        </small> -->
                                   <label>To</label>
-                                <input class="form-control" formControlName="areaTo" placeholder="Enter Max">
+                                <input class="form-control" formControlName="to_living_area_sf" placeholder="Enter Max">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                  *ngIf="propertyDataForm.controls['areaTo'].invalid && (propertyDataForm.controls['areaTo'].dirty || propertyDataForm.controls['areaTo'].touched)"
+                                  *ngIf="propertyDataForm.controls['to_living_area_sf'].invalid && (propertyDataForm.controls['to_living_area_sf'].dirty || propertyDataForm.controls['to_living_area_sf'].touched)"
                                   class="invalid-data">
                                   Please Enter Max Living Area SF       </small> -->
                             </td>
@@ -58,15 +58,15 @@
                             <td><label>Stories</label></td>
                             <td class="f-horizontal">
                                 <label>From</label>
-                                <input class="form-control" formControlName="storiesFrom" placeholder="Enter Min">
+                                <input class="form-control" formControlName="from_number_of_stories" placeholder="Enter Min">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                  *ngIf="propertyDataForm.controls['storiesFrom'].invalid && (propertyDataForm.controls['storiesFrom'].dirty || propertyDataForm.controls['storiesFrom'].touched)"
+                                  *ngIf="propertyDataForm.controls['from_number_of_stories'].invalid && (propertyDataForm.controls['from_number_of_stories'].dirty || propertyDataForm.controls['from_number_of_stories'].touched)"
                                   class="invalid-data">
                                   Please Enter Min Stories        </small> -->
                                   <label>To</label>
-                                <input class="form-control" formControlName="storiesTo" placeholder="Enter Max">
+                                <input class="form-control" formControlName="to_number_of_stories" placeholder="Enter Max">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                  *ngIf="propertyDataForm.controls['storiesTo'].invalid && (propertyDataForm.controls['storiesTo'].dirty || propertyDataForm.controls['storiesTo'].touched)"
+                                  *ngIf="propertyDataForm.controls['to_number_of_stories'].invalid && (propertyDataForm.controls['to_number_of_stories'].dirty || propertyDataForm.controls['to_number_of_stories'].touched)"
                                   class="invalid-data">
                                   Please Enter Max Stories      </small> -->
                             </td>
@@ -76,15 +76,15 @@
                             <td><label>Bedrooms</label></td>
                             <td class="f-horizontal">
                                 <label>From</label>
-                                <input class="form-control" formControlName="bedroomsMin" placeholder="Enter Min">
+                                <input class="form-control" formControlName="from_number_of_bedrooms" placeholder="Enter Min">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                *ngIf="propertyDataForm.controls['bedroomsMin'].invalid && (propertyDataForm.controls['bedroomsMin'].dirty || propertyDataForm.controls['bedroomsMin'].touched)"
+                                *ngIf="propertyDataForm.controls['from_number_of_bedrooms'].invalid && (propertyDataForm.controls['from_number_of_bedrooms'].dirty || propertyDataForm.controls['from_number_of_bedrooms'].touched)"
                                 class="invalid-data">
                                 Please Enter Min Bedrooms        </small> -->
                                 <label>To</label>
-                                <input class="form-control" formControlName="bedroomsMax" placeholder="Enter Max">
+                                <input class="form-control" formControlName="to_number_of_bedrooms" placeholder="Enter Max">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                *ngIf="propertyDataForm.controls['bedroomsMax'].invalid && (propertyDataForm.controls['bedroomsMax'].dirty || propertyDataForm.controls['bedroomsMax'].touched)"
+                                *ngIf="propertyDataForm.controls['to_number_of_bedrooms'].invalid && (propertyDataForm.controls['to_number_of_bedrooms'].dirty || propertyDataForm.controls['to_number_of_bedrooms'].touched)"
                                 class="invalid-data">
                                 Please Enter Max Bedrooms      </small> -->
                             </td>
@@ -93,15 +93,15 @@
                             <td><label>Baths </label></td>
                             <td class="f-horizontal">
                                 <label>From</label>
-                                <input class="form-control" formControlName="bathsMin" placeholder="Enter Min">
+                                <input class="form-control" formControlName="from_number_of_baths" placeholder="Enter Min">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                *ngIf="propertyDataForm.controls['bathsMin'].invalid && (propertyDataForm.controls['bathsMin'].dirty || propertyDataForm.controls['bathsMin'].touched)"
+                                *ngIf="propertyDataForm.controls['from_number_of_baths'].invalid && (propertyDataForm.controls['from_number_of_baths'].dirty || propertyDataForm.controls['from_number_of_baths'].touched)"
                                 class="invalid-data">
                                 Please Enter Min Bathrooms        </small> -->
                                 <label>To</label>
-                                <input class="form-control" formControlName="bathsMax" placeholder="Enter Max">
+                                <input class="form-control" formControlName="to_number_of_baths" placeholder="Enter Max">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                *ngIf="propertyDataForm.controls['bathsMax'].invalid && (propertyDataForm.controls['bathsMax'].dirty || propertyDataForm.controls['bathsMax'].touched)"
+                                *ngIf="propertyDataForm.controls['to_number_of_baths'].invalid && (propertyDataForm.controls['to_number_of_baths'].dirty || propertyDataForm.controls['to_number_of_baths'].touched)"
                                 class="invalid-data">
                                 Please Enter Max Bathrooms      </small> -->
                             </td>
@@ -110,53 +110,53 @@
                             <td><label>Fireplace</label></td>
                             <td class="f-horizontal">
                                 <label>From</label>
-                                <input class="form-control" formControlName="fireplaceMin" placeholder="Enter Min">
+                                <input class="form-control" formControlName="from_number_of_fireplaces" placeholder="Enter Min">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                  *ngIf="propertyDataForm.controls['fireplaceMin'].invalid && (propertyDataForm.controls['fireplaceMin'].dirty || propertyDataForm.controls['fireplaceMin'].touched)"
+                                  *ngIf="propertyDataForm.controls['from_number_of_fireplaces'].invalid && (propertyDataForm.controls['from_number_of_fireplaces'].dirty || propertyDataForm.controls['from_number_of_fireplaces'].touched)"
                                   class="invalid-data">
                                   Please Enter Min Fireplaces       </small> -->
                                   <label>To</label>
-                                <input class="form-control" formControlName="fireplaceMax" placeholder="Enter Max">
+                                <input class="form-control" formControlName="to_number_of_fireplaces" placeholder="Enter Max">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                  *ngIf="propertyDataForm.controls['fireplaceMax'].invalid && (propertyDataForm.controls['fireplaceMax'].dirty || propertyDataForm.controls['fireplaceMax'].touched)"
+                                  *ngIf="propertyDataForm.controls['to_number_of_fireplaces'].invalid && (propertyDataForm.controls['to_number_of_fireplaces'].dirty || propertyDataForm.controls['to_number_of_fireplaces'].touched)"
                                   class="invalid-data">
                                   Please Enter Max Fireplaces     </small> -->
                         </tr>
                         <tr>
                             <td><label>Pool </label></td>
                             <td class="f-horizontal">
-                                <input class="form-control" type="radio" formControlName="pool" >Yes
-                                <input class="form-control" type="radio" formControlName="pool" >No
-                                <input class="form-control" type="radio" formControlName="pool" >All
+                                <input class="form-control" type="radio" formControlName="pool_type" >Yes
+                                <input class="form-control" type="radio" formControlName="pool_type" >No
+                                <input class="form-control" type="radio" formControlName="pool_type" >All
                                 <!-- <small class="form-text text-muted invalid-data"
-                                *ngIf="propertyDataForm.controls['pool'].invalid && (propertyDataForm.controls['pool'].dirty || propertyDataForm.controls['pool'].touched)"
+                                *ngIf="propertyDataForm.controls['pool_type'].invalid && (propertyDataForm.controls['pool_type'].dirty || propertyDataForm.controls['pool_type'].touched)"
                                 class="invalid-data">
-                                Please enter Pool       </small> -->
+                                Please enter pool_type       </small> -->
                         </tr>
                         <tr>
                             <td><label>AC</label></td>
                             <td class="f-horizontal">
-                                <input class="form-control" type="radio" formControlName="ac" >Yes
-                                <input class="form-control" type="radio" formControlName="ac" >No
-                                <input class="form-control" type="radio" formControlName="ac" >All
+                                <input class="form-control" type="radio" formControlName="air_condition" >Yes
+                                <input class="form-control" type="radio" formControlName="air_condition" >No
+                                <input class="form-control" type="radio" formControlName="air_condition" >All
                                 <!-- <small class="form-text text-muted invalid-data"
                                   *ngIf="propertyDataForm.controls['ac'].invalid && (propertyDataForm.controls['ac'].dirty || propertyDataForm.controls['ac'].touched)"
                                   class="invalid-data">
-                                  Please enter AC        </small> -->
+                                  Please enter ac        </small> -->
                         </tr>
                         <tr>
                             <td><label>Year Built</label></td>
                             <td class="f-horizontal">
                                 <label>From</label>
-                                <input class="form-control" formControlName="yearBuiltMin" placeholder="Enter Min">
+                                <input class="form-control" formControlName="from_year_built" placeholder="Enter Min">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                *ngIf="propertyDataForm.controls['yearBuiltMin'].invalid && (propertyDataForm.controls['yearBuiltMin'].dirty || propertyDataForm.controls['yearBuiltMin'].touched)"
+                                *ngIf="propertyDataForm.controls['from_year_built'].invalid && (propertyDataForm.controls['from_year_built'].dirty || propertyDataForm.controls['from_year_built'].touched)"
                                 class="invalid-data">
                                 Please Enter Min Year Built       </small> -->
                                 <label>To</label>
-                                <input class="form-control" formControlName="yearBuiltMax" placeholder="Enter Max">
+                                <input class="form-control" formControlName="to_year_built" placeholder="Enter Max">
                                 <!-- <small class="form-text text-muted invalid-data"
-                                *ngIf="propertyDataForm.controls['yearBuiltMax'].invalid && (propertyDataForm.controls['yearBuiltMax'].dirty || propertyDataForm.controls['yearBuiltMax'].touched)"
+                                *ngIf="propertyDataForm.controls['to_year_built'].invalid && (propertyDataForm.controls['to_year_built'].dirty || propertyDataForm.controls['to_year_built'].touched)"
                                 class="invalid-data">
                                 Please Enter Max Year Built     </small> -->
                         </tr>
