@@ -44,9 +44,9 @@ import { EventEditComponent } from './event-edit/event-edit.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
  // for FullCalendar!
 import { NcfComponent } from './pages/admin/ncf/ncf.component';
-import { CriteriaComponent } from './criteria/criteria.component'; // for FullCalendar!
 import { CurrentCarrierComponent } from './current-carrier/current-carrier.component';
- // for FullCalendar!
+import { InstantidComponent } from './instantid/instantid.component'; // for FullCalendar!
+import { CriteriaComponent } from './criteria/criteria.component';
 
 @NgModule({
   declarations: [
@@ -95,9 +95,13 @@ import { CurrentCarrierComponent } from './current-carrier/current-carrier.compo
 
     NcfComponent,
 
+    
+
     CriteriaComponent,
     
-    CurrentCarrierComponent
+    CurrentCarrierComponent,
+    
+    InstantidComponent
   ],
   imports: [
     NgxNewstickerAlbeModule ,
