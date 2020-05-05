@@ -1,10 +1,10 @@
 
-<div class="page">
+<div class="page products">
 
-  
+    <div *ngIf="!displayRecordsView" class="row product-form">
         <div class="col-sm-9">
             <div class="heading-bar">
-                2. Filter Master List Data by criteria
+                2. Filter current carrier Data by criteria
             </div>
             <form [formGroup]="currentCarrierPropertyForm" class="form-group">
                 <table class="table table-hover light-dark-grey-bg">
@@ -12,7 +12,7 @@
                     <tr>
                         <td><label>State </label></td>
                         <td class="multi-select">
-
+    
                             <select formControlName="state" placeholder="All States">
                                 <option value="">All States</option>
                                 <option *ngFor="let items of states" value="items">{{items}}</option>
@@ -23,59 +23,60 @@
                   Please enter State         </small> -->
                         </td>
                     </tr>
-
+    
                     <tr>
                         <td> <label>AMBest  </label></td>
                         <td class="f-horizontal">
-
+    
                             <input class="form-control" formControlName="amBest" placeholder="Enter Number">
-
+    
                             <!-- <small class="form-text text-muted invalid-data"
                             *ngIf="currentCarrierPropertyForm.controls['amBest'].invalid && (currentCarrierPropertyForm.controls['amBest'].dirty || currentCarrierPropertyForm.controls['amBest'].touched)"
                             class="invalid-data">
                             Please enter AMBest Number        </small> -->
                         </td>
                     </tr>
-<tr> 
+    <tr> 
     <td><label>Number Of Policies</label></td>
     <td>
+       
         <label> From</label>
         <input class="form-control" formControlName="policyNumberFrom" placeholder="Enter Number">
- 
+    
                             <!-- <small class="form-text text-muted invalid-data"
                   *ngIf="currentCarrierPropertyForm.controls['policyNumberFrom'].invalid && (currentCarrierPropertyForm.controls['policyNumberFrom'].dirty || currentCarrierPropertyForm.controls['policyNumberFrom'].touched)"
                   class="invalid-data">
                   Please Enter Min Number Of Policies       </small> -->
         <label>To</label>
         <input class="form-control" formControlName="policyNumberTo" placeholder="Enter Number">
-
+    
                            <!-- <small class="form-text text-muted invalid-data"
                   *ngIf="currentCarrierPropertyForm.controls['policyNumberTo'].invalid && (currentCarrierPropertyForm.controls['policyNumberTo'].dirty || currentCarrierPropertyForm.controls['policyNumberTo'].touched)"
                   class="invalid-data">
                   Please Enter Max Number Of Policies      </small> -->
     </td>
-</tr>
-
-
+    </tr>
+    
+    
                     <tr>
                         <td> <label>Active Policy</label></td>
                         <td class="f-horizontal">
-
-                            <input class="form-control" type="radio" formControlName="activePolicy" >Yes
-                            <input class="form-control" type="radio" formControlName="activePolicy" >No
-                            <input class="form-control" type="radio" formControlName="activePolicy" >All
-
+    
+                            <input class="form-control" type="radio" formControlName="activePolicy" value="Yes">Yes
+                            <input class="form-control" type="radio" formControlName="activePolicy" value="No">No
+                            <input class="form-control" type="radio" formControlName="activePolicy" value="All">All
+    
                             <!-- <small class="form-text text-muted invalid-data"
                   *ngIf="currentCarrierPropertyForm.controls['activePolicy'].invalid && (currentCarrierPropertyForm.controls['activePolicy'].dirty || currentCarrierPropertyForm.controls['activePolicy'].touched)"
                   class="invalid-data">
                   Please Enter Active Policy         </small> -->
                         </td>
                     </tr>
-
-
-
-                    <tr class="f-horizontal">
-                        <td>  <label>Policy Type </label>></td>
+    
+    
+    
+                    <tr >
+                        <td class="f-horizontal">  <label>Policy Type </label></td>
                         <td>
                             <select formControlName="policyType" placeholder="Select">
                                 <option value="">Select</option>
@@ -85,52 +86,52 @@
                   *ngIf="currentCarrierPropertyForm.controls['policyType'].invalid && (currentCarrierPropertyForm.controls['policyType'].dirty || currentCarrierPropertyForm.controls['policyType'].touched)"
                   class="invalid-data">
                   Please Enter Policy Type    </small> -->
-
+    
                         </td>
                     </tr>
                 
-
-
+    
+    
                 
-<tr> 
-    <td><label>Inception Date</label></td>
+    <tr> 
+    <td ><label>Inception Date</label></td>
     <td>
         <label> From</label>
-        <input class="form-control" formControlName="inceptionDateFrom" placeholder="MM/DD/YYYY">
-<!-- 
+        <input   class="form-control" formControlName="inceptionDateFrom" placeholder="MM/DD/YYYY">
+    <!-- 
                             <small class="form-text text-muted invalid-data"
               *ngIf="currentCarrierPropertyForm.controls['inceptionDateFrom'].invalid && (currentCarrierPropertyForm.controls['inceptionDateFrom'].dirty || currentCarrierPropertyForm.controls['inceptionDateFrom'].touched)"
               class="invalid-data">
               Please Enter Min Inception Date        </small> -->
         <label>To</label>
         <input class="form-control" formControlName="inceptionDateTo" placeholder="MM/DD/YYYY">
-
+    
         <!-- <small class="form-text text-muted invalid-data"
         *ngIf="currentCarrierPropertyForm.controls['inceptionDateTo'].invalid && (currentCarrierPropertyForm.controls['inceptionDateTo'].dirty || currentCarrierPropertyForm.controls['inceptionDateTo'].touched)"
         class="invalid-data">
         Please Enter Max Inception Date       </small> -->
     </td>
-</tr>
-<tr> 
+    </tr>
+    <tr> 
     <td><label>Start Date</label></td>
     <td>
         <label> From</label>
         <input class="form-control" formControlName="startDateFrom" placeholder="MM/DD/YYYY">
-  <!-- <small class="form-text text-muted invalid-data"
+    <!-- <small class="form-text text-muted invalid-data"
               *ngIf="currentCarrierPropertyForm.controls['startDateFrom'].invalid && (currentCarrierPropertyForm.controls['startDateFrom'].dirty || currentCarrierPropertyForm.controls['startDateFrom'].touched)"
               class="invalid-data">
               Please Enter Start Date From        </small> -->
         <label>To</label>
         <input class="form-control" formControlName="startDateTo" placeholder="MM/DD/YYYY">
-
+    
         <!-- <small class="form-text text-muted invalid-data"
         *ngIf="currentCarrierPropertyForm.controls['startDateTo'].invalid && (currentCarrierPropertyForm.controls['startDateTo'].dirty || currentCarrierPropertyForm.controls['startDateTo'].touched)"
         class="invalid-data">
         Please Enter Start Date To    </small> -->
     </td>
-</tr>
+    </tr>
           
-<tr> 
+    <tr> 
     <td><label>End Date</label></td>
     <td>
         <label> From</label>
@@ -148,8 +149,8 @@
           class="invalid-data">
           Please Enter End Date To     </small> -->
     </td>
-</tr>
-<tr> 
+    </tr>
+    <tr> 
     <td><label>Cancel Date</label></td>
     <td>
         <label> From</label>
@@ -167,13 +168,13 @@
           class="invalid-data">
           Please Enter cancel Date To     </small> -->
     </td>
-</tr>    
-
+    </tr>    
+    
                    
-
+    
                     <h3>Coverage</h3>
-                    <tr class="f-horizontal">
-                        <td><label>Type</label></td>
+                    <tr >
+                        <td class="f-horizontal"><label>Type</label></td>
                         <td>
                             <select formControlName="coverageType" placeholder="Select">
                                 <option value="">Select</option>
@@ -183,57 +184,75 @@
                               *ngIf="currentCarrierPropertyForm.controls['coverageType'].invalid && (currentCarrierPropertyForm.controls['coverageType'].dirty || currentCarrierPropertyForm.controls['coverageType'].touched)"
                               class="invalid-data">
                               Please Enter Coverage Types       </small> -->
-
+    
                         </td>
                     </tr>
-                    <tr class="f-horizontal">
-                        <td> <label>Occurence</label></td>
+                    <tr >
+                        <td class="f-horizontal"> <label>Occurence</label></td>
                         <td>
                             <input class="form-control" formControlName="occurence" placeholder="Enter Occurence">
                             <!-- <small class="form-text text-muted invalid-data"
                               *ngIf="currentCarrierPropertyForm.controls['occurence'].invalid && (currentCarrierPropertyForm.controls['occurence'].dirty || currentCarrierPropertyForm.controls['occurence'].touched)"
                               class="invalid-data">
                               Please Enter Occurences       </small> -->
-
+    
                         </td>
                     </tr>
-                    <tr class="f-horizontal">
-                        <td> <label>Combined Single Limit</label></td>
+                    <tr >
+                        <td class="f-horizontal"> <label>Combined Single Limit</label></td>
                         <td>
                             <input class="form-control" formControlName="limit" placeholder="Enter Limit">
                             <!-- <small class="form-text text-muted invalid-data"
                               *ngIf="currentCarrierPropertyForm.controls['limit'].invalid && (currentCarrierPropertyForm.controls['limit'].dirty || currentCarrierPropertyForm.controls['limit'].touched)"
                               class="invalid-data">
                               Please Enter Combined Single Limit       </small> -->
-
+    
                         </td>
                     </tr>
-                    <tr class="f-horizontal">
-                        <td>  <label>Individual</label></td>
+                    <tr >
+                        <td class="f-horizontal">  <label>Individual</label></td>
                         <td>
                             <input class="form-control" formControlName="individual" placeholder="Enter Individual">
                             <!-- <small class="form-text text-muted invalid-data"
                               *ngIf="currentCarrierPropertyForm.controls['individual'].invalid && (currentCarrierPropertyForm.controls['individual'].dirty || currentCarrierPropertyForm.controls['individual'].touched)"
                               class="invalid-data">
                               Please Enter Individual      </small> -->
-
+    
                         </td>
                     </tr>
-
+    
                    
                    
                   
                   
-
-
+    
+    
                 </table>
 
             </form>
         </div>
-      
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
 
-    
+                <!-- <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a> -->
+            </div>
+        </div>
 
-    
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
 
 </div>

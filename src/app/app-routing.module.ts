@@ -23,6 +23,7 @@ import { EventEditComponent } from './event-edit/event-edit.component';
 import { CriteriaComponent } from './criteria/criteria.component';
 import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
 import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
+import { CurrentCarrierComponent } from './current-carrier/current-carrier.component';
 
 
 const routes: Routes = [
@@ -121,6 +122,10 @@ const routes: Routes = [
         {
         path:'filter-advanced-linking',
         component: FilterAdvancedLinkingComponent
+      },
+      {
+        path:'current-carrier',
+        component: CurrentCarrierComponent
       }
       
       
