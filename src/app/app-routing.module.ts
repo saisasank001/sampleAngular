@@ -24,6 +24,7 @@ import { CriteriaComponent } from './criteria/criteria.component';
 import { FilterAdvancedLinkingComponent } from './filter-advanced-linking/filter-advanced-linking.component';
 import { DownloadFullFilesComponent } from './download-full-files/download-full-files.component';
 import { CurrentCarrierComponent } from './current-carrier/current-carrier.component';
+import { FireAndDiasterComponent } from './fire-and-diaster/fire-and-diaster.component';
 
 
 const routes: Routes = [
@@ -126,6 +127,10 @@ const routes: Routes = [
       {
         path:'current-carrier',
         component: CurrentCarrierComponent
+      },
+      {
+        path:'fire-and-disaster',
+        component: FireAndDiasterComponent
       }
       
       

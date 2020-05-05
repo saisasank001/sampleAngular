@@ -1,0 +1,85 @@
+
+<div class="page products">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
+        <div class="col-sm-9">
+            <div class="heading-bar">
+                2.Filter Fire and Diaster Response Data by Criteria
+            </div>
+            <form [formGroup]="fireDisasterResponseForm" class="form-group">
+                <table class="table table-hover light-dark-grey-bg">
+                    <tbody>
+                    <tr>
+                        <td><label>State </label></td>
+                        <td class="multi-select">
+
+                            <select formControlName="state" placeholder="All States">
+                                <option value="">All States</option>
+                                <option *ngFor="let items of states" value="items">{{items}}</option>
+                            </select>
+                            <!--  <small class="form-text text-muted invalid-data"
+                  *ngIf="fireDisasterResponseForm.controls['state'].invalid && (fireDisasterResponseForm.controls['state'].dirty || fireDisasterResponseForm.controls['state'].touched)"
+                  class="invalid-data">
+                  Please enter State         </small> -->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>   <label>Score</label></td>
+                        <td class="f-horizontal">
+
+            <input class="form-control" type="checkbox" formControlName="score" value="1" >1
+            <input class="form-control" type="checkbox" formControlName="score" value="2">2
+            <input class="form-control" type="checkbox" formControlName="score" value="3">3
+            <input class="form-control" type="checkbox" formControlName="score" value="4">4
+            <input class="form-control" type="checkbox" formControlName="score" value="5">5
+            <input class="form-control" type="checkbox" formControlName="score" value="6">6
+            <input class="form-control" type="checkbox" formControlName="score" value="7">7
+            <input class="form-control" type="checkbox" formControlName="score" value="8">8
+            <input class="form-control" type="checkbox" formControlName="score" value="9" >9
+            <input class="form-control" type="checkbox" formControlName="score" value="10" >10
+            <input class="form-control" type="checkbox" formControlName="score" value="99">99
+
+            <small class="form-text text-muted invalid-data"
+              *ngIf="fireDisasterResponseForm.controls['score'].invalid && (fireDisasterResponseForm.controls['score'].dirty || fireDisasterResponseForm.controls['score'].touched)"
+              class="invalid-data">
+              Please select score         </small>
+                        </td>
+                    </tr>
+
+
+                  
+
+
+
+
+
+               </table>
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
+
+</div>
