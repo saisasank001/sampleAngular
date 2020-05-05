@@ -1,0 +1,222 @@
+
+<div class="page products">
+
+    <div *ngIf="!displayRecordsView" class="row product-form">
+        <div class="col-sm-9">
+            <div class="heading-bar">
+                2. Filter Individual Search Data by criteria
+            </div>
+            <form [formGroup]="individualSearchForm" class="form-group">
+                <table class="table table-hover light-dark-grey-bg">
+                    <tbody>
+                    <tr>
+                        <td> <label>Product</label></td>
+                        <td class="multi-select">
+
+                            <select formControlName="product" placeholder="Enter Product">
+                                <option value="">Select Products</option>
+                                <option *ngFor="let items of products" value="items">{{items}}</option>
+                            </select>
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="individualSearchForm.controls['product'].invalid && (individualSearchForm.controls['product'].dirty || individualSearchForm.controls['product'].touched)"
+                              class="invalid-data">
+                              Please Enter Product         </small> -->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>First Name</label></td>
+                        <td class="f-horizontal">
+
+                            <input type="text" class="form-control" formControlName="fname" placeholder="Enter First Name">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="individualSearchForm.controls['fname'].invalid && (individualSearchForm.controls['fname'].dirty || individualSearchForm.controls['fname'].touched)"
+              class="invalid-data">
+              Please Enter First Name         </small> -->
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label>Last Name</label></td>
+                        <td class="f-horizontal">
+
+                            <input type="text" class="form-control" formControlName="lname" placeholder="Enter Last Name">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="individualSearchForm.controls['lname'].invalid && (individualSearchForm.controls['lname'].dirty || individualSearchForm.controls['lname'].touched)"
+              class="invalid-data">
+              Please Enter Last Name          </small> -->
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td><label>Suffix Name</label></td>
+                        <td class="f-horizontal">
+
+                            <input type="text" class="form-control" formControlName="sname" placeholder="Enter Beneficiary Name">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="individualSearchForm.controls['sname'].invalid && (individualSearchForm.controls['sname'].dirty || individualSearchForm.controls['sname'].touched)"
+              class="invalid-data">
+              Please enter Suffix name          </small> -->
+                        </td>
+                    </tr>
+
+
+
+                    <tr >
+                        <td class="f-horizontal">
+                            <label>Middle Name </label></td>
+                        
+                        <td>
+                            <input type="text" class="form-control" formControlName="mname" placeholder="Enter Middle Name">
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="individualSearchForm.controls['mname'].invalid && (individualSearchForm.controls['mname'].dirty || individualSearchForm.controls['mname'].touched)"
+                              class="invalid-data">
+                              Please enter Middle Name         </small> -->
+
+                        </td>
+                    </tr>
+                    <tr >
+                        <td class="f-horizontal">
+                            <label>Date of Birth</label></td>
+                        <td>
+                            <input type="date" class="form-control" formControlName="dob" placeholder="MM/DD/YYYY">
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="individualSearchForm.controls['dob'].invalid && (individualSearchForm.controls['dob'].dirty || individualSearchForm.controls['dob'].touched)"
+                              class="invalid-data">
+                              Please enter Date of Birth          </small> -->
+
+                        </td>
+                    </tr>
+                    <tr >
+                        <td class="f-horizontal">
+                            <label>Social Security Number</label></td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="ssn" placeholder="Enter Social Security Number">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="individualSearchForm.controls['ssn'].invalid && (individualSearchForm.controls['ssn'].dirty || individualSearchForm.controls['ssn'].touched)"
+              class="invalid-data">
+              Please enter Social Security Number        </small> -->
+
+                        </td>
+                    </tr>
+                    <tr >
+                        <td class="f-horizontal">
+                            <label>DLN</label></td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="dln" placeholder="Enter DLN">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="individualSearchForm.controls['dln'].invalid && (individualSearchForm.controls['dln'].dirty || individualSearchForm.controls['dln'].touched)"
+              class="invalid-data">
+              Please enter DLN       </small> -->
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="f-horizontal"><label>House Number</label></td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="house_num" placeholder="Enter House Number">
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="individualSearchForm.controls['houseNumber'].invalid && (individualSearchForm.controls['houseNumber'].dirty || individualSearchForm.controls['houseNumber'].touched)"
+                              class="invalid-data">
+                              Please enter House Number         </small> -->
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="f-horizontal">Street Name </label></td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="street" placeholder="Enter Street Name ">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="individualSearchForm.controls['street'].invalid && (individualSearchForm.controls['street'].dirty || individualSearchForm.controls['street'].touched)"
+              class="invalid-data">
+              Please enter Street Name         </small> -->
+
+                        </td>
+                    </tr>
+
+               
+                     
+                        <tr>
+                            <td class="f-horizontal"><label>Apartment Number</label></td>
+                            <td>
+                            <input type="text" class="form-control" formControlName="apt_num" placeholder="Enter Apartment Number">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="individualSearchForm.controls['apt_num'].invalid && (individualSearchForm.controls['apt_num'].dirty || individualSearchForm.controls['apt_num'].touched)"
+              class="invalid-data">
+              Please enter Apartment Number          </small> -->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="f-horizontal"><label>City</label></td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="city" placeholder="Enter City">
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="individualSearchForm.controls['city'].invalid && (individualSearchForm.controls['city'].dirty || individualSearchForm.controls['city'].touched)"
+                              class="invalid-data">
+                              Please enter City        </small> -->
+
+                        </td>
+                    </tr>
+                       <tr class="multi-select">
+                        <td><label>State</label></td>
+                        <td>
+                            <select placeholder="All States" formControlName="state">
+                                <option value="">All States</option>
+                                <option *ngFor="let items of states" value="items">{{items}}</option>
+                            </select>
+                            <!-- <small class="form-text text-muted invalid-data"
+                              *ngIf="individualSearchForm.controls['state'].invalid && (individualSearchForm.controls['state'].dirty || individualSearchForm.controls['state'].touched)"
+                              class="invalid-data">
+                              Please enter State         </small> -->
+
+                        </td>
+                    </tr>
+
+                    <tr class="sub-form">
+                        <td><label>Zip</label></td>
+                        <td>
+                            <input class="form-control" formControlName="zip" placeholder="Enter Zip Code">
+            <!-- <small class="form-text text-muted invalid-data"
+              *ngIf="individualSearchForm.controls['zip'].invalid && (individualSearchForm.controls['zip'].dirty || individualSearchForm.controls['zip'].touched)"
+              class="invalid-data">
+              Please enter Zip       </small> -->
+
+                        </td>
+                    </tr>
+
+                   
+
+
+                </table>
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div class="heading-bar">
+                3. Download
+            </div>
+            <div class="records">
+                <span>Total Dataset Size</span>
+                <h3 [innerHTML]="records" type="number" min="0"></h3>
+                <p>Records</p>
+            </div>
+            <div>
+                <p>Download Limit : <input [value]="downloadLimit" class="form-control" ></p>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="downloadRecords()">Download Data</button>
+                <button class="btn dark-grey-bg white-text btn-block" (click)="clearAll()">Clear All</button>
+
+                <!-- <a [href]="httpService.filesUrl+constants.PDF_MASTER_LIST" class="btn dark-grey-bg white-text btn-block" target="_blank" download="master.pdf">Download Legend</a> -->
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="displayRecordsView" class="row products-view">
+        <!--        <app-table-filters [tableDisplay]="tableDisplay" [data]="downloadedRecords"></app-table-filters>-->
+    </div>
+
+</div>
