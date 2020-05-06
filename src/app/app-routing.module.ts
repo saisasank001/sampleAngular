@@ -28,6 +28,7 @@ import { FireAndDiasterComponent } from './fire-and-diaster/fire-and-diaster.com
 import { ForeclosureDataComponent } from './foreclosure-data/foreclosure-data.component';
 import { ConfidentialityAgreementComponent } from './confidentiality-agreement/confidentiality-agreement.component';
 import { HomeInspectionComponent } from './home-inspection/home-inspection.component';
+import { RequestNewUserComponent } from './request-new-user/request-new-user.component';
 
 
 
@@ -147,6 +148,10 @@ const routes: Routes = [
       {
         path:'home-inspection',
         component: HomeInspectionComponent
+      },
+      {
+        path:'request-new-user',
+        component:RequestNewUserComponent
       }
       
       

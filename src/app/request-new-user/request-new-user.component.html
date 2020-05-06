@@ -1,1 +1,45 @@
-<p>request-new-user works!</p>
+<button (click)="addUser()">Add User</button>
+<div class="col-12" *ngFor="let user of users ; let in = index"> 
+    
+    <div class="card m-b-30">
+        <div class="card-body">
+            <button (click)="deleteUser(i)">Remove</button>
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <label>First Name</label>
+                    <input placeholder="Enter First Name" [(ngModel)]="users[in]['UserRequest']['firstName']">
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <label>last Name</label>
+                    <input placeholder="Enter Last Name" [(ngModel)]="users[in]['UserRequest']['lastName']">
+                </div>
+
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <label>Company</label>
+                    <input placeholder="Enter Company" [(ngModel)]="users[in]['UserRequest']['company']">
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <label>Email</label>
+                    <input placeholder="Enter Email" [(ngModel)]="users[in]['UserRequest']['email']">
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <label>Work Phone Number</label>
+                    <input placeholder="Enter Workphone #" [(ngModel)]="users[in]['UserRequest']['workPhone']">
+                </div>
+
+               <div class="col-xs-12 col-sm-6 col-md-6">
+                    <label>Extn</label>
+                    <input placeholder="Enter Extn" [(ngModel)]="users[in]['UserRequest']['extn']">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+    <button type="button" class="btn btn-info waves-effect waves-light pull-right" (click)="submit()">Submit</button>
+</div>

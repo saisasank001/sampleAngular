@@ -1,46 +1,40 @@
 <p>test-add works!</p>
 <div>
-    <button (click)="addList()">Add</button>
-    <table border="1" class="table table-striped">
-        
-        <tr>
-            
-          <th>First Name</th>
-          <th>last Name</th>
-          <th>Company</th>
-          <th>Email</th>
-          <th>Workphone #</th>
-          <th>Extn</th>
-        </tr>
-        <tr *ngFor="let items of details , let in=index">
-          <td>
-            <input placeholder="Enter First Name"
-              [(ngModel)]="details[in]['firstName']">
-          </td>
-          <td>
-            <input placeholder="Enter Last Name"
-              [(ngModel)]="details[in]['lastName']">
-          </td>
-          <td>
-            <input placeholder="Enter Company"
-              [(ngModel)]="details[in]['company']">
-          </td>
-          <td>
-            <input placeholder="Enter Email"
-              [(ngModel)]="details[in]['email']">
-          </td>
-          <td>
-            <input placeholder="Enter Workphone"
-              [(ngModel)]="details[in]['workphone']">
-          </td>
-          <td>
-            <input placeholder="Enter Extn"
-              [(ngModel)]="details[in]['extn']">
-          </td>
-          <td>
-            <button name="close" (click)="remove(in)"></button>
-          </td>
-        </tr>
-      </table>
-      <button (click)="submit()">Submit</button>
+  <button (click)="addList()">Add</button>
+  <table border="1" class="table table-striped">
+
+    <tr>
+
+      <th>First Name</th>
+      <th>last Name</th>
+      <th>Company</th>
+      <th>Email</th>
+      <th>Workphone #</th>
+      <th>Extn</th>
+    </tr>
+    <tr *ngFor="let items of details , let in=index">
+      <td>
+        <input placeholder="Enter First Name" [(ngModel)]="details[in]['firstName']">
+      </td>
+      <td>
+        <input placeholder="Enter Last Name" [(ngModel)]="details[in]['lastName']">
+      </td>
+      <td>
+        <input placeholder="Enter Company" [(ngModel)]="details[in]['company']">
+      </td>
+      <td>
+        <input placeholder="Enter Email" [(ngModel)]="details[in]['email']">
+      </td>
+      <td>
+        <input placeholder="Enter Workphone" [(ngModel)]="details[in]['workphone']">
+      </td>
+      <td>
+        <input placeholder="Enter Extn" [(ngModel)]="details[in]['extn']">
+      </td>
+      <td>
+        <button name="close" (click)="remove(in)"></button>
+      </td>
+    </tr>
+  </table>
+  <button (click)="submit()">Submit</button>
 </div>
