@@ -66,7 +66,7 @@ export class DownloadFullFilesComponent implements OnInit {
       file_type: "MVR",
       current_version: "MVR_v1.csv",
       prev_version: "MVR_v0.csv",
-      product_line_name: "Home Products"
+      product_line_name: "Home Products",
     },
     {
       file_type: "NCF",
@@ -101,13 +101,13 @@ export class DownloadFullFilesComponent implements OnInit {
     this.json.forEach(element => {
       if (this.diff[element.product_line_name]) {
         this.diff[element.product_line_name].push({ current_version: element.current_version,
-           prev_version:element.prev_version, file_type:element.file_type })
+           prev_version:element.prev_version, file_type:element.file_type})
         
       }
       else {
         this.diff[element.product_line_name] = []
         this.diff[element.product_line_name].push({ current_version: element.current_version,
-          prev_version:element.prev_version, file_type:element.file_type })
+          prev_version:element.prev_version, file_type:element.file_type})
       }
 
     });
@@ -115,9 +115,24 @@ export class DownloadFullFilesComponent implements OnInit {
     let keys = [];
     keys=Object.keys(this.diff)
     keys.forEach(element => {
-      this.finalJson.push({name: element, data: this.diff[element]})
+      this.finalJson.push({name: element, data: this.diff[element], active:false})
     })
+    this.finalJson[0].active=true
     console.log(this.finalJson)
   }
+  openStatus(data){
+    //this.status = false;
+    if(data.active == true){
+      data.active = false
+    }
+    else{
+        this.finalJson.forEach(element => {
+          element.active = false
+        });
+        data.active = true
+      }
+      
+    }               
+    
+  }
 
-}
