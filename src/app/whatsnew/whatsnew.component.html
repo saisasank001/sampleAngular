@@ -1,1 +1,28 @@
-<p>whatsnew works!</p>
+
+<div class="body" >
+    <table class="table">
+        <thead>
+            <tr class="dark-grey-bg white-text">
+                <td>Customer</td>
+                <td>Type</td>
+                <td>Start Time</td>
+                <td>End Time</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="table" *ngFor="let items of json">
+                <td>{{items.Customer}}</td>
+                <td>{{items.TYPE}}</td>
+                <td *ngIf="items.Start_time">{{items.Start_time}}</td>
+                <td *ngIf="!items.Start_time">-</td>
+                <td *ngIf="items.End_time">{{items.End_time}}</td>
+                <td *ngIf="!items.End_time">-</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <button (click)="example('2019-11-29')">example</button>
+    <button (click)="example1('2019-11-10','2019-11-29')">example1</button>
+    <button (click)="example2()">example2</button>
+</div>

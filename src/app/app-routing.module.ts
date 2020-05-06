@@ -29,6 +29,7 @@ import { ForeclosureDataComponent } from './foreclosure-data/foreclosure-data.co
 import { ConfidentialityAgreementComponent } from './confidentiality-agreement/confidentiality-agreement.component';
 import { HomeInspectionComponent } from './home-inspection/home-inspection.component';
 import { RequestNewUserComponent } from './request-new-user/request-new-user.component';
+import { WhatsnewComponent } from './whatsnew/whatsnew.component';
 
 
 
@@ -152,6 +153,10 @@ const routes: Routes = [
       {
         path:'request-new-user',
         component:RequestNewUserComponent
+      },
+      {
+        path:'whatsnew',
+        component:WhatsnewComponent
       }
       
       
