@@ -24,12 +24,18 @@ eventDetails:any = {
   id: 141,
   Start_date: "11/20/2019"
 }
-
+eventDate;
 
   constructor() { }
 
   ngOnInit() {
     this.eventDetails.Description = atob(this.eventDetails.Description)
+
+    // if(this.eventDetails.Start_date == this.eventDetails.End_date){
+    //   this.eventDate = this.eventDetails.Start_date
+    // }else{
+    //   this.eventDate = this.eventDetails.Start_date - this.eventDetails.End_date
+    // }
   }
 
 }

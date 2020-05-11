@@ -72,7 +72,8 @@
                     <tr>
                         <td> {{eventDetails.Customer}} </td>
                         <td> {{eventDetails.RecurringType}} </td>
-                        <td> {{eventDetails.Start_date}} </td>
+                        <td *ngIf='eventDetails.Start_date == eventDetails.End_date'> {{eventDetails.Start_date}} </td>
+                        <td *ngIf='eventDetails.Start_date != eventDetails.End_date'> {{eventDetails.Start_date}} -  {{eventDetails.End_date}}</td>
                         <td> {{eventDetails.Start_time}} </td>
                         <td> {{eventDetails.End_time}} </td>
 
