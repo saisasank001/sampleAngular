@@ -1,20 +1,55 @@
 <div class="page">
-    <div class="heading-bar">
-      Edit Event
-  </div>
-      <div class="table-form" [formGroup]="eventForm">
-        <div class="row light-dark-grey-bg" style="margin-left:0;margin-right:0">
+  <div class="heading-bar">
+    Create Event
+</div>
+    <div class="table-form" [formGroup]="eventForm">
+      <div class="row light-dark-grey-bg" style="margin-left:0;margin-right:0">
+        <div class="col-sm-6 col-md-6">
+          <div class="row">
+              <div class="col-sm-3">
+                <label for="email">Customer:</label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Enter a Customer"  formControlName="Customer">
+                <small class="form-text text-muted invalid-data"
+                   *ngIf="eventForm.controls['Customer'].invalid && (eventForm.controls['Customer'].dirty || eventForm.controls['Customer'].touched)"
+                   class="invalid-data">
+              Please enter valid Customer  
+            </small>
+              </div>
+             
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="row">
+             
+              <div class="col-sm-3">
+                  <label for="email">Type:</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" placeholder="Enter Type of Event"  formControlName="TYPE">
+                  <small class="form-text text-muted invalid-data"
+                     *ngIf="eventForm.controls['TYPE'].invalid && (eventForm.controls['TYPE'].dirty || eventForm.controls['TYPE'].touched)"
+                     class="invalid-data">
+                Please enter valid Event type  
+              </small>
+                </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row light-dark-grey-bg" style="margin-left:0;margin-right:0">
           <div class="col-sm-6 col-md-6">
             <div class="row">
                 <div class="col-sm-3">
-                  <label for="email">Customer:</label>
+                  <label for="email">Requested By:</label>
                 </div>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" placeholder="Enter a Customer"  formControlName="customer">
+                  <input type="text" class="form-control" placeholder="Enter Requested By"  formControlName="Reported_By">
                   <small class="form-text text-muted invalid-data"
-                     *ngIf="eventForm.controls['customer'].invalid && (eventForm.controls['customer'].dirty || eventForm.controls['customer'].touched)"
+                     *ngIf="eventForm.controls['Reported_By'].invalid && (eventForm.controls['Reported_By'].dirty || eventForm.controls['Reported_By'].touched)"
                      class="invalid-data">
-                Please enter valid customer  
+                Please enter Requested By  
               </small>
                 </div>
                
@@ -24,66 +59,66 @@
             <div class="row">
                
                 <div class="col-sm-3">
-                    <label for="email">Type:</label>
+                    <label for="email">Notes:</label>
                   </div>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" placeholder="Enter Type of Event"  formControlName="eventType">
+                    <input type="text" class="form-control" placeholder="Enter Notes"  formControlName="Notes">
                     <small class="form-text text-muted invalid-data"
-                       *ngIf="eventForm.controls['eventType'].invalid && (eventForm.controls['eventType'].dirty || eventForm.controls['eventType'].touched)"
+                       *ngIf="eventForm.controls['Notes'].invalid && (eventForm.controls['Notes'].dirty || eventForm.controls['Notes'].touched)"
                        class="invalid-data">
-                  Please enter valid Event type  
+                  Please enter Enter Notes  
                 </small>
                   </div>
             </div>
           </div>
 
         </div>
-        <div class="row light-dark-grey-bg" style="margin-left:0;margin-right:0">
-            <div class="col-sm-6 col-md-6">
-              <div class="row">
-                  <div class="col-sm-3">
-                    <label for="email">Requested By:</label>
-                  </div>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" placeholder="Enter Requested By"  formControlName="requestedBy">
-                    <small class="form-text text-muted invalid-data"
-                       *ngIf="eventForm.controls['requestedBy'].invalid && (eventForm.controls['requestedBy'].dirty || eventForm.controls['requestedBy'].touched)"
-                       class="invalid-data">
-                  Please enter Requested By  
-                </small>
-                  </div>
-                 
+
+      <div class="row light-dark-grey-bg"  style="margin-left:0;margin-right:0">
+        <div class="col-sm-6 col-md-6">
+          <div class="row">
+              <div class="col-sm-3">
+                <label for="email">Start Time:</label>
               </div>
-            </div>
-            <div class="col-sm-6 col-md-6">
-              <div class="row">
-                 
-                  <div class="col-sm-3">
-                      <label for="email">Notes:</label>
-                    </div>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" placeholder="Enter Notes"  formControlName="notes">
-                      <small class="form-text text-muted invalid-data"
-                         *ngIf="eventForm.controls['notes'].invalid && (eventForm.controls['notes'].dirty || eventForm.controls['notes'].touched)"
-                         class="invalid-data">
-                    Please enter Enter Notes  
-                  </small>
-                    </div>
+              <div class="col-sm-9">
+                <ngb-timepicker formControlName="Start_time" [meridian]="true" required></ngb-timepicker>
+              <small class="form-text text-muted invalid-data"
+              *ngIf="eventForm.controls['Start_time'].invalid && (eventForm.controls['Start_time'].dirty || eventForm.controls['Start_time'].touched)"
+              class="invalid-data">
+              Please enter time </small>
               </div>
-            </div>
-  
           </div>
-  
-        <div class="row light-dark-grey-bg"  style="margin-left:0;margin-right:0">
+        </div>
+        <div class="col-sm-6 col-md-6" >
+          <div class="row">
+              <div class="col-sm-3">
+                <label for="email">End Time:</label>
+              </div>
+              <div class="col-sm-9">
+                <ngb-timepicker formControlName="End_time" [meridian]="true" required></ngb-timepicker>
+              <small class="form-text text-muted invalid-data"
+              *ngIf="eventForm.controls['End_time'].invalid && (eventForm.controls['End_time'].dirty || eventForm.controls['End_time'].touched)"
+              class="invalid-data">
+              Please enter time </small>
+              </div>
+          </div>
+          
+           
+        </div>
+      </div>
+
+      <div class="row light-dark-grey-bg"  style="margin-left:0;margin-right:0">
           <div class="col-sm-6 col-md-6">
             <div class="row">
                 <div class="col-sm-3">
-                  <label for="email">Start Time:</label>
+                  <label for="email">From Date:</label>
                 </div>
                 <div class="col-sm-9">
-                  <ngb-timepicker formControlName="startTime" [meridian]="true" required></ngb-timepicker>
-                <small class="form-text text-muted invalid-data"
-                *ngIf="eventForm.controls['fromDate'].invalid && (eventForm.controls['fromDate'].dirty || eventForm.controls['fromDate'].touched)"
+                  
+                  <input class="form-control" ngbDatepicker (click)="datePicker1.toggle()" #datePicker1="ngbDatepicker"
+                formControlName="Start_date" placeholder="yyyy-mm-dd">
+              <small class="form-text text-muted invalid-data"
+                *ngIf="eventForm.controls['Start_date'].invalid && (eventForm.controls['Start_date'].dirty || eventForm.controls['Start_date'].touched)"
                 class="invalid-data">
                 Please enter Date </small>
                 </div>
@@ -92,14 +127,15 @@
           <div class="col-sm-6 col-md-6" >
             <div class="row">
                 <div class="col-sm-3">
-                  <label for="email">End Time:</label>
+                  <label for="email">To Date:</label>
                 </div>
                 <div class="col-sm-9">
-                  <ngb-timepicker formControlName="endTime" [meridian]="true" required></ngb-timepicker>
+                  <input class="form-control" ngbDatepicker (click)="datePicker2.toggle()" #datePicker2="ngbDatepicker"
+                  formControlName="End_date" placeholder="yyyy-mm-dd">
                 <small class="form-text text-muted invalid-data"
-                *ngIf="eventForm.controls['toDate'].invalid && (eventForm.controls['toDate'].dirty || eventForm.controls['toDate'].touched)"
-                class="invalid-data">
-                Please enter Date </small>
+                  *ngIf="eventForm.controls['End_date'].invalid && (eventForm.controls['End_date'].dirty || eventForm.controls['End_date'].touched)"
+                  class="invalid-data">
+                  Please enter Date </small>
                 </div>
             </div>
             
@@ -107,112 +143,97 @@
           </div>
         </div>
 
-        <div class="row light-dark-grey-bg"  style="margin-left:0;margin-right:0">
-            <div class="col-sm-6 col-md-6">
-              <div class="row">
-                  <div class="col-sm-3">
-                    <label for="email">From Date:</label>
-                  </div>
-                  <div class="col-sm-9">
-                    <input class="form-control" ngbDatepicker (click)="datePicker1.toggle()" #datePicker1="ngbDatepicker"
-                  formControlName="fromDate" placeholder="yyyy-mm-dd">
-                <small class="form-text text-muted invalid-data"
-                  *ngIf="eventForm.controls['fromDate'].invalid && (eventForm.controls['fromDate'].dirty || eventForm.controls['fromDate'].touched)"
-                  class="invalid-data">
-                  Please enter Date </small>
-                  </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6" >
-              <div class="row">
-                  <div class="col-sm-3">
-                    <label for="email">To Date:</label>
-                  </div>
-                  <div class="col-sm-9">
-                    <input class="form-control" ngbDatepicker (click)="datePicker2.toggle()" #datePicker2="ngbDatepicker"
-                    formControlName="toDate" placeholder="yyyy-mm-dd">
+      <div class="row light-dark-grey-bg" style="margin-left:0;margin-right:0">
+        <div class="row col-sm-2">
+          <div class="col-sm-12">
+            <label for="email">Description:</label>
+          </div>
+          
+      </div>
+      <div class="col-sm-10">
+        <angular-editor formControlName="Description" [config]="editorConfig"></angular-editor>
+      
+      </div>
+      </div>
+
+      <div class="row light-dark-grey-bg" style="margin-left:0;margin-right:0">
+          <div class="col-sm-6 col-md-6">
+            <div class="row">
+                <div class="col-sm-3">
+                  <label for="email">Is Recurring:</label>
+                </div>
+                <div class="col-sm-9">
+                  <!-- put input small ---->
+                  <select  placeholder="Select is Recurring" formControlName="Is_Recurring" >
+                      <option value="">Select is Recurring</option>
+                      <option  value="1">Yes</option>
+                      <option  value="0">No</option></select>
                   <small class="form-text text-muted invalid-data"
-                    *ngIf="eventForm.controls['toDate'].invalid && (eventForm.controls['toDate'].dirty || eventForm.controls['toDate'].touched)"
+                    *ngIf="eventForm.controls['Is_Recurring'].invalid && (eventForm.controls['Is_Recurring'].dirty || eventForm.controls['Is_Recurring'].touched)"
                     class="invalid-data">
-                    Please enter Date </small>
-                  </div>
-              </div>
-              
-               
+                    Please select is Recurring</small>
+                </div>         
             </div>
           </div>
-
-        <div class="row light-dark-grey-bg" style="margin-left:0;margin-right:0">
-          <div class="row col-sm-2">
-            <div class="col-sm-12">
-              <label for="email">Description:</label>
-            </div>
-            
-        </div>
-        <div class="col-sm-10">
-          <angular-editor formControlName="message" [config]="editorConfig"></angular-editor>
-        
-        </div>
-        </div>
-
-        <div class="row light-dark-grey-bg" style="margin-left:0;margin-right:0">
-            <div class="col-sm-6 col-md-6">
-              <div class="row">
-                  <div class="col-sm-3">
-                    <label for="email">Is Recurring:</label>
+      
+          <div class="col-sm-6 col-md-6">
+            <div class="row">
+               
+                <div class="col-sm-3">
+                    <label for="email">Recurring Type:</label>
                   </div>
                   <div class="col-sm-9">
-                    <!-- put input small ---->
-                    <select  placeholder="Select is Recurring" formControlName="isRecurring" >
-                        <option value="">Select is Recurring</option>
-                        <option *ngFor="let items of recurring" [value]="items">{{items}}</option></select>
+                    <!-- put input smal -->
+                    <select  placeholder="Select Recurring Type" formControlName="RecurringType" >
+                        <option value="">Select Recurring Type</option>
+                        <option *ngFor="let items of recurringType" [value]="items">{{items}}</option></select>
                     <small class="form-text text-muted invalid-data"
-                      *ngIf="eventForm.controls['isRecurring'].invalid && (eventForm.controls['isRecurring'].dirty || eventForm.controls['isRecurring'].touched)"
+                      *ngIf="eventForm.controls['RecurringType'].invalid && (eventForm.controls['RecurringType'].dirty || eventForm.controls['RecurringType'].touched)"
                       class="invalid-data">
-                      Please select is Recurring</small>
-                  </div>         
-              </div>
+                      Please select Recurring Type</small>
+                  </div>
             </div>
-        
-            <div class="col-sm-6 col-md-6">
-              <div class="row">
-                 
-                  <div class="col-sm-3">
-                      <label for="email">Recurring Type:</label>
-                    </div>
-                    <div class="col-sm-9">
-                      <!-- put input smal -->
-                      <select  placeholder="Select Recurring Type" formControlName="recurringType" >
-                          <option value="">Select Recurring Type</option>
-                          <option *ngFor="let items of recurringType" [value]="items">{{items}}</option></select>
-                      <small class="form-text text-muted invalid-data"
-                        *ngIf="eventForm.controls['recurringType'].invalid && (eventForm.controls['recurringType'].dirty || eventForm.controls['recurringType'].touched)"
-                        class="invalid-data">
-                        Please select Recurring Type</small>
-                    </div>
-              </div>
-            </div>
-        
           </div>
+          <div class="col-sm-6 col-md-6">
+            <div class="row">
+               
+                <div class="col-sm-3">
+                    <label for="email">Scope:</label>
+                  </div>
+                  <div class="col-sm-9">
+                    <!-- put input smal -->
+                    <select  placeholder="Select Recurring Type" formControlName="Scope" >
+                        <option value="">Select Scope</option>
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                      </select>
+                    <small class="form-text text-muted invalid-data"
+                      *ngIf="eventForm.controls['Scope'].invalid && (eventForm.controls['Scope'].dirty || eventForm.controls['Scope'].touched)"
+                      class="invalid-data">
+                      Please select Scope</small>
+                  </div>
+            </div>
+          </div>
+      
+        </div>
 
-  
-        <table class="table table-hover light-grey-bg">
-          
-        <tfoot class="table table-hover light-grey-bg">
-          <tr>
-            <td colspan="5">
-              
-              <button class="button btn btn-default dark-grey-bg white-text" (click)="cancel()">Cancel</button>
-              <button  class="button btn btn-default primary-red-bg white-text" (click)="submit(eventForm.value)">Submit</button>
-            
-            </td>
-          </tr>
-       </tfoot>
-          
-        </table>
+
+      <table class="table table-hover light-grey-bg">
         
-      </div> 
-  </div>
-  
-  
-  
+      <tfoot class="table table-hover light-grey-bg">
+        <tr>
+          <td colspan="5">
+            
+            <button class="button btn btn-default dark-grey-bg white-text" (click)="cancel()">Cancel</button>
+            <button  class="button btn btn-default primary-red-bg white-text" (click)="submit(eventForm.value)">Submit</button>
+          
+          </td>
+        </tr>
+     </tfoot>
+        
+      </table>
+      
+    </div> 
+</div>
+
+

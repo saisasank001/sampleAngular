@@ -15,24 +15,25 @@ export class EventAddComponent implements OnInit {
   editorConfig;
   fromDate:NgbDateStruct;
   recurring:any = ["yes","no"]
-recurringType:any = ["type1","type2"]
+recurringType:any = ["type1","type2","monthly"]
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder,
     
     public httpService:HttpServiceService) { }
 
   ngOnInit() {
     this.eventForm = this.formBuilder.group({
-      customer: ['',[Validators.required]],
-      eventType: ['',[Validators.required]],
-      fromDate: ['',[]],
-      toDate: ['',[]],
-      startTime: ['',[]],
-      endTime: ['',[]],
-      message: ['',[Validators.required]],
-      notes:['',[Validators.required]],
-      requestedBy:['',[Validators.required]],
-      recurringType:['',[Validators.required]],
-      isRecurring:['',[Validators.required]]
+      Customer: ['',[Validators.required]],
+      TYPE: ['',[Validators.required]],
+      Start_date: ['',[]],
+      End_date: ['',[]],
+      Start_time: ['',[]],
+      End_time: ['',[]],
+      Description: ['',[Validators.required]],
+      Notes:['',[Validators.required]],
+      Reported_By:['',[Validators.required]],
+      Recurring_Type:['',[Validators.required]],
+      Is_Recurring:['',[Validators.required]],
+      Scope:['',[Validators.required]],
     }); 
 
     this.editorConfig={
