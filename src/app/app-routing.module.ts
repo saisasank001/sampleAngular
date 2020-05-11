@@ -30,6 +30,7 @@ import { ConfidentialityAgreementComponent } from './confidentiality-agreement/c
 import { HomeInspectionComponent } from './home-inspection/home-inspection.component';
 import { RequestNewUserComponent } from './request-new-user/request-new-user.component';
 import { WhatsnewComponent } from './whatsnew/whatsnew.component';
+import { NewuserRequestComponent } from './newuser-request/newuser-request.component';
 
 
 
@@ -157,6 +158,10 @@ const routes: Routes = [
       {
         path:'whatsnew',
         component:WhatsnewComponent
+      },
+      {
+        path:'new-user-request',
+        component:NewuserRequestComponent
       }
       
       

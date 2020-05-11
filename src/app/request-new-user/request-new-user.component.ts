@@ -6,19 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-new-user.component.scss']
 })
 export class RequestNewUserComponent implements OnInit {
-  users: any = [{
-    "UserRequest": {
-      "firstName": "",
-      "lastName": "",
-      "company": "",
-      "email": "",
-      "workPhone": "",
-      "extn": "",
-      "requestedBy":this.getRequestedBy(),
-      "requestedByEmail":this.getRequestedByEmail(),
-      "requestedStatusId":this.getUserRequestStatusId()
-    }
+  users: any = [
+    {
+      "UserRequest":{
+    "FirstName": "",
+    "LastName": "",
+    "Company": "",
+    "EmailAddress": "",
+    "WorkPhoneNumber": "",
+    "Extn": "",
+    "UserRequestStatusId":"1",
+    "RequestedBy":this.getRequestedBy(),
+    "RequestedByEmail":this.getRequestedByEmail(),
+    "RequestedStatusId":this.getUserRequestStatusId()
   }
+}
 
   ]
   constructor() { }
@@ -27,15 +29,16 @@ export class RequestNewUserComponent implements OnInit {
   }
   addUser() {
     this.users.push({"UserRequest":{
-      "firstName": "",
-      "lastName": "",
-      "company": "",
-      "email": "",
-      "workPhone": "",
-      "extn": "",
-      "requestedBy":this.getRequestedBy(),
-      "requestedByEmail":this.getRequestedByEmail(),
-      "requestedStatusId":this.getUserRequestStatusId()
+      "FirstName": "",
+      "LastName": "",
+      "Company": "",
+      "EmailAddress": "",
+      "WorkPhoneNumber": "",
+      "Extn": "",
+      "UserRequestStatusId":"1",
+      "RequestedBy":this.getRequestedBy(),
+      "RequestedByEmail":this.getRequestedByEmail(),
+      "RequestedStatusId":this.getUserRequestStatusId()
     }});
 
     console.log(this.users)

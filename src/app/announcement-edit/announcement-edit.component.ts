@@ -16,14 +16,14 @@ export class AnnouncementEditComponent implements OnInit {
   editdata:any={
     Priority: "1",
     announcements: true,
-    endTime: {hour: 14, minute: 6, second: 0},
+    endTime: "06:46:00",
     filename: "sample",
-    fromDate: {year: 2020, month: 5, day: 1},
+    fromDate: "2020-03-05",
     message: "testing with urgent message",
     sendEmail: "1",
-    startTime: {hour: 2, minute: 6, second: 0},
+    startTime: "03:25:00",
     title: "testing",
-    toDate: {year: 2020, month: 5, day: 2},
+    toDate: "2020-03-07",
     urgentMessage: true
   }
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder,
@@ -32,6 +32,39 @@ export class AnnouncementEditComponent implements OnInit {
  
 
   ngOnInit() {
+ //spliting fromdate
+    let frmDate = this.editdata.fromDate;
+    let str_array_fDate = frmDate.split('-');
+      for(let i = 0; i < str_array_fDate.length; i++) {
+        console.log(str_array_fDate[i]);
+      }
+      console.log({year:Number(str_array_fDate[0]), month:Number(str_array_fDate[1]), day:Number(str_array_fDate[2])})
+      this.editdata.fromDate = {year:Number(str_array_fDate[0]), month:Number(str_array_fDate[1]), day:Number(str_array_fDate[2])} 
+  //spliting Todate
+  let toDate = this.editdata.toDate;
+  let str_array_tDate = toDate.split('-');
+    for(let i = 0; i < str_array_tDate.length; i++) {
+      console.log(str_array_tDate[i]);
+    }
+    console.log({year:Number(str_array_tDate[0]), month:Number(str_array_tDate[1]), day:Number(str_array_tDate[2])})
+    this.editdata.toDate = {year:Number(str_array_tDate[0]), month:Number(str_array_tDate[1]), day:Number(str_array_tDate[2])} 
+  //spliting startTime
+  let stTime = this.editdata.startTime;
+  let str_array_strTime = stTime.split(':');
+    for(let i = 0; i < str_array_strTime.length; i++) {
+      console.log(str_array_strTime[i]);
+    }
+    console.log({hour:Number(str_array_strTime[0]), minute:Number(str_array_strTime[1]), second:Number(str_array_strTime[2])})
+    this.editdata.startTime = {hour:Number(str_array_strTime[0]), minute:Number(str_array_strTime[1]), second:Number(str_array_strTime[2])} 
+    //spliting endTime
+    let endTime = this.editdata.endTime;
+    let str_array_endTime = endTime.split(':');
+      for(let i = 0; i < str_array_endTime.length; i++) {
+        console.log(str_array_endTime[i]);
+      }
+      console.log({hour:Number(str_array_endTime[0]), minute:Number(str_array_endTime[1]), second:Number(str_array_endTime[2])})
+      this.editdata.endTime = {hour:Number(str_array_endTime[0]), minute:Number(str_array_endTime[1]), second:Number(str_array_endTime[2])} 
+
     this.announcementForm = this.formBuilder.group({
       title: ['',[Validators.required]],
       Priority: ['',[]],
@@ -45,6 +78,7 @@ export class AnnouncementEditComponent implements OnInit {
       filename: ['',[]],
       sendEmail: ['0',[]]
     }); 
+    
     this.announcementForm.patchValue(this.editdata);
     this.editorConfig={
       editable: true,
