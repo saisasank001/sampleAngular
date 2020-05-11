@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NewuserRequestComponent implements OnInit {
   unsubscribeUserForm : FormGroup;
-  usersArray:any = [{"unsubscription_id":1082,"Domain":"-","EmailAddress":"b@b.com","AddedBy":"User","DateAdded":"2020-03-03T14:37:13"}]
+  usersArray:any = [{"unsubscription_id":1082,"EmailAddress":"b@b.com","AddedBy":"User","DateAdded":"2020-03-03T14:37:13"}]
   constructor(private formBuilder:FormBuilder, private router:Router) { }
   ngOnInit(): void {
     this.unsubscribeUserForm = this.formBuilder.group({
