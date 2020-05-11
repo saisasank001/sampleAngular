@@ -612,3 +612,70 @@ label {
 
 
 
+
+
+//new
+.fc-clear {
+  clear: both;
+  display: none !important;
+}
+
+// .fc-event {
+//   position: relative;
+//   display: block;
+//   font-size: .85em;
+//   line-height: 1.3;
+//   border-radius: 3px;
+//   border: 1px solid $primary-red !important;
+// }
+
+// .fc-content{
+//   color:#fff;
+//   background:$primary-red
+// }
+
+button.fc-prev-button.fc-button.fc-state-default.fc-corner-left {
+  background: $dark-grey;
+  color:#fff
+}
+
+button.fc-today-button.fc-button.fc-state-default.fc-corner-left.fc-corner-right{
+  background: $dark-grey;
+  color:#fff;
+}
+
+button.fc-agendaWeek-button.fc-button.fc-state-default{
+  background: $dark-grey;
+  
+  color:#fff;
+}
+
+.fc-state-active{
+  background:$light-dark-grey!important;
+  color:#fff;
+}
+
+button.fc-today-button.fc-button.fc-state-default.fc-corner-left.fc-corner-right{
+  background: $dark-grey;
+  color:#fff;
+}
+
+button.fc-agendaWeek-button.fc-button.fc-state-default{
+  background: $dark-grey;
+  color:#fff;
+}
+
+button.fc-agendaDay-button.fc-button.fc-state-default.fc-corner-right{
+  background: $dark-grey;
+  color:#fff;
+}
+
+button.fc-next-button.fc-button.fc-state-default.fc-corner-right{
+  background: $dark-grey;
+  color:#fff;
+}
+
+button.fc-month-button.fc-button.fc-state-default.fc-corner-left{
+  background: $dark-grey;
+  color:#fff;
+}

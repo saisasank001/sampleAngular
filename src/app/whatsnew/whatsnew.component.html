@@ -1,28 +1,108 @@
+<div class="page">
 
-<div class="body" >
-    <table class="table">
-        <thead>
-            <tr class="dark-grey-bg white-text">
-                <td>Customer</td>
-                <td>Type</td>
-                <td>Start Time</td>
-                <td>End Time</td>
-            </tr>
-        </thead>
-        <tbody>
+<br>
+<div class="row">
+    <div class="col-sm-6" style="padding-right:0px">
+        <div id="full-calendar"></div> 
+        
+        <div class="row">
+            <div class="col-sm-12" style="margin:5px"> 
+                <table class="table">
+                    <tr>
+                        <td><div class="box" style="background: blue;">&nbsp;&nbsp;</div></td><td> Daily</td>
+                        <td> <div class="box" style="background: green;">&nbsp;&nbsp;</div></td><td> Weekly</td>
+                        <td><div class="box" style="background: orange;">&nbsp;&nbsp;</div></td><td> Bi-Weekly</td>
+                        <td><div class="box" style="background: purple;">&nbsp;&nbsp;</div></td><td> Monthly</td>
+                        <td>
+                            <div class="box" style="background: cyan;">&nbsp;&nbsp;</div></td>
+                        <td>  Non Recurring</td>
+                    </tr>
+                </table>
+            </div>
+           
+        
+    </div>
+    </div>
+    <div class="col-sm-6" style="padding-left:0px">
+        <div class="btn-toolbar" style="display: flex;
+        flex-direction: row-reverse;">
+            <button class="btn dark-grey-bg white-text waves-effect waves-light fc button" >Events To Activate</button>
+            <button class="btn dark-grey-bg white-text " id="delete">Delete</button>
+            <button class="btn light-dark-grey-bg" id="exportbtn">Export</button>
+            <button class="btn light-dark-grey-bg">Add Event</button>
+        </div>
+        <!-- <div style="background-color: #cf2109;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        margin-top:10px;
+        font-size: 15px;">
+             
+             <div class="form-group">
 
-            <tr class="table" *ngFor="let items of json">
-                <td>{{items.Customer}}</td>
-                <td>{{items.TYPE}}</td>
-                <td *ngIf="items.Start_time">{{items.Start_time}}</td>
-                <td *ngIf="!items.Start_time">-</td>
-                <td *ngIf="items.End_time">{{items.End_time}}</td>
-                <td *ngIf="!items.End_time">-</td>
-            </tr>
-            
-        </tbody>
-    </table>
-    <button (click)="example('2019-11-29')">example</button>
-    <button (click)="example1('2019-11-10','2019-11-29')">example1</button>
-    <button (click)="example2()">example2</button>
+                 <select class="form-control" id="monthSel">
+                     <option class='month' value='01'><a>January</a></option>
+                     <option class='month' value='02'><a>February</a></option>
+                     <option class='month' value='03'><a>March</a></option>
+                     <option class='month' value='04'><a>April</a></option>
+                     <option class='month' value='05'><a>May</a></option>
+                     <option class='month' value='06'><a>June</a></option>
+                     <option class='month' value='07'><a>July</a></option>
+                     <option class='month' value='08'><a>August</a></option>
+                     <option class='month' value='09'><a>September</a></option>
+                     <option class='month' value='10'><a>October</a></option>
+                     <option class='month' value='11'><a>November</a></option>
+                     <option class='month' value='12'><a>December</a></option>
+                 </select>
+             </div>
+             <div class="form-group">
+                 <select class="form-control" id="yearSel">
+                     <option>2016</option>
+                     <option>2017</option>
+                     <option>2018</option>
+                     <option>2019</option>
+                     <option>2020</option>
+                     <option>2021</option>
+                     <option>2022</option>
+                     <option>2023</option>
+                     <option>2024</option>
+                     <option>2025</option>
+                     <option>2026</option>
+                 </select>
+             </div>
+
+         </div> -->
+ <br>
+
+         <table class="table events-details primary-red-bg scrollable-table">
+            <thead>
+                <tr class="primary-red-bg white-text">
+                    <td style="min-width: 30px;max-width: 30px;width: 30px;"><input type="checkbox" (change)="selectAll()" [(ngModel)]="selectAll"></td>
+                    <td>Customer</td>
+                    <td>Type</td>
+                    <td>Start Time</td>
+                    <td>End Time</td>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr  *ngFor="let items of json">
+                    <td style="min-width: 30px;max-width: 30px;width: 30px;"><input type="checkbox"></td>
+                    <td>{{items.Customer}}</td>
+                    <td>{{items.TYPE}}</td>
+                    <td *ngIf="items.Start_time">{{items.Start_time}}</td>
+                    <td *ngIf="!items.Start_time">-</td>
+                    <td *ngIf="items.End_time">{{items.End_time}}</td>
+                    <td *ngIf="!items.End_time">-</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+
+
+
+    
 </div>

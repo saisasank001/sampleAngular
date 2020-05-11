@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+import {FullCalendarModule} from 'primeng/fullcalendar';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import * as $ from 'jquery';
+import * as moment from 'moment';
+import 'fullcalendar';
+
 @Component({
   selector: 'app-whatsnew',
   templateUrl: './whatsnew.component.html',
@@ -8,23 +16,7 @@ import { Component, OnInit } from '@angular/core';
 export class WhatsnewComponent implements OnInit {
 
   json: any = [
-    {
-      Customer: "swe",
-      Date_Created: "11/19/2019 16:22:20",
-      End_date: "2019-12-10",
-      End_time: "16:21:00",
-      Is_Active: 1,
-      Is_Recurring: 1,
-      Notes: "notes to test",
-      RecurringType: "daily",
-      Reported_By: "Swetha Patoor",
-      Reported_By_Email: "swetha.patoor@lexisnexis.com",
-      Scope: "public",
-      Start_time: "16:21:00",
-      TYPE: "testing schedule",
-      id: 111,
-      start_date: "2019-11-19"
-    },
+ 
     {
       Customer: "lexisNexis",
       Date_Created: "11/19/2019 15:08:41",
@@ -44,10 +36,10 @@ export class WhatsnewComponent implements OnInit {
       start_date: "2019-11-29"
     },
     {
-      Customer: "qwert",
+      Customer: "lexisNexis1lexisNexis1lexisNexis1lexisNexis1lexisNexis1",
       Date_Created: "11/19/2019 15:08:41",
       Description: "",
-      End_date: "2019-11-10",
+      End_date: "2019-11-29",
       End_time: "16:08:00",
       Is_Active: 1,
       Is_Recurring: 0,
@@ -56,55 +48,12 @@ export class WhatsnewComponent implements OnInit {
       Reported_By: "Mahesh Saka",
       Reported_By_Email: "mahesh.saka@lexisnexisrisk.com",
       Scope: "private",
-      Start_time: "15:08:00",
+      Start_time: "10:08:00",
       TYPE: "new",
       id: 101,
-      start_date: "2019-11-10"
-    }
-  ]
-  matched:any=[]
-  dataArr:any=[]
-  formatedDates:any=[]
-  constructor() { }
-
-  ngOnInit() {
-  }
-  //Function to get dates in between two dates
-  getDateArray(start, end) {
-    let arr = new Array();
-    let dt = new Date(start);
-    while (dt < end) {
-        arr.push(new Date(dt));
-        dt.setDate(dt.getDate() + 1);
-    }
-    return arr;
-}
-//Function to get matched start date from main json
-  example(date){
-    this.json.forEach(element => {
-      if(element.start_date == date){
-        this.matched.push(element)
-      }
-    });
-    console.log(this.matched)
-  }
-
-  example1(startDate,endDate){
-    let newDate
-    console.log(startDate,endDate)
-    //getting dates from arr
-    this.dataArr = this.getDateArray(new Date(startDate),new Date(endDate));
-    //to change the dates to formated dates
-    this.dataArr.forEach(element => {
-    newDate = new Date(element).toISOString().slice(0,10);
-    this.formatedDates.push(newDate)
-    });
-    console.log(this.formatedDates)
-  }
-  //function for checking is recurring and adding dates and customer to new json
-  example2(){
-    let dates:any=[]
-    let json:any={
+      start_date: "2019-11-29"
+    },
+    {
       Customer: "qwert",
       Date_Created: "11/19/2019 15:08:41",
       Description: "",
@@ -120,16 +69,277 @@ export class WhatsnewComponent implements OnInit {
       Start_time: "15:08:00",
       TYPE: "new",
       id: 101,
-      start_date: "2019-11-10"
-    }
-    let final:any=[]
-    console.log(json.start_date,json.End_date)
-    dates = this.getDateArray(new Date(json.start_date),new Date(json.End_date));
-    console.log(dates)
-    dates.forEach(element => {
+      start_date: "2019-11-10",
+     
+    },
+    {
+      Customer: "qwert",
+      Date_Created: "11/19/2019 15:08:41",
+      Description: "",
+      End_date: "2019-11-15",
+      End_time: "16:08:00",
+      Is_Active: 1,
+      Is_Recurring: 1,
+      Notes: "",
+      RecurringType: "weekly",
+      Reported_By: "Mahesh Saka",
+      Reported_By_Email: "mahesh.saka@lexisnexisrisk.com",
+      Scope: "private",
+      Start_time: "15:08:00",
+      TYPE: "new",
+      id: 101,
+      start_date: "2019-11-10",
+     
+    },
+    {
+      Customer: "qwert",
+      Date_Created: "11/19/2019 15:08:41",
+      Description: "",
+      End_date: "2019-11-15",
+      End_time: "16:08:00",
+      Is_Active: 1,
+      Is_Recurring: 1,
+      Notes: "",
+      RecurringType: "biweekly",
+      Reported_By: "Mahesh Saka",
+      Reported_By_Email: "mahesh.saka@lexisnexisrisk.com",
+      Scope: "private",
+      Start_time: "15:08:00",
+      TYPE: "new",
+      id: 101,
+      start_date: "2019-11-10",
+     
+    },
+    {
+      Customer: "qwert",
+      Date_Created: "11/19/2019 15:08:41",
+      Description: "",
+      End_date: "2019-11-15",
+      End_time: "16:08:00",
+      Is_Active: 1,
+      Is_Recurring: 1,
+      Notes: "",
+      RecurringType: "monthly",
+      Reported_By: "Mahesh Saka",
+      Reported_By_Email: "mahesh.saka@lexisnexisrisk.com",
+      Scope: "private",
+      Start_time: "15:08:00",
+      TYPE: "new",
+      id: 101,
+      start_date: "2019-11-10",
+     
+    },
+
+  ]
+  eventData: any=[]; // calendar events
+  tableEvents:any=[]; // on select date events to show
+  filteredTableEvents=[];
+  options: any; // calendar options
+  defaultConfigurations: any;
+  
+   
+  constructor() { }
+
+  ngOnInit() {
+
+    this.eventData=[];
     
-      final.push({customer:json.Customer, date:new Date(element).toISOString().slice(0,10)})
+    this.json.forEach(item=>{
+      if(this.validateEvent(item)){
+        if(item['Is_Recurring']){
+          let num=1;
+          if(item['RecurringType']=='weekly'){
+            num=7;
+          }
+          if(item['RecurringType']=='biweekly'){
+            num=14;
+          }
+          if(item['RecurringType']=='monthly'){
+            num=30;
+          }
+          let dates=(this.generateDates(item.start_date,item.End_date,num));
+          dates.forEach(date=>{
+            let json=Object.assign({},item);
+            json['date']=date;
+            this.tableEvents.push(json);
+
+            // add calendar events
+            let className=this.getEventClassName(item['Is_Recurring'],item['RecurringType']);
+               this.eventData.push(
+                {
+                  "title":item.Customer,
+                  "start": date+'T'+item.Start_time,
+                  "end": date+'T'+item.End_time,
+                  eventColor: '#fff',
+                  eventBackgroundColor:'red',
+                  eventTextColor:'#fff',
+                  className: className
+                }
+              )
+          })
+
+        }else{
+          item.date=item.start_date;
+          this.tableEvents.push(item);
+           // add calendar events
+           let className=this.getEventClassName(item['Is_Recurring'],item['RecurringType']);
+           this.eventData.push(
+            {
+              "title":item.Customer,
+              "start": item.start_date+'T'+item.Start_time,
+              "end": item.start_date+'T'+item.End_time,
+              eventColor: '#fff',
+              eventBackgroundColor:'red',
+              eventTextColor:'#fff',
+              className: className
+            }
+          )
+        }
+      }
+      
+    })
+
+    console.log(this.tableEvents)
+
+    console.log(this.eventData)
+    this.loadCalendar();
+   
+  }
+
+  filterTable(date){
+    this.filteredTableEvents=[];
+    this.filteredTableEvents=Object.assign([],this.tableEvents);
+    this.filteredTableEvents.filter(item=>{
+      return item.date==date
+    })
+  }
+
+  getEventClassName(arg0: any, arg1: any) {
+    if(arg0){
+      return arg1
+    }else{
+      return 'normal';
+    }
+  }
+
+  loadCalendar(){
+    this.defaultConfigurations = {
+      plugins: [ interactionPlugin ],
+               eventLimit: true,
+               defaultDate: '2019-11-10',
+               header: {
+                  left: 'prev,next today',
+                  right: 'title',
+                  center: 'month,agendaWeek,agendaDay'
+               },
+               eventLimitText:'View More',
+               views: {
+                agenda: {
+                   eventLimit: 1
+                },
+                month: {
+                  eventLimit: 1
+                }
+             },
+               
+               
+               selectable: true,
+               
+               events: this.eventData,
+               eventRender: function(event, element) {
+                if (event.className == 'normal') {
+                    element.css({
+                        'background-color': 'green',
+                        'border-color': 'green',
+                        'color':'#fff'
+                    });
+                }
+                if (event.className == 'daily') {
+                  element.css({
+                      'background-color': 'red',
+                      'border-color': 'green',
+                      'color':'#fff'
+                  });
+                }
+                if (event.className == 'weekly') {
+                  element.css({
+                      'background-color': 'blue',
+                      'border-color': 'green',
+                      'color':'#fff'
+                  });
+                }
+                if (event.className == 'biweekly') {
+                  element.css({
+                      'background-color': 'orange',
+                      'border-color': 'green',
+                      'color':'#fff'
+                  });
+                }
+                if (event.className == 'monthly') {
+                  element.css({
+                      'background-color': 'cyan',
+                      'border-color': 'green',
+                      'color':'#fff'
+                  });
+                }
+              },
+              
+              
+            //header and other values
+            select: function(start, end, allDay) {
+                console.log({start,end,allDay})
+             },
+             dateClick: function(info) {
+              alert('Clicked on: ' + info.dateStr);
+              alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+              alert('Current view: ' + info.view.type);
+              // change the day's background color just for fun
+              info.dayEl.style.backgroundColor = 'red';
+            }
+            };
+            $('#full-calendar').fullCalendar(
+              this.defaultConfigurations
+           );
+
+           let left=$(".fc-icon-left-single-arrow");
+              left.removeAttr('class');
+              left.addClass("fa fa-chevron-left")
+            left=$(".fc-icon-right-single-arrow");
+              left.removeAttr('class');
+              left.addClass("fa fa-chevron-right")
+  }
+  
+  validateEvent(data){
+    return true;
+  }
+
+  //Function to get dates in between two dates
+  getDateArray(start, end, addDate) {
+    let arr = new Array();
+    let dt = new Date(start);
+    while (dt < end) {
+        arr.push(new Date(dt));
+        dt.setDate(dt.getDate() + addDate);
+    }
+    return arr;
+  }
+
+  generateDates(startDate,endDate,addDate){
+    let formatedDates=[];
+    if(startDate==endDate){
+      return [startDate];
+    }
+    let newDate;
+   
+    //getting dates from arr
+    let dataArr = this.getDateArray(new Date(startDate),new Date(endDate),addDate);
+    //to change the dates to formated dates
+    dataArr.forEach(element => {
+      newDate = new Date(element).toISOString().slice(0,10);
+      formatedDates.push(newDate)
     });
-    console.log(final)
+    
+    return formatedDates;
+    
   }
 }
