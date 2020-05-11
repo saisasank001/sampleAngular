@@ -31,7 +31,7 @@ recurringType:any = ["type1","type2","monthly"]
       Description: ['',[Validators.required]],
       Notes:['',[Validators.required]],
       Reported_By:['',[Validators.required]],
-      Recurring_Type:['',[Validators.required]],
+      RecurringType:['',[Validators.required]],
       Is_Recurring:['',[Validators.required]],
       Scope:['',[Validators.required]],
     }); 
@@ -64,8 +64,28 @@ recurringType:any = ["type1","type2","monthly"]
     ]
     }
   }
+  checkDate(){
+    if(this.eventForm.value.Is_Recurring == '1'){
+      if(this.eventForm.value.End_date){
+        console.log("end date exisitng")
+      }
+      else{
+        this.eventForm.patchValue({End_date:this.eventForm.value.Start_date})
+        console.log(this.eventForm.value.End_date)
+      }
+    }
+  }
 submit(data){
   console.log(data)
+  if(data.End_date ==''){
+    data.End_date = data.Start_date
+  }
+
+  if(data['Scope']== 'public'){
+    data['Is_Active']= '0'
+  }else{
+    data['Is_Active'] = '1'
+  }
 }
 }
 

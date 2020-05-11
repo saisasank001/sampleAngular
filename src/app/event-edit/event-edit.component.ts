@@ -19,7 +19,7 @@ export class EventEditComponent implements OnInit {
     Customer: "swe4",
     Date_Created: "11/19/2019 16:34:58",
     Description: "ZmluYWwgd2l0aG91dCBlbWFpbCYjMTYwOw==",
-    End_date: "06/17/2020",
+    End_date: "",
     End_time: "16:33:00",
     Is_Active: 1,
     Is_Recurring: 1,
@@ -38,29 +38,41 @@ export class EventEditComponent implements OnInit {
     public httpService: HttpServiceService) { }
 
   ngOnInit() {
-    let frmDate = this.editData.Start_date;
-    let str_array_fDate = frmDate.split('/');
-
-    this.editData.Start_date = { year: Number(str_array_fDate[2]), month: Number(str_array_fDate[0]), day: Number(str_array_fDate[1]) }
-   
+    if(this.editData.Start_date){
+      let frmDate = this.editData.Start_date;
+      let str_array_fDate = frmDate.split('/');
+  
+      this.editData.Start_date = { year: Number(str_array_fDate[2]), month: Number(str_array_fDate[0]), day: Number(str_array_fDate[1]) }
+     
+    }
+    
     //spliting Todate
-    let toDate = this.editData.End_date;
-    let str_array_tDate = toDate.split('/');
- 
-    this.editData.End_date = { year: Number(str_array_tDate[2]), month: Number(str_array_tDate[0]), day: Number(str_array_tDate[1]) }
+    if(this.editData.End_date){
+      let toDate = this.editData.End_date;
+      let str_array_tDate = toDate.split('/');
+   
+      this.editData.End_date = { year: Number(str_array_tDate[2]), month: Number(str_array_tDate[0]), day: Number(str_array_tDate[1]) }
+      
+    }
     
     //spliting startTime
-    let stTime = this.editData.Start_time;
-    let str_array_strTime = stTime.split(':');
-
-     this.editData.Start_time = { hour: Number(str_array_strTime[0]), minute: Number(str_array_strTime[1]), second: Number(str_array_strTime[2]) }
+    if(this.editData.Start_time){
+      let stTime = this.editData.Start_time;
+      let str_array_strTime = stTime.split(':');
+  
+       this.editData.Start_time = { hour: Number(str_array_strTime[0]), minute: Number(str_array_strTime[1]), second: Number(str_array_strTime[2]) }
+      
+    }
     
     //spliting endTime
-    let endTime = this.editData.End_time;
-    let str_array_endTime = endTime.split(':');
-
-    this.editData.End_time = { hour: Number(str_array_endTime[0]), minute: Number(str_array_endTime[1]), second: Number(str_array_endTime[2]) }
-   
+    if(this.editData.End_time){
+      let endTime = this.editData.End_time;
+      let str_array_endTime = endTime.split(':');
+  
+      this.editData.End_time = { hour: Number(str_array_endTime[0]), minute: Number(str_array_endTime[1]), second: Number(str_array_endTime[2]) }
+     
+    }
+    
     this.editData.Description = atob(this.editData.Description)
 
     this.eventForm = this.formBuilder.group({
@@ -108,8 +120,28 @@ export class EventEditComponent implements OnInit {
       ]
     }
   }
+  checkDate(){
+    if(this.eventForm.value.Is_Recurring == '1'){
+      if(this.eventForm.value.End_date){
+        console.log("end date exisitng")
+      }
+      else{
+        this.eventForm.patchValue({End_date : this.eventForm.value.Start_date})
+        console.log(this.eventForm.value.End_date)
+      }
+    }
+  }
   submit(data) {
     console.log(data)
+    if(data.End_date ==''){
+      data.End_date = data.Start_date
+    }
+    
+    if(data['Scope']== 'public'){
+      data['Is_Active']= '0'
+    }else{
+      data['Is_Active'] = '1'
+    }
   }
 }
 

@@ -164,7 +164,7 @@
                 </div>
                 <div class="col-sm-9">
                   <!-- put input small ---->
-                  <select  placeholder="Select is Recurring" formControlName="Is_Recurring" >
+                  <select  placeholder="Select is Recurring" formControlName="Is_Recurring" (change)="checkDate()" >
                       <option value="">Select is Recurring</option>
                       <option  value="1">Yes</option>
                       <option  value="0">No</option></select>
