@@ -42,8 +42,8 @@
 
             <tr class="table" *ngFor="let item of usersArray; let in = index;">
                 <td>{{item.domain}}</td>
-                <td>{{item.addedBy}}</td>
-                <td>{{item.addedOn}}</td>
+                <td>{{item.AddedBy}}</td>
+                <td>{{item.DateAdded}}</td>
                 <button (click)="delete(item)">*</button>
             </tr>            
         </tbody>
