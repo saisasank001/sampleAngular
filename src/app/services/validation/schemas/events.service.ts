@@ -11,11 +11,12 @@ export class EventsService {
   eventAdd(data){
     let validations={
       Customer:["notEmpty"],
-      TYPE:["notEmpty"],
+      Type:["notEmpty"],
       Start_date:["notEmpty","vaildateYearFormat"],End_date:["notEmpty","vaildateYearFormat"],
       Start_time:["notEmpty","validateTime "],End_time:["notEmpty","validateTime "],
       Description:["notEmpty"],Notes:["notEmpty"],Reported_By:["notEmpty"]
-      ,RecurringType:["notEmpty"],Is_Recurring:["notEmpty","singleCharacter"],Scope:["notEmpty","singleCharacter"]};
+      ,RecurringType:["notEmpty"],Is_Recurring:["notEmpty","singleCharacter"],
+      Scope:["notEmpty","singleCharacter"],Is_Active:["notEmpty","singleCharacter"]};
       return this.validationService.checkValidate(data,validations);
     
   }
