@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import {NgbModal, ModalDismissReasons, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpServiceService } from '../http-service.service';
+import { ValidationService } from '../validation.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class EventAddComponent implements OnInit {
 recurringType:any = ["type1","type2","monthly"]
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder,
     
-    public httpService:HttpServiceService) { }
+    public httpService:HttpServiceService, public validation:ValidationService) { }
 
   ngOnInit() {
     this.eventForm = this.formBuilder.group({
@@ -36,7 +37,22 @@ recurringType:any = ["type1","type2","monthly"]
       Scope:['',[Validators.required]],
     }); 
 
-    this.editorConfig={
+    // console.log(this.validation.isAlphabet('Anusha'))
+    // console.log(this.validation.isNumeric('3456'))
+    // console.log(this.validation.isAlfaNumeric('123456werty'))
+    // console.log(this.validation.isEmail('wreweret@gmail.com'))
+    // console.log(this.validation.maxLength('anusha',6))
+    // console.log(this.validation.compare('anu',3))
+    // console.log(this.validation.checkIsArray(["anu"]))
+    // console.log(this.validation.dateValidate('2020-02-02','YYYY-MM-DD'))
+
+  //   let validations={Customer:["notEmpty" ],TYPE:["notEmpty"],Start_date:["notEmpty",""],End_date:["notEmpty"],
+  // Start_time:["notEmpty"],End_time:["notEmpty"],Description:["notEmpty"],Notes:["notEmpty"],Reported_By:["notEmpty"]
+  // ,RecurringType:["notEmpty"],Is_Recurring:["notEmpty"],Scope:["notEmpty"]}
+  //   console.log(this.validation.checkValidate('anusha',validations))
+
+
+      this.editorConfig={
       editable: true,
       spellcheck: true,
       height: 'auto',
@@ -52,7 +68,7 @@ recurringType:any = ["type1","type2","monthly"]
       defaultFontName: '',
       defaultFontSize: '',
      
-      
+
     uploadUrl: 'v1/image',
     uploadWithCredentials: false,
     sanitize: true,
@@ -75,6 +91,8 @@ recurringType:any = ["type1","type2","monthly"]
       }
     }
   }
+
+
 submit(data){
   console.log(data)
   if(data.End_date ==''){
