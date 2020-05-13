@@ -85,9 +85,10 @@ export class ValidationService {
       return false
     }
   }
+  
   checkValidate(data,validations){
     return true
   }
 
-  schemes(){}
+  
 }
