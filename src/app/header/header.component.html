@@ -39,7 +39,7 @@
                       <a routerLink="/admin/request-newuser"><i class="fa fa-user-plus"></i>Request New Users</a>
                   </li>
                   <li >
-                      <a routerLink="/products"><i class="fa fa-globe"></i>Products</a>
+                      <a routerLink="/products" [class]="checkActive('/products')?'active':''"><i class="fa fa-globe"></i>Products</a>
                   </li>
                   <li >
                       <a routerLink="/download-full-files"><i class="fa fa-download"></i>Download Full Files</a>
