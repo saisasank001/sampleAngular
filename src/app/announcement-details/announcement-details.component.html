@@ -1,40 +1,73 @@
 <div class="page">
     <table class="table table-hover light-grey-bg">
-    <thead class="primary-red-bg white-text">
-        <tr>
-            <th colspan="2">Announcement Details</th>
-        </tr>
-    </thead>
-    <tbody>
-       <tr>
-           <td><b>Title</b></td>
-           <td>Test</td>
-       </tr>
-       <tr>
-        <td><b>Title</b></td>
-        <td>Test</td>
-    </tr>
-    <tr>
-        <td><b>Title</b></td>
-        <td>Test</td>
-    </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <button type="button" class="btn dark-grey-bg white-text"><i class="fa fa-chevron-left"></i> Back</button>
+        <thead class="primary-red-bg white-text">
+            <tr>
+                <th colspan="2">Announcement Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Title:</b></td>
+                <td>{{json.title}}</td>
+            </tr>
+            <tr>
+                <td><b>Announcement:</b></td>
+                <td>{{json.announcement}}</td>
+            </tr>
+            <tr *ngIf="type !=  'Urgent Message'">
+                <td><b>File Name:</b></td>
+                <td>{{json.filename}}</td>
+            </tr>
+            <tr *ngIf="type !=  'Urgent Message'">
+                <td><b>Email Sent:</b></td>
+                <td *ngIf="json.IsEmailSend =='0'">No</td>
+                <td *ngIf="json.IsEmailSend =='1'">Yes</td>
+            </tr>
+            <tr>
+                <td><b>Created Date:</b></td>
+                <td>{{json.CreatedDate}}</td>
+            </tr>
+            <tr *ngIf="type != 'Announcement'">
+                <td><b>Priority:</b></td>
+                <td *ngIf="json.Priority=='1'">High</td>
+                <td *ngIf="json.Priority=='2'">Medium</td>
+                <td *ngIf="json.Priority=='3'">Low</td>
+            </tr>
+            <tr *ngIf="type != 'Announcement'">
+                <td><b>Start Date:</b></td>
+                <td>{{json.StartDate}}</td>
+            </tr>
+            <tr *ngIf="type != 'Announcement'">
+                <td><b>Start Time:</b></td>
+                <td>{{json.StartTime}}</td>
+            </tr>
+            <tr *ngIf="type != 'Announcement'">
+                <td><b>End Date:</b></td>
+                <td>{{json.EndDate}}</td>
+            </tr>
+            <tr *ngIf="type != 'Announcement'">
+                <td><b>End Time:</b></td>
+                <td>{{json.EndTime}}</td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="button" *ngIf="userService.checkAdmin()" routerLink="/admin/announcement-admin-list" class="btn dark-grey-bg white-text"><i class="fa fa-chevron-left"></i>Back</button>
+                            <button type="button" *ngIf="!userService.checkAdmin()" routerLink="/announcement-list" class="btn dark-grey-bg white-text"><i class="fa fa-chevron-left"></i>Back</button>
+                        </div>
+                        <div class="col-sm-6 text-align-right">
+
+                            <button *ngIf="userService.checkAdmin()" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                            <button *ngIf="userService.checkAdmin()" type="button" class="btn btn-success"><i class="fa fa-clone"></i> Clone</button>
+                        </div>
                     </div>
-                    <div class="col-sm-6 text-align-right">
-                       
-<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
-<button type="button" class="btn btn-success"><i class="fa fa-clone"></i> Clone</button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-      
-    </tfoot>
-</table>
+                </td>
+            </tr>
+
+        </tfoot>
+    </table>
 </div>
