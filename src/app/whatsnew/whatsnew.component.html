@@ -31,7 +31,7 @@
     <div class="col-sm-6" style="padding-left:0px">
         <div class="btn-toolbar" style="display: flex;
         flex-direction: row-reverse;">
-            <button class="btn dark-grey-bg white-text waves-effect waves-light fc button" >Events To Activate</button>
+            <button *ngIf="userService.checkAdmin()" class="btn dark-grey-bg white-text waves-effect waves-light fc button" >Events To Activate</button>
             <button class="btn dark-grey-bg white-text "(click)="deleteEvent()">Delete</button>
             <button class="btn light-dark-grey-bg" (click)="toggleExportForm()">Export</button>
             <button class="btn light-dark-grey-bg">Add Event</button>

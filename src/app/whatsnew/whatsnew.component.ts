@@ -7,6 +7,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import * as $ from 'jquery';
 import * as moment from 'moment';
 import 'fullcalendar';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-whatsnew',
@@ -139,7 +140,7 @@ export class WhatsnewComponent implements OnInit {
   defaultConfigurations: any;
   
    
-  constructor() { }
+  constructor(public userService:UserService) { }
 
   ngOnInit() {
 

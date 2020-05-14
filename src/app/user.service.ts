@@ -8,6 +8,10 @@ export class UserService {
   constructor() { }
  
   checkAdmin(){
-    return false
+    return true
+  }
+
+  findRoleAccess(){
+    return true
   }
 }
