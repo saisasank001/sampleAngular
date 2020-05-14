@@ -3,6 +3,7 @@ import {NgbModal, ModalDismissReasons, NgbDateStruct} from '@ng-bootstrap/ng-boo
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpServiceService } from '../http-service.service';
 import { ValidationService } from '../validation.service';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class EventAddComponent implements OnInit {
 recurringType:any = ["type1","type2","monthly"]
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder,
     
-    public httpService:HttpServiceService, public validation:ValidationService) { }
+    public httpService:HttpServiceService, public validation:ValidationService , public userService:UserService) { }
 
   ngOnInit() {
     this.eventForm = this.formBuilder.group({
@@ -94,14 +95,19 @@ recurringType:any = ["type1","type2","monthly"]
 
 
 submit(data){
+
   console.log(data)
   if(data.End_date ==''){
     data.End_date = data.Start_date
   }
 
-  if(data['Scope']== 'public'){
+  if(data['Scope']== 'public' && this.userService.checkAdmin()){
+    data['Is_Active']= '1'
+  }
+  else if(data['Scope']== 'public' && (this.userService.checkAdmin()== false)){
     data['Is_Active']= '0'
-  }else{
+  }
+  else if(data['Scope']== 'private'){
     data['Is_Active'] = '1'
   }
 }
