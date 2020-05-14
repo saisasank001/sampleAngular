@@ -7,6 +7,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import * as $ from 'jquery';
 import * as moment from 'moment';
 import 'fullcalendar';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-whatsnew',
@@ -14,6 +15,7 @@ import 'fullcalendar';
   styleUrls: ['./whatsnew.component.scss']
 })
 export class WhatsnewComponent implements OnInit {
+
 
   json: any = [
  
@@ -138,7 +140,7 @@ export class WhatsnewComponent implements OnInit {
   defaultConfigurations: any;
   
    
-  constructor() { }
+  constructor(public userService:UserService) { }
 
   ngOnInit() {
 
@@ -200,10 +202,50 @@ export class WhatsnewComponent implements OnInit {
     })
 
     console.log(this.tableEvents)
-
+    this.filteredTableEvents=this.tableEvents;
+    this.filteredTableEvents.forEach(item=>{
+      item.selected=false;
+    })
+    this.cloneResponse=this.filteredTableEvents;
+    this.addFilters();
     console.log(this.eventData)
+    console.log({table:this.tableEvents})
     this.loadCalendar();
    
+  }
+
+
+  selectAll=false;
+  
+  selectAllData=()=>{
+    this.selectAll=!this.selectAll;
+    this.filteredTableEvents.forEach(item=>{
+      item.selected=this.selectAll;
+    })
+    this.cloneResponse=this.filteredTableEvents;
+  }
+
+  deleteEvent(){
+    console.log({table:this.filteredTableEvents});
+    let flag=false;
+    this.filteredTableEvents.forEach(item=>{
+      if(item.Is_Recurring==1 || item.Is_Recurring=="1"){
+        flag=true;
+      }
+    })
+    if(flag){
+      
+    }else{
+
+    }
+  }
+
+  export(){
+
+  }
+
+  deleteEventDetails(){
+
   }
 
   filterTable(date){
@@ -213,6 +255,159 @@ export class WhatsnewComponent implements OnInit {
       return item.date==date
     })
   }
+
+  toggleExportForm(){
+    this.showExportForm=!this.showExportForm;
+  }
+
+  showErrorExport(){
+    alert('errro')
+  }
+
+  exportEvents(){
+    console.log(this.exportFrom,this.exportTo)
+    if(!(this.exportFrom && this.exportTo)){
+      console.log(1)
+      return;
+    }
+    try{
+      if(new Date(this.exportFrom).getTime()<new Date(this.exportTo).getTime()){
+        console.log(this.exportFrom);
+        console.log(this.tableEvents);
+        let dates=this.generateDates(this.exportFrom,this.exportTo,1);
+        let tmp=JSON.parse(JSON.stringify(this.tableEvents));
+        tmp.filter(item=>{
+          return dates.indexOf(item.start_date)>-1 
+        })
+        console.log(tmp)
+
+      }else{
+        this.showErrorExport();
+      }
+    }catch(e){
+      this.showErrorExport();
+    }
+    
+  }
+
+  tableDisplay=[{
+    name:'Customer',
+    key:'Customer',
+  },
+  {
+    name:'Type',
+    key:'TYPE'
+  },{
+    name:'Start Time',
+    key:'Start_time'
+  },{
+    name:'End Time',
+    key:'End_time'
+  }];
+  keys=["Customer","TYPE","Start_time","End_time"];
+  cloneResponse=[];
+  page=1;
+  pageSize=10;
+  filter=[]; // for filter menu toggle
+  filters=[]; // for filters checkbox data
+  searchTitle=[]; // for searching text 
+  exportFrom="";
+  exportTo="";
+  showExportForm=false;
+  
+  // check if alread filter added
+  checkFilterExist(item,key,index){
+    
+    let response=Object.assign([],this.filters[index]);
+    let data=response.filter(filterData=>{
+      return filterData['name']==item[key]; 
+    })
+    
+    return data.length?true:false;
+  }
+
+  addFilters(){
+    // init filters
+    let count=this.keys;
+    count.map(item=>{
+      this.filters.push([]);
+      this.searchTitle.push()
+      this.filter.push(false);
+    })
+
+    // insert filter data inside filters
+    this.filteredTableEvents.forEach(item=>{
+      let count=this.keys;
+      count.map((key,index)=>{
+        if(!this.checkFilterExist(item,key,index)){
+          this.filters[index].push({name:item[key],selected:false})
+        }
+      })
+      
+    })
+  }
+
+  // toggle filter menu of item
+  changeFilter(index){
+    
+    let i=index;
+    
+    let value=this.filter[i];
+    // reset filters
+    let count=this.keys;
+    
+    this.filter=[];
+    count.map(item=>{
+      this.filter.push(false);
+    })
+    
+    // toggle filter of selected menu item
+    this.filter[i]=value;
+    this.filter[i]=!this.filter[i];
+    
+  }
+
+  // on change checkbox filter data
+  filterRecords(){
+    let count=this.keys;
+    let tmp={};
+    let filteredRecords=[];
+    count.map((key,index)=>{
+      if(!tmp[key]){
+        tmp[key]=[];
+      }
+      
+      let filters=JSON.parse(JSON.stringify(this.filters[index]));
+    
+      filters=filters.filter(item=>{return item.selected==true})
+      console.log(filters)
+      if(filters.length){
+        filters.forEach(element => {
+          tmp[key].push(element.name);
+        });
+      }
+    })
+  
+    let tmpResponse=[];
+    this.cloneResponse.forEach(item=>{
+      let keys=Object.keys(item);
+      let flag=1;
+      keys.forEach(key=>{
+        if(tmp[key].length){
+          if(tmp[key].indexOf(item[key])==-1){
+            flag=0;
+          }
+        }        
+      })
+      
+      if(flag){
+        tmpResponse.push(item);
+      }
+    })
+    this.filteredTableEvents=tmpResponse;
+  }
+
+
 
   getEventClassName(arg0: any, arg1: any) {
     if(arg0){

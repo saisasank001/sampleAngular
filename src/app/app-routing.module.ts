@@ -162,8 +162,11 @@ const routes: Routes = [
       {
         path:'new-user-request',
         component:NewuserRequestComponent
+      },
+      {
+        path:'header',
+        component:Headers
       }
-      
       
     ]
   }
