@@ -1,4 +1,4 @@
-<div class="header flex-row flex-space-between container-fluid" >
+<!-- <div class="header flex-row flex-space-between container-fluid" >
   <div class="left" >
       <img src="assets/images/logo.png">
       <h5 class="primary-text">Customer Test Data Query Tool</h5>
@@ -17,10 +17,9 @@
 </div>
 </div></span>
 
-
   </div>
 
-</div>
+</div> -->
 
 <header id="topnav">
 
@@ -32,23 +31,23 @@
               <ul class="navigation-menu">
 
                   <li >
-                      <a routerLink="/announcements-list" style="padding-left:15px"><i class="fa fa-bell"></i>Announcements</a>
+                      <a routerLink="/announcements-list"  style="padding-left:15px"><i class="fa fa-bell"></i>Announcements</a>
                   </li>
 
                   <li >
-                      <a routerLink="/admin/request-newuser"><i class="fa fa-user-plus"></i>Request New Users</a>
+                      <a routerLink="/admin/request-newuser" ><i class="fa fa-user-plus"></i>Request New Users</a>
                   </li>
                   <li >
                       <a routerLink="/products" [class]="checkActive('/products')?'active':''"><i class="fa fa-globe"></i>Products</a>
                   </li>
                   <li >
-                      <a routerLink="/download-full-files"><i class="fa fa-download"></i>Download Full Files</a>
+                      <a routerLink="/download-full-files" ><i class="fa fa-download"></i>Download Full Files</a>
                   </li>
                   <li >
                       <a target="_blank" download="faq.pdf" [href]="httpService.filesUrl+'faq_pdf/FAQs.pdf'"><i class="fa fa-list"></i>FAQ</a>
                   </li>
                   <li >
-                      <a routerLink="/admin/announcements-admin-create"><i class="fa fa-user-secret"></i>Admin</a>
+                      <a routerLink="/admin/announcements-admin-create" ><i class="fa fa-user-secret"></i>Admin</a>
                   </li>
 
 
