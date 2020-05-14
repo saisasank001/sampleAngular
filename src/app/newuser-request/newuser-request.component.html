@@ -1,10 +1,12 @@
 <div class="page">
+    <div class="heading-bar">3. Unsubcribe User</div>
     <form class="form-group" [formGroup]="unsubscribeUserForm">
-    <table class="table table-hover light-grey-bg">       
+    <table class="table table-hover light-dark-grey-bg">       
         <tbody>
             <tr>
                 <td>
                     <label> Email Address</label>
+                
                     <input class="form-control" formControlName="email" placeholder="Enter Email Address">
                     <small class="form-text text-muted invalid-data"
                       *ngIf="unsubscribeUserForm.controls['email'].invalid && (unsubscribeUserForm.controls['email'].dirty || unsubscribeUserForm.controls['email'].touched)"
@@ -20,7 +22,7 @@
             <td colspan="3">
                 <div class="row">
                     <div class="col-sm-12">
-                        <button type="button" style="float: right;" class="btn dark-grey-bg white-text pull-right"  (click)="submit(unsubscribeUserForm.value)"> Add</button>
+                        <button type="button" style="float: right;" class="btn primary-red-bg white-text pull-right"  (click)="submit(unsubscribeUserForm.value)"> Add</button>
                     </div>
                 </div>
             </td>
@@ -32,19 +34,25 @@
 <div class="body" >
     <table class="table">
         <thead>
-            <tr class="dark-grey-bg white-text">
-                <td>Domain</td>
-                <td>Added By</td>
-                <td>Added On</td>
+            <tr class="primary-red-bg white-text">
+                <th *ngFor="let filterData of tableDisplay;let i=index">
+                    <span [innerHtml]="filterData.name"></span> <i class="fa fa-filter" *ngIf="!filterData.noFilter " (click)="changeFilter(i)"></i>
+                    <div id="myDropdown" class="dropdown-content" *ngIf="!filterData.noFilter  && filter[i] && ( filters[i] |  filter:searchTitle[i]) as result ">
+                        <input type="text" placeholder="Search Filter.." class="form-control" [(ngModel)]="searchTitle[i]">
+                        <a *ngFor="let item of result"><label><input  type="checkbox" (change)="filterRecords()" [(ngModel)]="item.selected"> {{item.name}}</label></a>
+                        <a *ngIf="!(result.length)"><label >No Results Found</label></a>
+                    </div>
+                </th>
+                <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="light-dark-grey-bg">
 
             <tr class="table" *ngFor="let item of usersArray; let in = index;">
                 <td>{{item.EmailAddress}}</td>
                 <td>{{item.AddedBy}}</td>
                 <td>{{item.DateAdded}}</td>
-                <button (click)="delete(item)">*</button>
+                <td><i class="fa fa-trash primary-text" (click)="delete(item)"></i></td>
             </tr>            
         </tbody>
     </table>

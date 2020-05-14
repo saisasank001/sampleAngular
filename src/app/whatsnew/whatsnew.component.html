@@ -7,6 +7,11 @@
         
         <div class="row">
             <div class="col-sm-12" style="margin:5px"> 
+                <div *ngIf="showExportForm">
+                <input type="date" [(ngModel)]="exportFrom">
+                <input type="date" [(ngModel)]="exportTo">
+                <button (click)="exportEvents()">export events</button>
+            </div>
                 <table class="table">
                     <tr>
                         <td><div class="box" style="background: blue;">&nbsp;&nbsp;</div></td><td> Daily</td>
@@ -27,8 +32,8 @@
         <div class="btn-toolbar" style="display: flex;
         flex-direction: row-reverse;">
             <button class="btn dark-grey-bg white-text waves-effect waves-light fc button" >Events To Activate</button>
-            <button class="btn dark-grey-bg white-text " id="delete">Delete</button>
-            <button class="btn light-dark-grey-bg" id="exportbtn">Export</button>
+            <button class="btn dark-grey-bg white-text "(click)="deleteEvent()">Delete</button>
+            <button class="btn light-dark-grey-bg" (click)="toggleExportForm()">Export</button>
             <button class="btn light-dark-grey-bg">Add Event</button>
         </div>
         <!-- <div style="background-color: #cf2109;
@@ -77,17 +82,21 @@
          <table class="table events-details primary-red-bg scrollable-table">
             <thead>
                 <tr class="primary-red-bg white-text">
-                    <td style="min-width: 30px;max-width: 30px;width: 30px;"><input type="checkbox" (change)="selectAll()" [(ngModel)]="selectAll"></td>
-                    <td>Customer</td>
-                    <td>Type</td>
-                    <td>Start Time</td>
-                    <td>End Time</td>
+                    <td style="min-width: 30px;max-width: 30px;width: 30px;"><input type="checkbox" (ngModelChange)="selectAllData()" [(ngModel)]="selectAll"></td>
+                    <th *ngFor="let filterData of tableDisplay;let i=index">
+                        <span [innerHtml]="filterData.name"></span> <i class="fa fa-filter" *ngIf="!filterData.noFilter " (click)="changeFilter(i)"></i>
+                        <div id="myDropdown" class="dropdown-content" *ngIf="!filterData.noFilter  && filter[i] && ( filters[i] |  filter:searchTitle[i]) as result ">
+                            <input type="text" placeholder="Search Filter.." class="form-control" [(ngModel)]="searchTitle[i]">
+                            <a *ngFor="let item of result"><label><input  type="checkbox" (change)="filterRecords()" [(ngModel)]="item.selected"> {{item.name}}</label></a>
+                            <a *ngIf="!(result.length)"><label >No Results Found</label></a>
+                        </div>
+                    </th>
                 </tr>
             </thead>
             <tbody>
     
-                <tr  *ngFor="let items of json">
-                    <td style="min-width: 30px;max-width: 30px;width: 30px;"><input type="checkbox"></td>
+                <tr  *ngFor="let items of filteredTableEvents;let i=index">
+                    <td style="min-width: 30px;max-width: 30px;width: 30px;" ><input [(ngModel)]="filteredTableEvents[i].selected" type="checkbox"></td>
                     <td>{{items.Customer}}</td>
                     <td>{{items.TYPE}}</td>
                     <td *ngIf="items.Start_time">{{items.Start_time}}</td>
